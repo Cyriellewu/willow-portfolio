@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+<title id="title">Palm Vein Enhancement aggregate similarity check</title><desc id="desc">Histogram of 1,526 SSIM before-after values. Mean is 0.9392. No biometric images are shown.</desc>
+<rect width="100%" height="100%" fill="#f6f5f0"/><rect x="45" y="42" width="1110" height="600" rx="18" fill="#fffefa" stroke="#d7d8d0"/>
+<text x="92" y="92" fill="#2b362f" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">Palm Vein Enhancement — Aggregate Similarity Check</text><text x="92" y="122" fill="#526057" font-family="Segoe UI, Arial, sans-serif" font-size="16">1,526 archived batch-comparison rows · SSIM before/after · no biometric images shown</text>
+<line x1="92" y1="572" x2="1122" y2="572" stroke="#d7d8d0"/><text x="78" y="577" text-anchor="end" fill="#657168" font-family="Segoe UI, Arial, sans-serif" font-size="13">0</text>
+<line x1="92" y1="469.5" x2="1122" y2="469.5" stroke="#d7d8d0"/><text x="78" y="474.5" text-anchor="end" fill="#657168" font-family="Segoe UI, Arial, sans-serif" font-size="13">142</text>
+<line x1="92" y1="367" x2="1122" y2="367" stroke="#d7d8d0"/><text x="78" y="372" text-anchor="end" fill="#657168" font-family="Segoe UI, Arial, sans-serif" font-size="13">284</text>
+<line x1="92" y1="264.5" x2="1122" y2="264.5" stroke="#d7d8d0"/><text x="78" y="269.5" text-anchor="end" fill="#657168" font-family="Segoe UI, Arial, sans-serif" font-size="13">426</text>
+<line x1="92" y1="162" x2="1122" y2="162" stroke="#d7d8d0"/><text x="78" y="167" text-anchor="end" fill="#657168" font-family="Segoe UI, Arial, sans-serif" font-size="13">568</text>
+<rect x="94" y="572" width="38.9166666666667" height="0" rx="2" fill="#526c5e"/>
+<rect x="136.916666666667" y="572" width="38.9166666666667" height="0" rx="2" fill="#526c5e"/>
+<rect x="179.833333333333" y="570.556338028169" width="38.9166666666667" height="1.44366197183099" rx="2" fill="#526c5e"/>
+<rect x="222.75" y="566.225352112676" width="38.9166666666667" height="5.77464788732394" rx="2" fill="#526c5e"/>
+<rect x="265.666666666667" y="570.556338028169" width="38.9166666666667" height="1.44366197183099" rx="2" fill="#526c5e"/>
+<rect x="308.583333333333" y="571.278169014084" width="38.9166666666667" height="0.721830985915493" rx="2" fill="#526c5e"/>
+<rect x="351.5" y="571.278169014084" width="38.9166666666667" height="0.721830985915493" rx="2" fill="#526c5e"/>
+<rect x="394.416666666667" y="572" width="38.9166666666667" height="0" rx="2" fill="#526c5e"/>
+<rect x="437.333333333333" y="571.278169014084" width="38.9166666666667" height="0.721830985915493" rx="2" fill="#526c5e"/>
+<rect x="480.25" y="572" width="38.9166666666667" height="0" rx="2" fill="#526c5e"/>
+<rect x="523.166666666667" y="570.556338028169" width="38.9166666666667" height="1.44366197183099" rx="2" fill="#526c5e"/>
+<rect x="566.083333333333" y="569.834507042254" width="38.9166666666667" height="2.16549295774648" rx="2" fill="#526c5e"/>
+<rect x="609" y="571.278169014084" width="38.9166666666667" height="0.721830985915493" rx="2" fill="#526c5e"/>
+<rect x="651.916666666667" y="567.669014084507" width="38.9166666666667" height="4.33098591549296" rx="2" fill="#526c5e"/>
+<rect x="694.833333333333" y="564.781690140845" width="38.9166666666667" height="7.21830985915493" rx="2" fill="#526c5e"/>
+<rect x="737.75" y="562.616197183099" width="38.9166666666667" height="9.38380281690141" rx="2" fill="#526c5e"/>
+<rect x="780.666666666667" y="556.119718309859" width="38.9166666666667" height="15.8802816901408" rx="2" fill="#526c5e"/>
+<rect x="823.583333333333" y="555.397887323944" width="38.9166666666667" height="16.6021126760563" rx="2" fill="#526c5e"/>
+<rect x="866.5" y="551.066901408451" width="38.9166666666667" height="20.9330985915493" rx="2" fill="#526c5e"/>
+<rect x="909.416666666667" y="535.18661971831" width="38.9166666666667" height="36.8133802816901" rx="2" fill="#526c5e"/>
+<rect x="952.333333333333" y="506.31338028169" width="38.9166666666667" height="65.6866197183099" rx="2" fill="#526c5e"/>
+<rect x="995.25" y="452.176056338028" width="38.9166666666667" height="119.823943661972" rx="2" fill="#526c5e"/>
+<rect x="1038.16666666667" y="192.316901408451" width="38.9166666666667" height="379.683098591549" rx="2" fill="#526c5e"/>
+<rect x="1081.08333333333" y="162" width="38.9166666666667" height="410" rx="2" fill="#526c5e"/>
+<text x="92" y="600" text-anchor="middle" fill="#657168" font-family="Segoe UI, Arial, sans-serif" font-size="13">0.3</text>
+<text x="386.285714285714" y="600" text-anchor="middle" fill="#657168" font-family="Segoe UI, Arial, sans-serif" font-size="13">0.5</text>
+<text x="680.571428571429" y="600" text-anchor="middle" fill="#657168" font-family="Segoe UI, Arial, sans-serif" font-size="13">0.7</text>
+<text x="974.857142857143" y="600" text-anchor="middle" fill="#657168" font-family="Segoe UI, Arial, sans-serif" font-size="13">0.9</text>
+<text x="1122" y="600" text-anchor="middle" fill="#657168" font-family="Segoe UI, Arial, sans-serif" font-size="13">1.0</text>
+<line x1="1032.53502263078" y1="162" x2="1032.53502263078" y2="572" stroke="#a97835" stroke-width="4"/><rect x="1044.53502263078" y="172" width="150" height="34" rx="8" fill="#efeee8"/><text x="1056.53502263078" y="194" fill="#3f5749" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">Mean 0.9392</text>
+<text x="92" y="620" fill="#657168" font-family="Segoe UI, Arial, sans-serif" font-size="14">Interpretation: a similarity-preservation diagnostic, not biometric recognition accuracy.</text></svg>
