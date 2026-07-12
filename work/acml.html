@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Willow Wu's ACML 2025 research on explainable dynamic graph neural networks for predictive maintenance." />
+    <title>Cost-aware graph learning - Willow Wu</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="site-frame header-content">
+        <a class="site-name" href="../index.html">Willow Wu</a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="../index.html#work">Work</a>
+          <a href="../index.html#approach">Approach</a>
+          <a href="../about.html">About</a>
+        </nav>
+        <a class="utility-link" href="mailto:willowwu925@gmail.com">Contact</a>
+      </div>
+    </header>
+    <main id="main-content" class="site-frame">
+      <header class="case-hero">
+        <p class="eyebrow">ACML 2025 / PMLR 304 / First author</p>
+        <h1>Making predictive maintenance answer a decision, not a vague request.</h1>
+        <p class="case-summary">
+          An explainable dynamic graph-learning system for vehicle-chassis maintenance,
+          designed around cost and diagnosis rather than a generic instruction to
+          "predict failure."
+        </p>
+        <dl class="case-meta-grid">
+          <div><dt>Role</dt><dd>First author and lead researcher</dd></div>
+          <div><dt>Context</dt><dd>Published ACML research</dd></div>
+          <div><dt>Scale</dt><dd>Approximately 9M fault-log records</dd></div>
+          <div><dt>Focus</dt><dd>Graph learning and evaluation</dd></div>
+        </dl>
+      </header>
+      <div class="case-content">
+        <aside class="case-rail" aria-label="Case study sections">
+          <a href="#question">Question</a>
+          <a href="#approach">Approach</a>
+          <a href="#evidence">Evidence</a>
+          <a href="#limits">Limits</a>
+        </aside>
+        <article class="case-story">
+          <section id="question">
+            <p class="case-label">The question</p>
+            <h2>What should a maintenance model optimize for?</h2>
+            <p>
+              "Predict failure" was too vague to be operational. I worked from noisy,
+              scattered fault data toward tasks tied to the decisions people actually
+              make: emergency-fee risk, cost tier, and subsystem diagnosis.
+            </p>
+          </section>
+          <section id="approach">
+            <p class="case-label">The approach</p>
+            <h2>Use structure without losing the reason behind a prediction.</h2>
+            <p>
+              I developed NRP-GCN-RF: a GCN encoder paired with a Random Forest, over
+              weighted fault graphs that combine temporal, spatial, and Apriori
+              co-occurrence edges. Vehicle-wise chronological validation was used to
+              prevent temporal and inter-vehicle leakage.
+            </p>
+            <div class="system-diagram" aria-label="Research flow">
+              <div><strong>Fault signals</strong><span>Temporal, spatial, and co-occurrence evidence</span></div>
+              <div><strong>Weighted graph</strong><span>GCN representation learning over relationships</span></div>
+              <div><strong>Maintenance decision</strong><span>Cost-aware tasks with interpretable patterns</span></div>
+            </div>
+          </section>
+          <section id="evidence">
+            <p class="case-label">What changed</p>
+            <h2>High-cost failure precision improved from 60% to 95%.</h2>
+            <p>
+              On the published task formulation, the system reached 98.9% fault-category
+              accuracy, raised high-cost failure precision from 60% to 95%, and improved
+              recall by 25%. Apriori rule mining made co-fault patterns inspectable rather
+              than leaving the graph representation as a black box.
+            </p>
+            <div class="evidence-callout">
+              <strong>Publication</strong><br />
+              You Wu, Junwei Su, Sirui Zhang, Zhijian Li. "Explainable Dynamic Graph
+              Neural Networks for Predictive Maintenance in Vehicle Chassis Systems."
+              ACML 2025, Proceedings of Machine Learning Research, volume 304.
+            </div>
+          </section>
+          <section id="limits">
+            <p class="case-label">What is not shown here</p>
+            <h2>Public evidence, without proprietary figures.</h2>
+            <p>
+              The research used proprietary manufacturer datasets. This case study keeps
+              the published result and method description, but intentionally does not
+              reproduce dataset examples, internal figures, or unpublished implementation
+              details.
+            </p>
+          </section>
+        </article>
+      </div>
+    </main>
+    <footer class="site-frame site-footer"><p>© <span id="current-year"></span> Willow Wu</p><p><a href="../index.html#work">All selected work</a></p></footer>
+    <script src="../app.js"></script>
+  </body>
+</html>
