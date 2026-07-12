@@ -1,6 +1,6 @@
 # Willow Wu — Personal Website
 
-Static, dependency-free personal portfolio intended for simple publishing.
+Static, dependency-free recruiter-first personal website.
 
 ## Preview locally
 
@@ -18,4 +18,6 @@ The site has no build step. Upload the contents of this folder to a static host 
 
 ## Content sources
 
-All factual claims are derived from `../09_Master_Resume/main.tex` and the verified project cards in `../00_Project_Cards/`.
+All factual claims are derived from `../09_Master_Resume/main.tex` and the verified
+project cards in `../00_Project_Cards/`. `Willow_Wu_Resume.pdf` is the public SWE
+new-grad résumé variant from `../09_Master_Resume/variants/swe_newgrad.pdf`.
