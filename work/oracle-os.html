@@ -15,7 +15,9 @@
         <a class="site-name" href="../index.html">Willow Wu</a>
         <nav class="site-nav" aria-label="Primary navigation">
           <a href="../index.html#work" aria-current="page">Work</a>
-          <a href="../index.html#approach">Approach</a>
+          <a href="../path.html">Timeline</a>
+          <a href="../notes.html">Notes</a>
+          <a href="../now.html">Now</a>
           <a href="../about.html">About</a>
         </nav>
         <a class="utility-link" href="mailto:willowwu925@gmail.com">Contact</a>
@@ -71,6 +73,14 @@
               <div><strong>Rule-based engine</strong><span>Generate symbols in code, never from an LLM</span></div>
               <div><strong>Interpretation layer</strong><span>LLM adds reflective language, not a prediction</span></div>
               <div><strong>User context</strong><span>Journal and motifs personalize future prompts</span></div>
+            </div>
+            <div class="case-micro-exhibit oracle-exhibit">
+              <p class="micro-label">Cast versus interpret</p>
+              <button type="button" id="oracle-cast">Draw the next local example</button>
+              <div id="oracle-symbol" class="oracle-symbol" aria-hidden="true">·</div>
+              <div id="oracle-result" aria-live="polite">
+                <strong>Code chooses:</strong> a local symbolic state. <strong>AI may:</strong> offer reflection. <strong>AI may not:</strong> predict or claim authority.
+              </div>
             </div>
             <a class="text-link" href="https://github.com/Cyriellewu/oracle-os" target="_blank" rel="noreferrer">View source code <span aria-hidden="true">↗</span></a>
           </section>
