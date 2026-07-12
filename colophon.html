@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Colophon — how this site is built, what is published, and what is intentionally omitted." />
+    <title>Colophon - Willow Wu</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="site-frame header-content">
+        <a class="site-name" href="index.html">Willow Wu</a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="index.html#work">Work</a>
+          <a href="path.html">Timeline</a>
+          <a href="notes.html">Notes</a>
+          <a href="now.html">Now</a>
+          <a href="about.html">About</a>
+        </nav>
+        <a class="utility-link" href="mailto:willowwu925@gmail.com">Say hello</a>
+      </div>
+    </header>
+
+    <main id="main-content" class="site-frame notebook-page">
+      <p class="eyebrow">Colophon</p>
+      <h1>How this site works.</h1>
+
+      <div class="colophon-body">
+        <section>
+          <h2>A living field notebook</h2>
+          <p>
+            This site is a working document, not a finished portfolio. It changes as projects
+            develop, thinking sharpens, and new work becomes ready to share. Some pages are
+            polished; others are honest first drafts.
+          </p>
+        </section>
+
+        <section>
+          <h2>What is published</h2>
+          <ul>
+            <li>Project case studies drawn from published papers, public repositories, and course work</li>
+            <li>Sample data and synthetic illustrations only — no real user data</li>
+            <li>Aggregate statistics (e.g. SSIM histograms) without source imagery</li>
+            <li>Public-safe career and project facts selected for this site</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>What is intentionally omitted</h2>
+          <ul>
+            <li>Biometric images or identifiers (palm-vein project uses synthetic illustrations)</li>
+            <li>Proprietary datasets, NDA-covered details, or private account data</li>
+            <li>Internal details of employer work beyond high-level public role descriptions</li>
+            <li>Personal lifestyle, hobbies, or media consumption not relevant to work</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Technical stack</h2>
+          <p>
+            Static HTML, CSS, and vanilla JavaScript. No frameworks, no build step, no external
+            scripts, no analytics, no cookies. Hosted on GitHub Pages.
+          </p>
+        </section>
+
+        <section>
+          <h2>Accessibility</h2>
+          <ul>
+            <li>Semantic HTML with landmark regions and ARIA labels where needed</li>
+            <li>Skip-to-content link on every page</li>
+            <li>Keyboard-navigable interactive elements</li>
+            <li>Respects <code>prefers-reduced-motion</code></li>
+            <li>Color contrast targets WCAG AA against the sage/cream palette</li>
+          </ul>
+          <p>
+            If something isn't working well with your setup, I'd like to know —
+            <a href="mailto:willowwu925@gmail.com">email me</a>.
+          </p>
+        </section>
+
+        <section>
+          <h2>Update policy</h2>
+          <p>
+            I update this site when there is something worth saying, not on a schedule.
+            Major project additions or corrections get a commit; small copy edits accumulate.
+            The <a href="now.html">Now page</a> carries a date so you know when it was last true.
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-frame site-footer">
+      <p>© <span id="current-year"></span> Willow Wu</p>
+      <p><a href="index.html">Back to selected work</a></p>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
