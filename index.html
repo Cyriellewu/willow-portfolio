@@ -3,25 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Willow Wu is a Columbia MSCS candidate working across machine learning research and product engineering."
-    />
-    <meta property="og:title" content="Willow Wu - Selected Work" />
-    <meta
-      property="og:description"
-      content="Four projects about making ambiguous problems more accountable."
-    />
-    <title>Willow Wu - Selected Work</title>
+    <meta name="description" content="Willow Wu builds things that are useful, reliable, and a little more alive." />
+    <meta property="og:title" content="Willow Wu - A Field Notebook" />
+    <meta property="og:description" content="Things built to make uncertainty more usable." />
+    <title>Willow Wu - A Field Notebook</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <script>
-      (() => {
-        const param = new URLSearchParams(window.location.search).get("scoutTheme");
-        const theme =
-          param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-        document.documentElement.setAttribute("data-theme", theme);
-      })();
-    </script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -31,200 +17,197 @@
         <a class="site-name" href="index.html">Willow Wu</a>
         <nav class="site-nav" aria-label="Primary navigation">
           <a href="#work" aria-current="page">Work</a>
-          <a href="#approach">Approach</a>
+          <a href="path.html">Timeline</a>
+          <a href="notes.html">Notes</a>
+          <a href="now.html">Now</a>
           <a href="about.html">About</a>
         </nav>
-        <a class="utility-link" href="mailto:willowwu925@gmail.com">Contact</a>
+        <a class="utility-link" href="mailto:willowwu925@gmail.com">Say hello</a>
       </div>
     </header>
 
     <main id="main-content">
-      <section class="site-frame hero">
+      <section class="site-frame hero notebook-hero">
         <div>
-          <p class="eyebrow">Willow Wu / Columbia MSCS / December 2026</p>
-          <h1>I build and evaluate machine-learning systems and full-stack products.</h1>
+          <p class="eyebrow">Willow Wu / Columbia MSCS / New York</p>
+          <h1>I make ambiguous problems more accountable.</h1>
           <p class="hero-copy">
-            I am targeting ML Engineer, Research Engineer, and Applied AI/ML roles.
-            My work spans problem formulation, system boundaries, evaluation, and
-            product implementation for decisions that need to be explainable.
+            I move between ML research, full-stack product, and the human decisions
+            behind both. I like the moment a vague problem becomes a clear question.
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#work">Explore selected work <span aria-hidden="true">↓</span></a>
-            <a class="button button-secondary" href="mailto:willowwu925@gmail.com">Email me <span aria-hidden="true">↗</span></a>
+            <a class="button button-primary" href="#work">See selected work <span aria-hidden="true">↓</span></a>
+            <a class="button button-secondary" href="mailto:willowwu925@gmail.com">Say hello <span aria-hidden="true">↗</span></a>
           </div>
         </div>
-        <aside class="hero-note">
-          <p class="eyebrow">Currently</p>
-          <p>MSCS, Machine Learning track</p>
-          <p>Columbia University</p>
-          <p class="note-small">Graduating December 2026 / New York, NY</p>
+        <aside class="field-note" aria-label="Current field note">
+          <p class="field-note-label"><span aria-hidden="true"></span> Now</p>
+          <h2>Teaching machines some manners.</h2>
+          <p>
+            Currently exploring how systems behave when evidence is incomplete,
+            people disagree, or a clean answer does not exist.
+          </p>
+          <dl>
+            <div><dt>Based in</dt><dd>New York, NY</dd></div>
+            <div><dt>Finishing</dt><dd>MSCS, ML track</dd></div>
+            <div><dt>Fuel</dt><dd><button type="button" id="fuel-note" aria-label="Change fuel note">A good question</button></dd></div>
+          </dl>
         </aside>
       </section>
 
-      <section id="work" class="site-frame section">
-        <div class="section-intro">
-          <p class="eyebrow">Selected work</p>
-          <h2>Selected research and product work.</h2>
-          <p>
-            The work spans predictive-maintenance research, structure-preserving NIR
-            image enhancement, a private memory product, and AI system boundaries.
-          </p>
-        </div>
-
-        <div class="work-list">
-          <article class="work-item work-item-research">
-            <div class="work-index">01</div>
-            <div class="work-body">
-              <p class="work-meta">Research / ACML 2025 / First author / Four-author collaboration</p>
-              <h3>Cost-aware graph learning for predictive maintenance.</h3>
-              <p>
-                I reframed a broad vehicle-failure request into cost- and
-                diagnosis-oriented tasks, then built an explainable dynamic graph
-                learning system around the resulting question.
-              </p>
-              <div class="work-facts">
-                <span>~9M fault-log records</span>
-                <span>60% to 95% high-cost precision</span>
-              </div>
-              <div class="work-links">
-                <a class="text-link" href="work/acml.html">Read the research story <span aria-hidden="true">→</span></a>
-                <a class="artifact-link" href="https://github.com/Cyriellewu/Node-Level-Fault-Prediction-in-Vehicles-Using-Graph-Neural-Networks-NRP-GCN-" target="_blank" rel="noreferrer">Source code <span aria-hidden="true">↗</span></a>
-              </div>
-            </div>
-            <div class="citation-card">
-              <p>PMLR 304 / ACML 2025</p>
-              <strong>Explainable Dynamic Graph Neural Networks for Predictive Maintenance in Vehicle Chassis Systems</strong>
-              <span>Published as You WU with Junwei Su, Sirui Zhang, and Zhijian Li</span>
-              <a class="text-link" href="https://proceedings.mlr.press/v304/you26a.html" target="_blank" rel="noreferrer">Read publication <span aria-hidden="true">↗</span></a>
-            </div>
-          </article>
-
-          <article class="work-item work-item-image">
-            <div class="work-index">02</div>
-            <div class="work-body">
-              <p class="work-meta">Product / Solo full-stack build</p>
-              <h3>Evidence of Life: a private full-stack memory application.</h3>
-              <p>
-                A React and TypeScript application for authenticated capture,
-                classification, calendar, and location workflows. It preserves context
-                conventional planning tools often omit.
-              </p>
-              <div class="work-facts">
-                <span>React + TypeScript</span>
-                <span>Supabase + Edge Functions</span>
-                <span>51 passing tests</span>
-              </div>
-              <div class="work-links">
-                <a class="text-link" href="work/evidence-of-life.html">Read the product story <span aria-hidden="true">→</span></a>
-                <a class="artifact-link" href="https://github.com/Cyriellewu/evidenceoflife-006dea11" target="_blank" rel="noreferrer">Source code <span aria-hidden="true">↗</span></a>
-              </div>
-            </div>
-            <figure class="project-figure">
-              <img
-                src="assets/projects/evidence-of-life-demo.png"
-                alt="Evidence of Life public demo with sample calendar and memory data"
-              />
-              <figcaption>Public demo rendered from repository sample data. No personal account data is shown.</figcaption>
-            </figure>
-          </article>
-
-          <article class="work-item work-item-image">
-            <div class="work-index">03</div>
-            <div class="work-body">
-              <p class="work-meta">Product / Hackathon / End-to-end owner</p>
-              <h3>Oracle OS: code-generated symbolic engines with constrained LLM interpretation.</h3>
-              <p>
-                A full-stack reflection workspace where rule-based engines produce
-                symbols, LLMs provide interpretation only, and implemented constraints
-                redirect medical, legal, and financial prompts.
-              </p>
-              <div class="work-facts">
-                <span>React 19 + Express</span>
-                <span>Rule-based engines</span>
-                <span>Implemented constraints</span>
-              </div>
-              <div class="work-links">
-                <a class="text-link" href="work/oracle-os.html">Read the system story <span aria-hidden="true">→</span></a>
-                <a class="artifact-link" href="https://github.com/Cyriellewu/oracle-os" target="_blank" rel="noreferrer">Source code <span aria-hidden="true">↗</span></a>
-              </div>
-            </div>
-            <figure class="project-figure project-figure-oracle">
-              <img
-                src="assets/projects/oracle-os-demo.png"
-                alt="Oracle OS local demo showing code-generated I Ching, BaZi, and Astrology lenses"
-              />
-              <figcaption>Local demo with a fictional profile. The visible symbolic lenses are generated by code.</figcaption>
-            </figure>
-          </article>
-
-          <article class="work-item work-item-image">
-            <div class="work-index">04</div>
-            <div class="work-body">
-              <p class="work-meta">Applied ML / Columbia COMS 6998 / End-to-end owner</p>
-              <h3>Structure-preserving NIR image-enhancement exploration.</h3>
-              <p>
-                I built a condition-specific enhancement pipeline for degraded NIR
-                palm-vein imagery, evaluating similarity to clean references rather
-                than visual quality alone.
-              </p>
-              <div class="work-facts">
-                <span>InstructPix2Pix + FFT</span>
-                <span>1,526 aggregate rows</span>
-                <span>SSIM / PSNR / LPIPS</span>
-              </div>
-              <div class="work-links">
-                <a class="text-link" href="work/palm-vein.html">Read the evaluation story <span aria-hidden="true">→</span></a>
-                <a class="artifact-link" href="https://github.com/Cyriellewu/palm-vein-enhancement" target="_blank" rel="noreferrer">Source code <span aria-hidden="true">↗</span></a>
-              </div>
-            </div>
-            <figure class="project-figure">
-              <img
-                src="assets/projects/palm-vein-ssim.svg"
-                alt="Histogram of 1,526 aggregate SSIM before-after values with a mean of 0.9392"
-              />
-              <figcaption>Aggregate similarity diagnostic only. No biometric images or identifiers are published.</figcaption>
-            </figure>
-          </article>
+      <section class="notebook-marquee" aria-label="Working principles">
+        <div class="marquee-track">
+          <span>Clear systems</span><i aria-hidden="true">✦</i>
+          <span>Curious questions</span><i aria-hidden="true">✦</i>
+          <span>Kind interfaces</span>
         </div>
       </section>
 
-      <section id="approach" class="site-frame section approach">
+      <section id="work" class="site-frame section work-notebook">
         <div class="section-intro">
-          <p class="eyebrow">How I work</p>
-          <h2>Start with the thing that does not yet make sense.</h2>
+          <p class="eyebrow">Selected work</p>
+          <h2>Four rooms in a field notebook.</h2>
+          <p>
+            Each project starts with a tension: more data versus better evidence,
+            prettier output versus preserved structure, more context versus more work,
+            or AI fluency versus false authority.
+          </p>
         </div>
-        <div class="approach-grid">
-          <article>
-            <span>01</span>
-            <h3>Reframe the question</h3>
+
+        <article class="work-item notebook-room work-item-research flagship-room">
+          <div class="work-index">01</div>
+          <div class="work-body">
+            <p class="work-meta">Research / ACML 2025 / Published as You WU</p>
+            <h3>"Predict failure" was too vague. I rewrote the question.</h3>
             <p>
-              "Predict failure" and "make a reflection app" are not requirements. I look
-              for the decision, constraint, or person hiding behind the request.
+              Vehicle fault logs did not become useful just because there were millions
+              of them. I reframed the work around emergency-fee risk, repair cost, and
+              fault categories - decisions a maintenance team could actually act on.
             </p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>Make the boundary visible</h3>
+            <p class="interesting-part"><strong>The interesting part - </strong>the hard work was asking what the data could honestly support before optimizing a model.</p>
+            <div class="work-facts">
+              <span>PMLR 304 / ACML 2025</span>
+              <span>60% to 95% high-cost precision</span>
+              <span>Vehicle-wise chronological validation</span>
+            </div>
+            <div class="work-links">
+              <a class="text-link" href="work/acml.html">Read the research story <span aria-hidden="true">→</span></a>
+              <a class="artifact-link" href="https://proceedings.mlr.press/v304/you26a.html" target="_blank" rel="noreferrer">Publication <span aria-hidden="true">↗</span></a>
+              <a class="artifact-link" href="https://github.com/Cyriellewu/Node-Level-Fault-Prediction-in-Vehicles-Using-Graph-Neural-Networks-NRP-GCN-" target="_blank" rel="noreferrer">Code <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <div class="citation-card">
+            <p>A tiny thought experiment</p>
+            <strong>What should a maintenance graph remember?</strong>
+            <span id="graph-copy">Time links faults that recur near each other. The graph remembers sequence, not just frequency.</span>
+            <svg class="toy-graph" id="toy-graph" data-graph-state="time" viewBox="0 0 280 120" aria-hidden="true">
+              <line class="toy-edge toy-edge-time" x1="42" y1="62" x2="140" y2="30" />
+              <line class="toy-edge toy-edge-place" x1="42" y1="62" x2="210" y2="76" />
+              <line class="toy-edge toy-edge-pattern" x1="140" y1="30" x2="210" y2="76" />
+              <circle cx="42" cy="62" r="13" /><circle cx="140" cy="30" r="13" /><circle cx="210" cy="76" r="13" />
+              <text x="25" y="96">fault A</text><text x="122" y="16">fault B</text><text x="192" y="108">fault C</text>
+            </svg>
+            <div class="graph-controls" role="group" aria-label="Toy graph edge controls">
+              <button type="button" class="is-active" data-graph="time" aria-pressed="true">Time</button>
+              <button type="button" data-graph="place" aria-pressed="false">Place</button>
+              <button type="button" data-graph="pattern" aria-pressed="false">Pattern</button>
+            </div>
+          </div>
+          <div class="flagship-trail" aria-label="ACML research decision trail">
+            <span>Ambiguous input</span><i aria-hidden="true">→</i>
+            <span>Useful labels</span><i aria-hidden="true">→</i>
+            <span>Weighted graph</span><i aria-hidden="true">→</i>
+            <span>Leakage-aware evaluation</span>
+          </div>
+        </article>
+
+        <article class="work-item notebook-room work-item-image compact-room">
+          <div class="work-index">02</div>
+          <div class="work-body">
+            <p class="work-meta">Product / Solo full-stack build</p>
+            <h3>What if a calendar remembered what the day felt like?</h3>
             <p>
-              I prefer systems with explicit assumptions: what rule-based code owns,
-              what a model can suggest, and where a result should stop being trusted.
+              Evidence of Life is a private memory application built around capture and
+              revisit: authenticated moments, calendar context, places, recap, and
+              AI-assisted routing without turning reflection into another score.
             </p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>Leave an evidence trail</h3>
+            <p class="interesting-part"><strong>The interesting part - </strong>most tools preserve the plan but discard the life around it. I built the opposite.</p>
+            <div class="work-facts">
+              <span>React + TypeScript + Supabase</span>
+              <span>51 passing tests</span>
+              <span>Private-by-default product surface</span>
+            </div>
+            <div class="work-links">
+              <a class="text-link" href="work/evidence-of-life.html">Read the product story <span aria-hidden="true">→</span></a>
+              <a class="artifact-link" href="https://github.com/Cyriellewu/evidenceoflife-006dea11" target="_blank" rel="noreferrer">Code <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <figure class="project-figure">
+            <img src="assets/projects/evidence-of-life-demo.png" alt="Evidence of Life public demo with sample calendar and memory data" />
+            <figcaption>Public demo rendered from sample data. No personal account data is shown.</figcaption>
+          </figure>
+        </article>
+
+        <article class="work-item notebook-room work-item-image compact-room">
+          <div class="work-index">03</div>
+          <div class="work-body">
+            <p class="work-meta">Product / Hackathon / End-to-end owner</p>
+            <h3>What if code draws the symbols and AI only explains them?</h3>
             <p>
-              A model metric, a test suite, an error trace, or a user-facing interface
-              should make it possible to inspect what changed and why.
+              Oracle OS is a reflection workspace where rule-based engines select the
+              symbolic material and an LLM is constrained to interpretation. It makes
+              the boundary between a system and its story visible.
             </p>
-          </article>
-        </div>
+            <p class="interesting-part"><strong>The interesting part - </strong>the model is not allowed to draw the card, invent a hexagram, or manufacture certainty.</p>
+            <div class="work-facts">
+              <span>React 19 + Express</span>
+              <span>Rule-based casts</span>
+              <span>Implemented prompt constraints</span>
+            </div>
+            <div class="work-links">
+              <a class="text-link" href="work/oracle-os.html">Read the system story <span aria-hidden="true">→</span></a>
+              <a class="artifact-link" href="https://github.com/Cyriellewu/oracle-os" target="_blank" rel="noreferrer">Code <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <figure class="project-figure project-figure-oracle">
+            <img src="assets/projects/oracle-os-demo.png" alt="Oracle OS local demo showing code-generated I Ching, BaZi, and Astrology lenses" />
+            <figcaption>Local mock profile. Visible symbolic lenses are selected through application logic.</figcaption>
+          </figure>
+        </article>
+
+        <article class="work-item notebook-room work-item-image compact-room">
+          <div class="work-index">04</div>
+          <div class="work-body">
+            <p class="work-meta">Applied ML / Columbia COMS 6998 / End-to-end owner</p>
+            <h3>A prettier biometric image can be a worse biometric.</h3>
+            <p>
+              I explored condition-specific NIR image enhancement under Dirty, Warm,
+              and Wet conditions, evaluating similarity to clean references instead of
+              treating visual smoothness as success.
+            </p>
+            <p class="interesting-part"><strong>The interesting part - </strong>"enhancement" sounds visual, but this was a question about whether a system preserved structure.</p>
+            <div class="work-facts">
+              <span>InstructPix2Pix + FFT preservation</span>
+              <span>1,526 aggregate comparison rows</span>
+              <span>Similarity, not recognition accuracy</span>
+            </div>
+            <div class="work-links">
+              <a class="text-link" href="work/palm-vein.html">Read the evaluation story <span aria-hidden="true">→</span></a>
+              <a class="artifact-link" href="https://github.com/Cyriellewu/palm-vein-enhancement" target="_blank" rel="noreferrer">Code <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <figure class="project-figure">
+            <img src="assets/projects/palm-vein-ssim.svg" alt="Histogram of 1,526 aggregate SSIM before-after values with a mean of 0.9392" />
+            <figcaption>Aggregate similarity diagnostic only. No biometric images or identifiers are published.</figcaption>
+          </figure>
+        </article>
       </section>
 
       <section class="site-frame contact-section">
         <div>
-          <p class="eyebrow">Looking ahead</p>
-          <h2>Targeting ML systems, research engineering, and applied AI/ML roles.</h2>
+          <p class="eyebrow">A good next conversation</p>
+          <h2>Have an interesting problem?</h2>
+          <p>I am always glad to meet people thinking carefully about AI, data, software, or the surprising human behavior around all three.</p>
         </div>
         <div class="contact-links">
           <a href="mailto:willowwu925@gmail.com">willowwu925@gmail.com <span aria-hidden="true">↗</span></a>
@@ -234,8 +217,9 @@
     </main>
 
     <footer class="site-frame site-footer">
+      <p>Built with curiosity, clear type, and a healthy respect for edge cases.</p>
+      <p><a href="notes.html">Notes</a> · <a href="colophon.html">Colophon</a></p>
       <p>© <span id="current-year"></span> Willow Wu</p>
-      <p>Selected work, not a complete archive.</p>
     </footer>
     <script src="app.js"></script>
   </body>
