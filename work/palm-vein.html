@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Willow Wu's palm-vein enhancement evaluation project for Columbia COMS 6998." />
+    <title>Palm Vein Enhancement - Willow Wu</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="site-frame header-content">
+        <a class="site-name" href="../index.html">Willow Wu</a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="../index.html#work">Work</a>
+          <a href="../index.html#approach">Approach</a>
+          <a href="../about.html">About</a>
+        </nav>
+        <a class="utility-link" href="mailto:willowwu925@gmail.com">Contact</a>
+      </div>
+    </header>
+    <main id="main-content" class="site-frame">
+      <header class="case-hero">
+        <p class="eyebrow">Applied ML / Columbia COMS 6998 / End-to-end owner</p>
+        <h1>Restoring an image is not enough if the identity signal disappears.</h1>
+        <p class="case-summary">
+          An identity-preserving enhancement pipeline for degraded NIR palm-vein images,
+          designed to balance visual restoration against similarity to the clean
+          reference.
+        </p>
+        <dl class="case-meta-grid">
+          <div><dt>Role</dt><dd>End-to-end owner</dd></div>
+          <div><dt>Method</dt><dd>InstructPix2Pix and FFT preservation</dd></div>
+          <div><dt>Evaluation</dt><dd>SSIM, PSNR, LPIPS</dd></div>
+          <div><dt>Batch check</dt><dd>1,526 archived rows</dd></div>
+        </dl>
+      </header>
+      <div class="case-content">
+        <aside class="case-rail" aria-label="Case study sections">
+          <a href="#problem">Problem</a>
+          <a href="#method">Method</a>
+          <a href="#evaluation">Evaluation</a>
+          <a href="#privacy">Data boundary</a>
+        </aside>
+        <article class="case-story">
+          <section id="problem">
+            <p class="case-label">The problem</p>
+            <h2>Better-looking output can still be a worse biometric image.</h2>
+            <p>
+              Dirt, warmth, and moisture degrade NIR palm-vein imagery. For a biometric
+              use case, the goal cannot simply be a visually smoother image: the
+              enhancement must preserve the identity-relevant structure in the clean
+              reference.
+            </p>
+          </section>
+          <section id="method">
+            <p class="case-label">The method</p>
+            <h2>Constrain a generative edit with low-frequency preservation.</h2>
+            <p>
+              I built a condition-specific InstructPix2Pix pipeline with FFT
+              low-frequency preservation and reference blending. The work evaluates
+              Dirty, Warm, and Wet conditions rather than treating all degradation as
+              interchangeable noise.
+            </p>
+            <div class="system-diagram" aria-label="Palm Vein evaluation flow">
+              <div><strong>Degraded NIR input</strong><span>Dirty, Warm, or Wet condition</span></div>
+              <div><strong>Guided enhancement</strong><span>InstructPix2Pix with FFT preservation and blending</span></div>
+              <div><strong>Identity check</strong><span>SSIM, PSNR, LPIPS against clean reference</span></div>
+            </div>
+          </section>
+          <section id="evaluation">
+            <p class="case-label">Aggregate evidence</p>
+            <h2>Mean SSIM was 0.9392 across 1,526 archived batch-comparison rows.</h2>
+            <p>
+              The chart below is intentionally limited to aggregate similarity values.
+              It is a preservation diagnostic, not a claim about biometric recognition
+              accuracy and not a substitute for a licensed dataset evaluation.
+            </p>
+            <div class="case-image">
+              <img src="../assets/projects/palm-vein-ssim.svg" alt="Histogram of aggregate SSIM before-after values with a mean of 0.9392" />
+              <p class="case-caption">1,526 aggregate comparison rows. No palm-vein image, crop, identifier, or dataset example is shown.</p>
+            </div>
+          </section>
+          <section id="privacy">
+            <p class="case-label">Data boundary</p>
+            <h2>Visual outputs are not public evidence by default.</h2>
+            <p>
+              The project produced comparison triplets, heatmaps, and histograms, but
+              this public case study excludes biometric-derived imagery pending separate
+              data-license and consent review. The public artifact is the aggregate
+              evaluation record and the method description only.
+            </p>
+          </section>
+        </article>
+      </div>
+    </main>
+    <footer class="site-frame site-footer"><p>© <span id="current-year"></span> Willow Wu</p><p><a href="../index.html#work">All selected work</a></p></footer>
+    <script src="../app.js"></script>
+  </body>
+</html>
