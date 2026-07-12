@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Working notes from Willow Wu's field notebook — observations drawn from project work." />
+    <title>Notes - Willow Wu</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="site-frame header-content">
+        <a class="site-name" href="index.html">Willow Wu</a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="index.html#work">Work</a>
+          <a href="path.html">Timeline</a>
+          <a href="notes.html" aria-current="page">Notes</a>
+          <a href="now.html">Now</a>
+          <a href="about.html">About</a>
+        </nav>
+        <a class="utility-link" href="mailto:willowwu925@gmail.com">Say hello</a>
+      </div>
+    </header>
+
+    <main id="main-content" class="site-frame notebook-page">
+      <p class="eyebrow">Notebook index</p>
+      <h1>Working notes.</h1>
+      <p class="page-lede">Short observations drawn from project work. Not essays — just things I noticed that shaped how I think about the next problem.</p>
+
+      <div class="notes-list">
+        <article class="note-entry">
+          <div class="note-tags"><span class="note-tag">Field note</span></div>
+          <h2>Useful data is not the same as big data.</h2>
+          <p>
+            Nine million fault-log rows did not become useful until I stopped asking "what can I predict?"
+            and started asking "what can a maintenance team actually act on?" The breakthrough was a
+            conversation with the stakeholder, not a bigger model.
+          </p>
+          <p class="note-link"><a href="work/acml.html">From the ACML research story <span aria-hidden="true">→</span></a></p>
+        </article>
+
+        <article class="note-entry">
+          <div class="note-tags"><span class="note-tag">Project reflection</span></div>
+          <h2>A calendar remembers plans, not context.</h2>
+          <p>
+            Most productivity tools preserve what you intended to do.
+            They discard what was happening around it — the walk, the call, the mood of the afternoon.
+            Evidence of Life was built around the opposite assumption: capture the life first, attach the plan later.
+          </p>
+          <p class="note-link"><a href="work/evidence-of-life.html">From the Evidence of Life story <span aria-hidden="true">→</span></a></p>
+        </article>
+
+        <article class="note-entry">
+          <div class="note-tags"><span class="note-tag">Field note</span></div>
+          <h2>The model is not allowed to draw the symbols.</h2>
+          <p>
+            In Oracle OS, symbolic material — hexagrams, cards, pillars — comes from deterministic code engines.
+            The LLM is constrained to interpretation only. It cannot invent a cast, predict an outcome, or
+            manufacture certainty. The boundary between system and story is explicit.
+          </p>
+          <p class="note-link"><a href="work/oracle-os.html">From the Oracle OS story <span aria-hidden="true">→</span></a></p>
+        </article>
+
+        <article class="note-entry">
+          <div class="note-tags"><span class="note-tag">Project reflection</span></div>
+          <h2>Prettier does not necessarily mean more trustworthy.</h2>
+          <p>
+            Enhancing a palm-vein image can make it visually smoother while destroying the branching
+            structure a biometric system relies on. I evaluated enhancement by similarity to a clean reference,
+            not by how good the output looked. Visual polish is not fidelity.
+          </p>
+          <p class="note-link"><a href="work/palm-vein.html">From the Palm Vein evaluation story <span aria-hidden="true">→</span></a></p>
+        </article>
+      </div>
+    </main>
+
+    <footer class="site-frame site-footer">
+      <p>© <span id="current-year"></span> Willow Wu</p>
+      <p><a href="index.html">Back to selected work</a></p>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
