@@ -24,11 +24,11 @@
     <main id="main-content" class="site-frame">
       <header class="case-hero">
         <p class="eyebrow">ACML 2025 / PMLR 304 / First author</p>
-        <h1>Making predictive maintenance answer a decision, not a vague request.</h1>
+        <h1>Cost-aware graph learning for predictive maintenance.</h1>
         <p class="case-summary">
-          An explainable dynamic graph-learning system for vehicle-chassis maintenance,
-          designed around cost and diagnosis rather than a generic instruction to
-          "predict failure."
+          First-author research in a four-author collaboration, reframing vehicle
+          maintenance from a generic failure-prediction task into cost- and
+          diagnosis-oriented decisions.
         </p>
         <dl class="case-meta-grid">
           <div><dt>Role</dt><dd>First author and lead researcher</dd></div>
@@ -58,8 +58,8 @@
             <p class="case-label">The approach</p>
             <h2>Use structure without losing the reason behind a prediction.</h2>
             <p>
-              I developed NRP-GCN-RF: a GCN encoder paired with a Random Forest, over
-              weighted fault graphs that combine temporal, spatial, and Apriori
+              The study used NRP-GCN-RF: a GCN encoder paired with a Random Forest,
+              over weighted fault graphs that combine temporal, spatial, and Apriori
               co-occurrence edges. Vehicle-wise chronological validation was used to
               prevent temporal and inter-vehicle leakage.
             </p>
@@ -74,15 +74,20 @@
             <h2>High-cost failure precision improved from 60% to 95%.</h2>
             <p>
               On the published task formulation, the system reached 98.9% fault-category
-              accuracy, raised high-cost failure precision from 60% to 95%, and improved
-              recall by 25%. Apriori rule mining made co-fault patterns inspectable rather
-              than leaving the graph representation as a black box.
+              accuracy and raised high-cost failure precision from 60% to 95%.
+              Apriori rule mining made co-fault patterns inspectable rather than leaving
+              the graph representation as a black box. See the publication for
+              task-level metric definitions and evaluation context.
             </p>
             <div class="evidence-callout">
-              <strong>Publication</strong><br />
-              You Wu, Junwei Su, Sirui Zhang, Zhijian Li. "Explainable Dynamic Graph
+              <strong>Publication (published as You WU)</strong><br />
+              You WU, Junwei Su, Sirui Zhang, Zhijian Li. "Explainable Dynamic Graph
               Neural Networks for Predictive Maintenance in Vehicle Chassis Systems."
               ACML 2025, Proceedings of Machine Learning Research, volume 304.
+              <br /><br />
+              <a class="text-link" href="https://proceedings.mlr.press/v304/you26a.html" target="_blank" rel="noreferrer">Read publication in PMLR <span aria-hidden="true">↗</span></a>
+              <br /><br />
+              <a class="text-link" href="https://github.com/Cyriellewu/Node-Level-Fault-Prediction-in-Vehicles-Using-Graph-Neural-Networks-NRP-GCN-" target="_blank" rel="noreferrer">View source code <span aria-hidden="true">↗</span></a>
             </div>
           </section>
           <section id="limits">
