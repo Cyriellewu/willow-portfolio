@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Evidence of Life, a solo full-stack memory and daily-planning product by Willow Wu." />
+    <title>Evidence of Life - Willow Wu</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="site-frame header-content">
+        <a class="site-name" href="../index.html">Willow Wu</a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="../index.html#work">Work</a>
+          <a href="../index.html#approach">Approach</a>
+          <a href="../about.html">About</a>
+        </nav>
+        <a class="utility-link" href="mailto:willowwu925@gmail.com">Contact</a>
+      </div>
+    </header>
+    <main id="main-content" class="site-frame">
+      <header class="case-hero">
+        <p class="eyebrow">Solo product / Full-stack / 2026</p>
+        <h1>Evidence of Life: memory without productivity theater.</h1>
+        <p class="case-summary">
+          A private daily-planning and memory product that captures what actually
+          happened around a plan: focus time, places, notes, and the moments a checklist
+          would otherwise erase.
+        </p>
+        <dl class="case-meta-grid">
+          <div><dt>Role</dt><dd>End-to-end product owner</dd></div>
+          <div><dt>Stack</dt><dd>React, TypeScript, Supabase</dd></div>
+          <div><dt>Backend</dt><dd>Postgres and Edge Functions</dd></div>
+          <div><dt>Validation</dt><dd>51 passing tests</dd></div>
+        </dl>
+      </header>
+      <div class="case-content">
+        <aside class="case-rail" aria-label="Case study sections">
+          <a href="#premise">Premise</a>
+          <a href="#system">System</a>
+          <a href="#evidence">Evidence</a>
+          <a href="#privacy">Privacy</a>
+        </aside>
+        <article class="case-story">
+          <section id="premise">
+            <p class="case-label">The premise</p>
+            <h2>Planning is not the same as living.</h2>
+            <p>
+              Most tools preserve the plan and discard the day. I wanted a quieter
+              product: a place where a calendar, a small note, a location, or an
+              unexpected conversation could remain as evidence of a life well-lived.
+            </p>
+            <div class="case-image">
+              <img src="../assets/projects/evidence-of-life-demo.png" alt="Evidence of Life public demo with sample calendar, notes, and focus data" />
+              <p class="case-caption">Public demo rendered with repository sample data. Nothing in this image belongs to a real account.</p>
+            </div>
+          </section>
+          <section id="system">
+            <p class="case-label">The system</p>
+            <h2>One input, several useful forms of context.</h2>
+            <p>
+              I built the application as a React and TypeScript SPA with Supabase Auth,
+              Postgres, and Edge Functions. Smart input classifies a fragment of daily
+              life, while calendar and map views make it possible to revisit when and
+              where a moment happened.
+            </p>
+            <div class="system-diagram" aria-label="Evidence of Life product flow">
+              <div><strong>Capture</strong><span>Plan, note, focus session, or remembered moment</span></div>
+              <div><strong>Classify</strong><span>AI-assisted input routed into a useful record</span></div>
+              <div><strong>Revisit</strong><span>Calendar and place context, not a productivity score</span></div>
+            </div>
+          </section>
+          <section id="evidence">
+            <p class="case-label">Evidence</p>
+            <h2>Product behavior is backed by a testable system.</h2>
+            <p>
+              The interface sits on a full-stack implementation rather than a static
+              concept: authentication, database records, serverless workflows, and
+              centralized design tokens. The project card records 51 passing Vitest
+              tests across its core flows.
+            </p>
+          </section>
+          <section id="privacy">
+            <p class="case-label">Privacy boundary</p>
+            <h2>The public view is deliberately fictional.</h2>
+            <p>
+              This site shows only a local public demo using sample data. No map view,
+              real account, private journal, or connected calendar is exposed here.
+            </p>
+          </section>
+        </article>
+      </div>
+    </main>
+    <footer class="site-frame site-footer"><p>© <span id="current-year"></span> Willow Wu</p><p><a href="../index.html#work">All selected work</a></p></footer>
+    <script src="../app.js"></script>
+  </body>
+</html>
