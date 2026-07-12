@@ -1,6 +1,6 @@
 # Willow Wu — Personal Website
 
-Static, dependency-free recruiter-first personal website.
+Static, project-led personal portfolio with four evidence-backed case studies.
 
 ## Preview locally
 
@@ -19,5 +19,13 @@ The site has no build step. Upload the contents of this folder to a static host 
 ## Content sources
 
 All factual claims are derived from `../09_Master_Resume/main.tex` and the verified
-project cards in `../00_Project_Cards/`. `Willow_Wu_Resume.pdf` is the public SWE
-new-grad résumé variant from `../09_Master_Resume/variants/swe_newgrad.pdf`.
+project cards in `../00_Project_Cards/`.
+
+`assets/projects/` contains only approved conservative-public artifacts:
+
+- Oracle OS local mock UI screenshot with a fictional profile.
+- Evidence of Life local public demo screenshot with repository sample data.
+- Palm Vein aggregate SSIM chart without biometric imagery.
+
+The public site intentionally does not include a downloadable resume until a new
+sanitized general-purpose version is regenerated from the verified source material.
