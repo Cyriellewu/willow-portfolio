@@ -24,11 +24,10 @@
     <main id="main-content" class="site-frame">
       <header class="case-hero">
         <p class="eyebrow">Applied ML / Columbia COMS 6998 / End-to-end owner</p>
-        <h1>Restoring an image is not enough if the identity signal disappears.</h1>
+        <h1>Structure-preserving NIR image-enhancement exploration.</h1>
         <p class="case-summary">
-          An identity-preserving enhancement pipeline for degraded NIR palm-vein images,
-          designed to balance visual restoration against similarity to the clean
-          reference.
+          A condition-specific enhancement pipeline for degraded NIR palm-vein images,
+          evaluated for similarity to clean references rather than visual quality alone.
         </p>
         <dl class="case-meta-grid">
           <div><dt>Role</dt><dd>End-to-end owner</dd></div>
@@ -47,12 +46,11 @@
         <article class="case-story">
           <section id="problem">
             <p class="case-label">The problem</p>
-            <h2>Better-looking output can still be a worse biometric image.</h2>
+            <h2>Image enhancement must preserve reference structure, not only visual quality.</h2>
             <p>
               Dirt, warmth, and moisture degrade NIR palm-vein imagery. For a biometric
               use case, the goal cannot simply be a visually smoother image: the
-              enhancement must preserve the identity-relevant structure in the clean
-              reference.
+              enhancement must preserve structure relative to the clean reference.
             </p>
           </section>
           <section id="method">
@@ -67,8 +65,9 @@
             <div class="system-diagram" aria-label="Palm Vein evaluation flow">
               <div><strong>Degraded NIR input</strong><span>Dirty, Warm, or Wet condition</span></div>
               <div><strong>Guided enhancement</strong><span>InstructPix2Pix with FFT preservation and blending</span></div>
-              <div><strong>Identity check</strong><span>SSIM, PSNR, LPIPS against clean reference</span></div>
+              <div><strong>Similarity evaluation</strong><span>SSIM, PSNR, LPIPS against clean reference</span></div>
             </div>
+            <a class="text-link" href="https://github.com/Cyriellewu/palm-vein-enhancement" target="_blank" rel="noreferrer">View source code <span aria-hidden="true">↗</span></a>
           </section>
           <section id="evaluation">
             <p class="case-label">Aggregate evidence</p>
