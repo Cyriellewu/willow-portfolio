@@ -15,7 +15,9 @@
         <a class="site-name" href="../index.html">Willow Wu</a>
         <nav class="site-nav" aria-label="Primary navigation">
           <a href="../index.html#work" aria-current="page">Work</a>
-          <a href="../index.html#approach">Approach</a>
+          <a href="../path.html">Timeline</a>
+          <a href="../notes.html">Notes</a>
+          <a href="../now.html">Now</a>
           <a href="../about.html">About</a>
         </nav>
         <a class="utility-link" href="mailto:willowwu925@gmail.com">Contact</a>
@@ -24,53 +26,101 @@
     <main id="main-content" class="site-frame">
       <header class="case-hero">
         <p class="eyebrow">ACML 2025 / PMLR 304 / First author</p>
-        <h1>Cost-aware graph learning for predictive maintenance.</h1>
+        <h1>The model was not the first problem.</h1>
         <p class="case-summary">
-          First-author research in a four-author collaboration, reframing vehicle
-          maintenance from a generic failure-prediction task into cost- and
-          diagnosis-oriented decisions.
+          First-author research in a four-author collaboration. The work began with an
+          industrial prediction request, then became a story about problem definition,
+          usable labels, representation design, and evaluation that could survive
+          leakage.
         </p>
         <dl class="case-meta-grid">
           <div><dt>Role</dt><dd>First author and lead researcher</dd></div>
           <div><dt>Context</dt><dd>Published ACML research</dd></div>
-          <div><dt>Scale</dt><dd>Approximately 9M fault-log records</dd></div>
+          <div><dt>Data</dt><dd>Industrial maintenance data</dd></div>
           <div><dt>Focus</dt><dd>Graph learning and evaluation</dd></div>
         </dl>
       </header>
       <div class="case-content">
         <aside class="case-rail" aria-label="Case study sections">
-          <a href="#question">Question</a>
-          <a href="#approach">Approach</a>
-          <a href="#evidence">Evidence</a>
-          <a href="#limits">Limits</a>
+          <a href="#question">The first problem</a>
+          <a href="#turn">The turn</a>
+          <a href="#graph">The graph</a>
+          <a href="#evaluation">Evaluation</a>
+          <a href="#evidence">Published result</a>
+          <a href="#limits">Boundary</a>
         </aside>
         <article class="case-story">
           <section id="question">
-            <p class="case-label">The question</p>
-            <h2>What should a maintenance model optimize for?</h2>
+            <p class="case-label">01 / The first problem</p>
+            <h2>The initial data could not reliably answer the initial question.</h2>
             <p>
-              "Predict failure" was too vague to be operational. I worked from noisy,
-              scattered fault data toward tasks tied to the decisions people actually
-              make: emergency-fee risk, cost tier, and subsystem diagnosis.
+              “Predict failure” sounds straightforward until the available inputs do
+              not line up with a usable outcome. In the initial industrial data, source
+              alignment was unreliable and missing observations were ambiguous. Before
+              changing models, I had to ask what decision the system was meant to
+              support.
             </p>
           </section>
-          <section id="approach">
-            <p class="case-label">The approach</p>
-            <h2>Use structure without losing the reason behind a prediction.</h2>
+          <section id="turn">
+            <p class="case-label">02 / Clarify before optimizing</p>
+            <h2>A maintenance-linked target changed the whole project.</h2>
             <p>
-              The study used NRP-GCN-RF: a GCN encoder paired with a Random Forest,
-              over weighted fault graphs that combine temporal, spatial, and Apriori
-              co-occurrence edges. Vehicle-wise chronological validation was used to
-              prevent temporal and inter-vehicle leakage.
+              After clarifying the decision to support, maintenance outcomes made three
+              supervised tasks possible: emergency-fee occurrence, cost tier, and
+              subsystem category. That change turned a vague failure request into
+              targets that could be evaluated against real maintenance outcomes.
+            </p>
+            <div class="decision-trail" aria-label="ACML research decision trail">
+              <span>Ambiguous inputs</span><i aria-hidden="true">→</i>
+              <span>Maintenance-linked labels</span><i aria-hidden="true">→</i>
+              <span>Aligned fault histories</span><i aria-hidden="true">→</i>
+              <span>Testable decisions</span>
+            </div>
+          </section>
+          <section id="graph">
+            <p class="case-label">03 / Earn the graph</p>
+            <h2>Representation changed before the model did.</h2>
+            <p>
+              Sparse fault-code features treated related events as independent. The
+              representation evolved from one-hot codes to aggregated contextual
+              features, then to weighted graphs where relationships could become
+              first-class: events close in time, events in related contexts, and
+              events that repeatedly co-occur.
             </p>
             <div class="system-diagram" aria-label="Research flow">
               <div><strong>Fault signals</strong><span>Temporal, spatial, and co-occurrence evidence</span></div>
               <div><strong>Weighted graph</strong><span>GCN representation learning over relationships</span></div>
               <div><strong>Maintenance decision</strong><span>Cost-aware tasks with interpretable patterns</span></div>
             </div>
+            <div class="case-micro-exhibit graph-case-exhibit">
+              <p class="micro-label">Toy representation explorer</p>
+              <p id="graph-copy">Time links faults that recur near each other. The graph remembers sequence, not just frequency.</p>
+              <svg class="toy-graph" id="toy-graph" data-graph-state="time" viewBox="0 0 280 120" aria-hidden="true">
+                <line class="toy-edge toy-edge-time" x1="42" y1="62" x2="140" y2="30" />
+                <line class="toy-edge toy-edge-place" x1="42" y1="62" x2="210" y2="76" />
+                <line class="toy-edge toy-edge-pattern" x1="140" y1="30" x2="210" y2="76" />
+                <circle cx="42" cy="62" r="13" /><circle cx="140" cy="30" r="13" /><circle cx="210" cy="76" r="13" />
+                <text x="25" y="96">fault A</text><text x="122" y="16">fault B</text><text x="192" y="108">fault C</text>
+              </svg>
+              <div class="graph-controls" role="group" aria-label="Toy graph edge controls">
+                <button type="button" class="is-active" data-graph="time" aria-pressed="true">Time</button>
+                <button type="button" data-graph="place" aria-pressed="false">Place</button>
+                <button type="button" data-graph="pattern" aria-pressed="false">Pattern</button>
+              </div>
+            </div>
+          </section>
+          <section id="evaluation">
+            <p class="case-label">04 / Treat evaluation as product design</p>
+            <h2>Split by vehicle and time - not randomly.</h2>
+            <p>
+              The published evaluation uses vehicle-wise chronological cross-validation
+              to reduce temporal and inter-vehicle leakage. The point was not just a
+              strong score; it was to avoid a score that looked strong because the
+              future had quietly leaked into the past.
+            </p>
           </section>
           <section id="evidence">
-            <p class="case-label">What changed</p>
+            <p class="case-label">05 / Published result</p>
             <h2>High-cost failure precision improved from 60% to 95%.</h2>
             <p>
               On the published task formulation, the system reached 98.9% fault-category
@@ -90,8 +140,17 @@
               <a class="text-link" href="https://github.com/Cyriellewu/Node-Level-Fault-Prediction-in-Vehicles-Using-Graph-Neural-Networks-NRP-GCN-" target="_blank" rel="noreferrer">View source code <span aria-hidden="true">↗</span></a>
             </div>
           </section>
+          <section id="lesson">
+            <p class="case-label">06 / What changed in my thinking</p>
+            <h2>A usable target and leakage-resistant evaluation matter before model novelty.</h2>
+            <p>
+              This project changed how I approach applied ML: more records are not
+              automatically more evidence, and an evaluation protocol is part of the
+              system design rather than a final reporting step.
+            </p>
+          </section>
           <section id="limits">
-            <p class="case-label">What is not shown here</p>
+            <p class="case-label">07 / Public boundary</p>
             <h2>Public evidence, without proprietary figures.</h2>
             <p>
               The research used proprietary manufacturer datasets. This case study keeps
