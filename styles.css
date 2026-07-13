@@ -60,7 +60,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
 body {
   min-width: 320px;
   margin: 0;
@@ -182,7 +182,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 .case-meta-grid dt { color: var(--cp-text-soft); font-family: var(--font-mono); font-size: .68rem; letter-spacing: .055em; text-transform: uppercase; }
 .case-meta-grid dd { margin-top: 8px; font-size: .87rem; font-weight: 700; line-height: 1.38; }
 .case-content { display: grid; grid-template-columns: minmax(150px, .2fr) minmax(0, .72fr); gap: clamp(40px, 9vw, 130px); padding: 56px 0 clamp(100px, 14vw, 184px); border-top: 1px solid var(--cp-border); }
-.case-rail { position: sticky; top: 100px; align-self: start; display: grid; gap: 9px; }
+.case-rail { position: sticky; top: 84px; align-self: start; display: grid; gap: 9px; }
 .case-rail a {
   width: fit-content;
   padding-left: 9px;
@@ -235,7 +235,6 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 @media (max-width: 560px) {
   body { font-size: 17px; }
   .site-frame { width: calc(100% - 40px); }
-  .site-header { position: static; }
   .header-content { min-height: 58px; }
   .site-nav { gap: 15px; font-size: .76rem; }
   .utility-link { font-size: .76rem; }
@@ -265,7 +264,6 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
   .system-diagram { grid-template-columns: 1fr; }
   .system-diagram div, .system-diagram div + div { padding: 17px 0; border-right: 0; border-bottom: 1px solid var(--cp-border); }
   .system-diagram div:last-child { border-bottom: 0; }
-  .proof-rail span:nth-child(3) { display: none; }
   .marquee-track {
     width: calc(100% - 40px);
     grid-template-columns: 1fr;
@@ -280,7 +278,12 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  * { transition-duration: .01ms !important; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 .notebook-hero h1 {
@@ -341,25 +344,6 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 
 .field-note dt { color: var(--cp-text-soft); }
 .field-note dd { font-weight: 700; text-align: right; }
-
-#fuel-note {
-  appearance: none;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  font: inherit;
-  color: inherit;
-  text-decoration: underline;
-  text-decoration-color: var(--cp-border-strong);
-  text-underline-offset: 3px;
-}
-
-#fuel-note:hover {
-  color: var(--cp-accent);
-  text-decoration-color: var(--cp-accent);
-}
 
 .notebook-marquee {
   overflow: hidden;
@@ -526,10 +510,14 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 
 .path-timeline li {
   display: grid;
-  grid-template-columns: 150px minmax(0, 1fr);
-  gap: 28px;
+  grid-template-columns: 150px 42px minmax(0, 1fr);
+  gap: 20px;
   padding: 28px 0;
   border-bottom: 1px solid var(--cp-border);
+}
+
+.path-timeline li:not(.has-logo) > div {
+  grid-column: 3;
 }
 
 .path-timeline li > span {
@@ -635,11 +623,8 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
   .work-item .micro-exhibit { grid-column: 1; padding: 19px; }
   .interesting-part { font-size: .98rem !important; }
   .path-timeline li { grid-template-columns: 1fr; gap: 9px; }
+  .path-timeline li:not(.has-logo) > div { grid-column: 1; }
   .side-quest { grid-template-columns: 1fr; gap: 16px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .marquee-track { animation: none; }
 }
 
 /* ===================== Panel refinements ===================== */
@@ -659,11 +644,10 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 }
 
 .notebook-room {
-  transition: background 180ms ease, padding-inline 180ms ease;
+  transition: background 180ms ease;
 }
 
 .notebook-room:hover {
-  padding-inline: 14px;
   background: var(--cp-accent-soft);
 }
 
@@ -997,7 +981,6 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
   }
 
   .notebook-room:hover {
-    padding-inline: 0;
     background: transparent;
   }
 
@@ -1222,11 +1205,11 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
   line-height: 1.45;
 }
 
-.decision-step[aria-expanded="true"] {
+.decision-step[aria-checked="true"] {
   background: var(--cp-accent-soft);
 }
 
-.decision-step[aria-expanded="true"] p {
+.decision-step[aria-checked="true"] p {
   display: block;
 }
 
@@ -1650,12 +1633,6 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
   }
 }
 
-@media (max-width: 560px) {
-  .proof-rail span:nth-child(3) {
-    display: none;
-  }
-}
-
 /* ===================== Ruled Evidence identity ===================== */
 
 .proof-rail {
@@ -1682,9 +1659,6 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
   gap: 8px;
   white-space: nowrap;
 }
-
-.org-logo { object-fit: contain; }
-.org-logo-crown { padding: 2px; }
 
 .edge-formula-note {
   margin-top: 8px !important;
@@ -2009,7 +1983,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 }
 
 .experience-section {
-  padding: clamp(72px, 9vw, 126px) 0;
+  padding: clamp(64px, 8vw, 112px) 0;
   border-top: 2px solid var(--cp-text);
 }
 
@@ -2061,12 +2035,15 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 }
 
 .org-logo-crown {
-  padding: 3px;
+  padding: 0;
 }
 
-.path-timeline li.has-logo {
-  grid-template-columns: 150px 42px minmax(0, 1fr);
-  gap: 20px;
+.org-logo-microsoft {
+  padding: 8px;
+}
+
+.org-logo-hkbu {
+  padding: 6px;
 }
 
 .image-viewer {
@@ -2130,6 +2107,10 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 
   .path-timeline li.has-logo > span {
     grid-column: 1 / -1;
+  }
+
+  .path-timeline li:not(.has-logo) > div {
+    grid-column: 1;
   }
 
   .image-viewer {
