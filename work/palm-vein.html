@@ -8,7 +8,7 @@
     <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="../styles.css" />
   </head>
-  <body>
+  <body class="case-page case-palm">
     <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="site-header">
       <div class="site-frame header-content">
@@ -25,14 +25,15 @@
     </header>
     <main id="main-content" class="site-frame">
       <header class="case-hero">
-        <p class="eyebrow">Applied ML / Columbia COMS 6998 / End-to-end owner</p>
-        <h1>Structure-preserving NIR image-enhancement exploration.</h1>
+        <p class="eyebrow">Applied ML / Four-author Columbia COMS 6998 project</p>
+        <h1>A prettier biometric image can be a worse biometric.</h1>
         <p class="case-summary">
-          A condition-specific enhancement pipeline for degraded NIR palm-vein images,
-          evaluated for similarity to clean references rather than visual quality alone.
+          A COMS 6998 exploration of controllable NIR palm-image augmentation under
+          simulated Dirty, Warm, and Wet surface conditions. Evaluation measures image
+          similarity, not identity or recognition accuracy.
         </p>
         <dl class="case-meta-grid">
-          <div><dt>Role</dt><dd>End-to-end owner</dd></div>
+          <div><dt>Role</dt><dd>Lead implementation and experimentation</dd></div>
           <div><dt>Method</dt><dd>InstructPix2Pix and FFT preservation</dd></div>
           <div><dt>Evaluation</dt><dd>SSIM, PSNR, LPIPS</dd></div>
           <div><dt>Batch check</dt><dd>1,526 archived rows</dd></div>
@@ -76,25 +77,36 @@
               <div class="synthetic-vein" aria-hidden="true"><span></span><span></span><span></span></div>
               <p id="palm-copy">Low smoothing keeps a toy branching pattern intact. This is a synthetic illustration, not biometric data.</p>
             </div>
-            <a class="text-link" href="https://github.com/Cyriellewu/palm-vein-enhancement" target="_blank" rel="noreferrer">View source code <span aria-hidden="true">↗</span></a>
           </section>
           <section id="evaluation">
-            <p class="case-label">Aggregate evidence</p>
-            <h2>Mean SSIM was 0.9392 across 1,526 archived batch-comparison rows.</h2>
+            <p class="case-label">Evaluation / two distinct setups</p>
+            <h2>Controlled experiment and archived QA stay separate.</h2>
+            <div class="evaluation-split">
+              <div>
+                <span>Controlled 50-pair experiment</span>
+                <strong>Dirty: 0.460 SSIM</strong>
+                <p>Condition-group means: Dirty 0.460, Warm 0.438, Wet 0.455 SSIM. Corresponding PSNR values: 21.68, 20.90, and 19.80.</p>
+              </div>
+              <div>
+                <span>Archived 1,526-row QA check</span>
+                <strong>Mean: 0.939 SSIM</strong>
+                <p>A separate before/after SSIM distribution. Comparator construction and condition membership are not retained, so it is not merged with the controlled experiment.</p>
+              </div>
+            </div>
             <p>
               The chart below is intentionally limited to aggregate similarity values.
-              It is a preservation diagnostic, not a claim about biometric recognition
-              accuracy and not a substitute for a licensed dataset evaluation.
+              It is a QA diagnostic, not a claim about biometric recognition accuracy
+              or physical-capture realism.
             </p>
-            <div class="case-image">
-              <img src="../assets/projects/palm-vein-ssim.svg" alt="Histogram of aggregate SSIM before-after values with a mean of 0.9392" />
+            <div class="case-image palm-evidence-figure">
+              <img src="../assets/projects/palm-vein-ssim.svg" width="1200" height="700" loading="lazy" decoding="async" alt="Histogram of aggregate SSIM before-after values with a mean of 0.9392" />
               <p class="case-caption">1,526 aggregate comparison rows. No palm-vein image, crop, identifier, or dataset example is shown.</p>
             </div>
           </section>
           <section id="privacy">
             <p class="case-label">Data boundary</p>
             <h2>Visual outputs are not public evidence by default.</h2>
-            <p>
+            <p class="palm-privacy-boundary">
               The project produced comparison triplets, heatmaps, and histograms, but
               this public case study excludes biometric-derived imagery pending separate
               data-license and consent review. The public artifact is the aggregate
@@ -104,6 +116,13 @@
         </article>
       </div>
     </main>
+    <nav class="site-frame project-nav" aria-label="Next project">
+      <a href="acml.html">
+        <span>Return to flagship</span>
+        <strong>ACML research</strong>
+        <p>The model was not the first problem.</p>
+      </a>
+    </nav>
     <footer class="site-frame site-footer"><p>© <span id="current-year"></span> Willow Wu</p><p><a href="../index.html#work">All selected work</a></p></footer>
     <script src="../app.js"></script>
   </body>
