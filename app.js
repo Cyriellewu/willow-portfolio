@@ -4,23 +4,6 @@ if (currentYear) {
   currentYear.textContent = String(new Date().getFullYear());
 }
 
-const fuelNotes = [
-  "A good question",
-  "An elegant query plan",
-  "A stubborn edge case",
-  "Someone saying 'what if?'",
-];
-
-const fuelNote = document.querySelector("#fuel-note");
-if (fuelNote) {
-  const advanceFuel = () => {
-    const currentIndex = fuelNotes.indexOf(fuelNote.textContent);
-    fuelNote.textContent = fuelNotes[(currentIndex + 1) % fuelNotes.length];
-  };
-
-  fuelNote.addEventListener("click", advanceFuel);
-}
-
 const graphCopy = document.querySelector("#graph-copy");
 const graphDisplay = document.querySelector("#toy-graph");
 const graphFacts = {
@@ -111,12 +94,24 @@ if (claritySlider && palmExhibit && palmCopy) {
 }
 
 document.querySelectorAll(".decision-step").forEach((step) => {
-  step.addEventListener("click", () => {
+  const selectStep = () => {
     document.querySelectorAll(".decision-step").forEach((item) => {
       const isCurrent = item === step;
       item.classList.toggle("is-active", isCurrent);
-      item.setAttribute("aria-expanded", String(isCurrent));
+      item.setAttribute("aria-checked", String(isCurrent));
+      item.tabIndex = isCurrent ? 0 : -1;
     });
+  };
+
+  step.addEventListener("click", selectStep);
+  step.addEventListener("keydown", (event) => {
+    if (!["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"].includes(event.key)) return;
+    event.preventDefault();
+    const steps = [...document.querySelectorAll(".decision-step")];
+    const offset = ["ArrowRight", "ArrowDown"].includes(event.key) ? 1 : -1;
+    const next = steps[(steps.indexOf(step) + offset + steps.length) % steps.length];
+    next.focus();
+    next.click();
   });
 });
 
@@ -256,6 +251,7 @@ if (zoomButtons.length) {
   });
   viewer.addEventListener("close", () => {
     viewerImage.removeAttribute("src");
+    viewerCaption.textContent = "";
     returnFocus?.focus();
     returnFocus = null;
   });
