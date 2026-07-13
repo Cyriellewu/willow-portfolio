@@ -33,7 +33,7 @@
           <a href="../path.html">Experience</a>
           <a href="../about.html">About</a>
         </nav>
-        <a class="utility-link" href="mailto:willowwu925@gmail.com">Contact</a>
+        <a class="utility-link" href="mailto:willowwu925@gmail.com">Say hello</a>
       </div>
     </header>
     <main id="main-content" class="site-frame">
@@ -99,23 +99,23 @@
               and subsystem category. That change turned a vague failure request into
               targets that could be evaluated against real maintenance outcomes.
             </p>
-            <div class="decision-stepper" aria-label="ACML decision timeline">
-              <button type="button" class="decision-step is-active" aria-expanded="true">
+            <div class="decision-stepper" role="radiogroup" aria-label="ACML decision timeline">
+              <button type="button" role="radio" class="decision-step is-active" aria-checked="true" tabindex="0">
                 <span>01 / Ambiguous brief</span>
                 <strong>“Predict failure”</strong>
                 <p>No operational outcome had been defined clearly enough to evaluate.</p>
               </button>
-              <button type="button" class="decision-step" aria-expanded="false">
+              <button type="button" role="radio" class="decision-step" aria-checked="false" tabindex="-1">
                 <span>02 / Feasibility</span>
                 <strong>Inputs did not align</strong>
                 <p>Source alignment was unreliable, and missing observations had multiple possible meanings.</p>
               </button>
-              <button type="button" class="decision-step" aria-expanded="false">
+              <button type="button" role="radio" class="decision-step" aria-checked="false" tabindex="-1">
                 <span>03 / Useful labels</span>
                 <strong>Maintenance outcomes</strong>
                 <p>Maintenance records enabled maintenance-linked supervised targets.</p>
               </button>
-              <button type="button" class="decision-step" aria-expanded="false">
+              <button type="button" role="radio" class="decision-step" aria-checked="false" tabindex="-1">
                 <span>04 / Three tasks</span>
                 <strong>Decisions, not a slogan</strong>
                 <p>Emergency-fee existence, emergency-fee cost tier, and subsystem category became testable tasks.</p>
@@ -167,12 +167,6 @@
             </div>
             <p class="edge-formula">w<sub>ij</sub> = α · sim<sub>temporal</sub> + β · sim<sub>spatial</sub> + γ · assoc<sub>apriori</sub></p>
             <p class="edge-formula-note">Illustrative composition; see PMLR 304 for the published edge-weighting method.</p>
-            <div class="acml-method-plate">
-              <span>Representation ladder</span>
-              <strong>Sparse fault codes</strong><i aria-hidden="true">→</i>
-              <strong>Contextual features</strong><i aria-hidden="true">→</i>
-              <strong>Weighted graph</strong>
-            </div>
             <div class="case-micro-exhibit graph-case-exhibit">
               <p class="micro-label">Toy representation explorer</p>
               <p id="graph-copy">Time links faults that recur near each other. The graph remembers sequence, not just frequency.</p>
