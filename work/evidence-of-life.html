@@ -8,7 +8,7 @@
     <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="../styles.css" />
   </head>
-  <body>
+  <body class="case-page case-eol">
     <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="site-header">
       <div class="site-frame header-content">
@@ -55,8 +55,8 @@
               a system where a calendar, a short note, a location, or an unexpected
               event can remain connected to the day it happened.
             </p>
-            <div class="case-image">
-              <img src="../assets/projects/evidence-of-life-demo.png" alt="Evidence of Life public demo with sample calendar, notes, and focus data" />
+            <div class="case-image eol-hero-figure">
+              <img src="../assets/projects/evidence-of-life-demo.png" width="1440" height="900" loading="lazy" decoding="async" alt="Evidence of Life public demo with sample calendar, notes, and focus data" />
               <p class="case-caption">Public demo rendered with repository sample data. Nothing in this image belongs to a real account.</p>
             </div>
           </section>
@@ -88,7 +88,6 @@
               </div>
               <p id="week-copy">Mon: a late walk, a finished query, and a call home. The day is more than its tasks.</p>
             </div>
-            <a class="text-link" href="https://github.com/Cyriellewu/evidenceoflife-006dea11" target="_blank" rel="noreferrer">View source code <span aria-hidden="true">↗</span></a>
           </section>
           <section id="evidence">
             <p class="case-label">Evidence</p>
@@ -99,6 +98,16 @@
               centralized design tokens. The project records 51 passing Vitest tests
               across documented core flows.
             </p>
+            <aside class="product-tradeoff">
+              <span>Unresolved product question</span>
+              <h3>How do you show continuity without turning it into pressure?</h3>
+              <p>
+                The product research pushes against guilt-driven streak mechanics, while
+                the current implementation still records habit streaks. The next product
+                question is how to preserve completion history without making it the
+                source of motivation.
+              </p>
+            </aside>
           </section>
           <section id="privacy">
             <p class="case-label">Privacy boundary</p>
@@ -111,6 +120,13 @@
         </article>
       </div>
     </main>
+    <nav class="site-frame project-nav" aria-label="Next project">
+      <a href="oracle-os.html">
+        <span>Next project</span>
+        <strong>Oracle OS</strong>
+        <p>What if code draws the symbols and AI only explains them?</p>
+      </a>
+    </nav>
     <footer class="site-frame site-footer"><p>© <span id="current-year"></span> Willow Wu</p><p><a href="../index.html#work">All selected work</a></p></footer>
     <script src="../app.js"></script>
   </body>
