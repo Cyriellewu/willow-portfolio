@@ -8,7 +8,7 @@
     <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="../styles.css" />
   </head>
-  <body>
+  <body class="case-page case-oracle">
     <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="site-header">
       <div class="site-frame header-content">
@@ -25,7 +25,7 @@
     </header>
     <main id="main-content" class="site-frame">
       <header class="case-hero">
-        <p class="eyebrow">Hackathon / End-to-end owner / 2026</p>
+        <p class="eyebrow">Hackathon / Product architect / Full-stack implementer / 2026</p>
         <h1>Oracle OS: code-generated symbolic engines with constrained LLM interpretation.</h1>
         <p class="case-summary">
           A full-stack reflection workspace built on one implementation rule:
@@ -33,7 +33,7 @@
           interpret them, but does not generate a cast or make a prediction.
         </p>
         <dl class="case-meta-grid">
-          <div><dt>Role</dt><dd>End-to-end product owner</dd></div>
+          <div><dt>Role</dt><dd>Product architect and full-stack implementer</dd></div>
           <div><dt>Stack</dt><dd>React 19, Express, TypeScript</dd></div>
           <div><dt>Validation</dt><dd>Zod-validated APIs</dd></div>
           <div><dt>Constraint</dt><dd>Implemented prompt-category constraints</dd></div>
@@ -55,8 +55,8 @@
               interpretation. This makes the system boundary visible to the user and
               avoids presenting model output as a deterministic forecast.
             </p>
-            <div class="case-image">
-              <img src="../assets/projects/oracle-os-demo.png" alt="Oracle OS demo showing code-generated I Ching, BaZi, and Astrology lenses" />
+            <div class="case-image oracle-hero-figure">
+              <img src="../assets/projects/oracle-os-demo.png" width="1280" height="800" loading="lazy" decoding="async" alt="Oracle OS demo showing code-generated I Ching, BaZi, and Astrology lenses" />
               <p class="case-caption">Local mock profile. The I Ching, BaZi, and Astrology lenses are generated through application logic.</p>
             </div>
           </section>
@@ -75,7 +75,7 @@
               <div><strong>User context</strong><span>Journal and motifs personalize future prompts</span></div>
             </div>
             <div class="case-micro-exhibit oracle-exhibit">
-              <p class="micro-label">Cast versus interpret</p>
+              <p class="micro-label">Local mock / cast versus interpret</p>
               <button type="button" id="oracle-cast">Draw the next local example</button>
               <div id="oracle-symbol" class="oracle-symbol" aria-hidden="true">·</div>
               <div id="oracle-result" aria-live="polite">
@@ -92,6 +92,12 @@
               and uses those motifs to shape the next prompt. A code-only daily food
               draw and mock LLM fallback keep the demo useful even without API keys.
             </p>
+            <div class="oracle-loop-plate">
+              <span>Code casts</span><i aria-hidden="true">→</i>
+              <span>LLM reflects</span><i aria-hidden="true">→</i>
+              <span>Journal motifs</span><i aria-hidden="true">→</i>
+              <span>Tomorrow's prompt</span>
+            </div>
           </section>
           <section id="safety">
             <p class="case-label">Safety</p>
@@ -105,6 +111,13 @@
         </article>
       </div>
     </main>
+    <nav class="site-frame project-nav" aria-label="Next project">
+      <a href="palm-vein.html">
+        <span>Next project</span>
+        <strong>Palm Vein Enhancement</strong>
+        <p>A prettier biometric image can be a worse biometric.</p>
+      </a>
+    </nav>
     <footer class="site-frame site-footer"><p>© <span id="current-year"></span> Willow Wu</p><p><a href="../index.html#work">All selected work</a></p></footer>
     <script src="../app.js"></script>
   </body>
