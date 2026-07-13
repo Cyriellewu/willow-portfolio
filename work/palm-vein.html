@@ -3,8 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Willow Wu's palm-vein enhancement evaluation project for Columbia COMS 6998." />
-    <title>Palm Vein Enhancement - Willow Wu</title>
+    <meta name="description" content="Case study of controllable NIR palm-image augmentation evaluated with similarity metrics rather than recognition claims." />
+    <link rel="canonical" href="https://cyriellewu.github.io/willow-portfolio/work/palm-vein.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Willow Wu" />
+    <meta property="og:title" content="Palm Vein Enhancement Evaluation | Willow Wu" />
+    <meta property="og:description" content="Controlled NIR augmentation evaluated with similarity metrics rather than biometric recognition claims." />
+    <meta property="og:url" content="https://cyriellewu.github.io/willow-portfolio/work/palm-vein.html" />
+    <meta property="og:image" content="https://cyriellewu.github.io/willow-portfolio/assets/social/palm-vein-og-1200x630.png" />
+    <meta property="og:image:alt" content="Palm Vein Enhancement evaluation case study" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Palm Vein Enhancement Evaluation | Willow Wu" />
+    <meta name="twitter:description" content="Controlled NIR augmentation evaluated with similarity metrics rather than biometric recognition claims." />
+    <meta name="twitter:image" content="https://cyriellewu.github.io/willow-portfolio/assets/social/palm-vein-og-1200x630.png" />
+    <title>Palm Vein Enhancement Evaluation | Willow Wu</title>
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"CreativeWork","name":"Palm Vein Enhancement Evaluation","url":"https://cyriellewu.github.io/willow-portfolio/work/palm-vein.html","description":"Controllable NIR palm-image augmentation evaluated with similarity metrics rather than recognition claims.","author":{"@type":"Person","name":"Willow Wu","url":"https://cyriellewu.github.io/willow-portfolio/"},"image":"https://cyriellewu.github.io/willow-portfolio/assets/social/palm-vein-og-1200x630.png"}
+    </script>
     <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="../styles.css" />
   </head>
@@ -31,7 +46,7 @@
           similarity, not identity or recognition accuracy.
         </p>
         <dl class="case-meta-grid">
-          <div><dt>Role</dt><dd>Lead implementation and experimentation</dd></div>
+          <div><dt>Role</dt><dd>Lead implementation and evaluation</dd></div>
           <div><dt>Method</dt><dd>InstructPix2Pix and FFT preservation</dd></div>
           <div><dt>Evaluation</dt><dd>SSIM, PSNR, LPIPS</dd></div>
           <div><dt>Batch check</dt><dd>1,526 archived rows</dd></div>
@@ -83,12 +98,12 @@
               <div>
                 <span>Controlled 50-pair experiment</span>
                 <strong>Dirty: 0.460 SSIM</strong>
-                <p>Condition-group means: Dirty 0.460, Warm 0.438, Wet 0.455 SSIM. Corresponding PSNR values: 21.68, 20.90, and 19.80.</p>
+                <p>Condition means: Dirty 0.460, Warm 0.438, Wet 0.455 SSIM; PSNR 21.68, 20.90, 19.80; LPIPS 0.517, 0.497, 0.505. n=50 total, treated as a directional readout.</p>
               </div>
               <div>
                 <span>Archived 1,526-row QA check</span>
                 <strong>Mean: 0.939 SSIM</strong>
-                <p>A separate before/after SSIM distribution. Comparator construction and condition membership are not retained, so it is not merged with the controlled experiment.</p>
+                <p>A separate before/after SSIM distribution using a different comparator setup. Exact condition membership is not retained, so it is not merged with the controlled experiment.</p>
               </div>
             </div>
             <p>
@@ -97,7 +112,7 @@
               or physical-capture realism.
             </p>
             <div class="case-image palm-evidence-figure">
-              <img src="../assets/projects/palm-vein-ssim.svg" width="1200" height="700" loading="lazy" decoding="async" alt="Histogram of aggregate SSIM before-after values with a mean of 0.9392" />
+              <img src="../assets/projects/palm-vein-ssim.svg" width="1200" height="700" loading="lazy" decoding="async" alt="Histogram of 1,526 aggregate SSIM before-after values with a mean of 0.9392" />
               <p class="case-caption">1,526 aggregate comparison rows. No palm-vein image, crop, identifier, or dataset example is shown.</p>
             </div>
           </section>
