@@ -3,8 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Evidence of Life, a solo full-stack memory and daily-planning product by Willow Wu." />
-    <title>Evidence of Life - Willow Wu</title>
+    <meta name="description" content="Case study of a private memory and daily-planning product built with React, TypeScript, Supabase, and AI-assisted routing." />
+    <link rel="canonical" href="https://cyriellewu.github.io/willow-portfolio/work/evidence-of-life.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Willow Wu" />
+    <meta property="og:title" content="Evidence of Life | Full-Stack Memory App Case Study" />
+    <meta property="og:description" content="A private full-stack memory system for the context between tasks." />
+    <meta property="og:url" content="https://cyriellewu.github.io/willow-portfolio/work/evidence-of-life.html" />
+    <meta property="og:image" content="https://cyriellewu.github.io/willow-portfolio/assets/social/evidence-of-life-og-1200x630.png" />
+    <meta property="og:image:alt" content="Evidence of Life full-stack memory system" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Evidence of Life | Full-Stack Memory App Case Study" />
+    <meta name="twitter:description" content="A private full-stack memory system for the context between tasks." />
+    <meta name="twitter:image" content="https://cyriellewu.github.io/willow-portfolio/assets/social/evidence-of-life-og-1200x630.png" />
+    <title>Evidence of Life | Full-Stack Memory App Case Study | Willow Wu</title>
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"CreativeWork","name":"Evidence of Life","url":"https://cyriellewu.github.io/willow-portfolio/work/evidence-of-life.html","description":"A private full-stack memory and daily-planning product built with React, TypeScript, Supabase, and AI-assisted routing.","author":{"@type":"Person","name":"Willow Wu","url":"https://cyriellewu.github.io/willow-portfolio/"},"image":"https://cyriellewu.github.io/willow-portfolio/assets/social/evidence-of-life-og-1200x630.png"}
+    </script>
     <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="../styles.css" />
   </head>
@@ -24,17 +39,16 @@
     <main id="main-content" class="site-frame">
       <header class="case-hero">
         <p class="eyebrow">Solo product / Full-stack / 2026</p>
-        <h1>Evidence of Life: a private full-stack memory application.</h1>
+        <h1>Evidence of Life.</h1>
         <p class="case-summary">
-          A React and TypeScript application for authenticated capture, AI-assisted
-          classification, calendar, and location workflows, built around the context
-          conventional planning tools often omit.
+          A private memory system for the context between tasks: authenticated capture,
+          Edge Function-assisted routing, calendar, and location workflows.
         </p>
         <dl class="case-meta-grid">
           <div><dt>Role</dt><dd>End-to-end product owner</dd></div>
           <div><dt>Stack</dt><dd>React, TypeScript, Supabase</dd></div>
           <div><dt>Backend</dt><dd>Postgres and Edge Functions</dd></div>
-          <div><dt>Validation</dt><dd>51 passing tests</dd></div>
+          <div><dt>Validation</dt><dd>51 passing Vitest tests</dd></div>
         </dl>
       </header>
       <div class="case-content">
@@ -72,8 +86,13 @@
             </p>
             <div class="system-diagram" aria-label="Evidence of Life product flow">
               <div><strong>Capture</strong><span>Plan, note, focus session, or remembered moment</span></div>
-              <div><strong>Classify</strong><span>AI-assisted input routed into a useful record</span></div>
+              <div><strong>Classify</strong><span>Smart-input Edge Function routes free-form input to a typed record</span></div>
               <div><strong>Revisit</strong><span>Calendar and place context, not a productivity score</span></div>
+            </div>
+            <div class="system-diagram engineering-diagram" aria-label="Evidence of Life engineering flow">
+              <div><strong>React + TypeScript SPA</strong><span>Authenticated capture, calendar, map, and recap views</span></div>
+              <div><strong>Supabase</strong><span>Auth and Postgres persistence for user records</span></div>
+              <div><strong>Edge Functions</strong><span>Server-side smart-input and integration workflows</span></div>
             </div>
             <div class="case-micro-exhibit week-exhibit" aria-label="One fictional week in three views">
               <p class="micro-label">One fictional week, three views</p>
@@ -92,12 +111,12 @@
           </section>
           <section id="evidence">
             <p class="case-label">Evidence</p>
-            <h2>Product behavior is backed by a testable system.</h2>
+            <h2>Product behavior is backed by a unit-tested implementation.</h2>
             <p>
               The interface sits on a full-stack implementation rather than a static
               concept: authentication, database records, serverless workflows, and
               centralized design tokens. The project records 51 passing Vitest tests
-              across documented core flows.
+              across parsing, classification, time, and timer utilities.
             </p>
             <aside class="product-tradeoff">
               <span>Unresolved product question</span>
