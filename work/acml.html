@@ -3,8 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Willow Wu's ACML 2025 research on explainable dynamic graph neural networks for predictive maintenance." />
-    <title>Cost-aware graph learning - Willow Wu</title>
+    <meta name="description" content="Case study of Willow Wu's first-author ACML 2025 research on reframing predictive maintenance into cost-aware graph learning with leakage-aware evaluation." />
+    <link rel="canonical" href="https://cyriellewu.github.io/willow-portfolio/work/acml.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Willow Wu" />
+    <meta property="og:title" content="ACML 2025 Predictive Maintenance Research | Willow Wu" />
+    <meta property="og:description" content="From an ambiguous industrial prediction request to cost-aware graph learning and leakage-aware evaluation." />
+    <meta property="og:url" content="https://cyriellewu.github.io/willow-portfolio/work/acml.html" />
+    <meta property="og:image" content="https://cyriellewu.github.io/willow-portfolio/assets/social/acml-og-1200x630.png" />
+    <meta property="og:image:alt" content="Cost-aware graph learning — ACML 2025 research by Willow Wu" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ACML 2025 Predictive Maintenance Research | Willow Wu" />
+    <meta name="twitter:description" content="From an ambiguous industrial prediction request to cost-aware graph learning and leakage-aware evaluation." />
+    <meta name="twitter:image" content="https://cyriellewu.github.io/willow-portfolio/assets/social/acml-og-1200x630.png" />
+    <title>ACML 2025 Predictive Maintenance Research | Willow Wu</title>
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"CreativeWork","name":"ACML 2025 Predictive Maintenance Research","url":"https://cyriellewu.github.io/willow-portfolio/work/acml.html","description":"First-author research on reframing predictive maintenance into cost-aware graph learning with leakage-aware evaluation.","author":{"@type":"Person","name":"Willow Wu","url":"https://cyriellewu.github.io/willow-portfolio/"},"image":"https://cyriellewu.github.io/willow-portfolio/assets/social/acml-og-1200x630.png"}
+    </script>
     <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="../styles.css" />
   </head>
@@ -45,7 +60,8 @@
           <a href="#graph">The graph</a>
           <a href="#evaluation">Evaluation</a>
           <a href="#evidence">Published result</a>
-          <a href="#limits">Boundary</a>
+          <a href="#lesson">Lesson</a>
+          <a href="#limits">Public boundary</a>
         </aside>
         <article class="case-story">
           <section id="question">
@@ -79,8 +95,8 @@
             <h2>A maintenance-linked target changed the whole project.</h2>
             <p>
               After clarifying the decision to support, maintenance outcomes made three
-              supervised tasks possible: emergency-fee occurrence, cost tier, and
-              subsystem category. That change turned a vague failure request into
+              supervised tasks possible: emergency-fee existence, emergency-fee cost tier,
+              and subsystem category. That change turned a vague failure request into
               targets that could be evaluated against real maintenance outcomes.
             </p>
             <div class="decision-stepper" aria-label="ACML decision timeline">
@@ -102,7 +118,7 @@
               <button type="button" class="decision-step" aria-expanded="false">
                 <span>04 / Three tasks</span>
                 <strong>Decisions, not a slogan</strong>
-                <p>Emergency-fee occurrence, cost tier, and subsystem category became testable tasks.</p>
+                <p>Emergency-fee existence, emergency-fee cost tier, and subsystem category became testable tasks.</p>
               </button>
             </div>
           </section>
@@ -150,6 +166,7 @@
               <div><strong>Maintenance decision</strong><span>Cost-aware tasks with interpretable patterns</span></div>
             </div>
             <p class="edge-formula">w<sub>ij</sub> = α · sim<sub>temporal</sub> + β · sim<sub>spatial</sub> + γ · assoc<sub>apriori</sub></p>
+            <p class="edge-formula-note">Illustrative composition; see PMLR 304 for the published edge-weighting method.</p>
             <div class="acml-method-plate">
               <span>Representation ladder</span>
               <strong>Sparse fault codes</strong><i aria-hidden="true">→</i>
@@ -185,31 +202,28 @@
           </section>
           <section id="evidence">
             <p class="case-label">05 / Published result</p>
-            <h2>High-cost failure precision improved from 60% to 95%.</h2>
+            <h2>High-cost failure precision improved from about 60% to 95%.</h2>
             <p>
               On the published task formulation, the system reached 98.9% fault-category
-              accuracy and raised high-cost failure precision from 60% to 95%.
+              accuracy and raised high-cost failure precision from about 60% for the SVM
+              baseline to 95%.
               Apriori rule mining made co-fault patterns inspectable rather than leaving
               the graph representation as a black box. See the publication for
               task-level metric definitions and evaluation context.
             </p>
             <div class="result-plate" aria-label="Published high-cost precision result">
               <span>Published high-cost precision</span>
-              <strong>60% <i aria-hidden="true">→</i> 95%</strong>
-              <p>Reported in the ACML 2025 PMLR publication.</p>
+              <strong>60% SVM <i aria-hidden="true">→</i> 95%</strong>
+              <p>High-cost class in the emergency-fee range task. Reported in PMLR 304.</p>
             </div>
             <div class="evidence-hierarchy">
               <div class="evidence-tier tier-published">
                 <span>Published in PMLR 304</span>
-                <p>98.9% fault-category accuracy · 60% → 95% high-cost precision · recall improved by 25%.</p>
+                <p>98.9% fault-category accuracy · high-cost precision 60% (SVM) → 95% · recall +25%.</p>
               </div>
               <div class="evidence-tier tier-method">
                 <span>Method verified in the paper</span>
                 <p>NRP-GCN-RF, triple-edge graph construction, and vehicle-wise chronological cross-validation.</p>
-              </div>
-              <div class="evidence-tier tier-boundary">
-                <span>Public boundary</span>
-                <p>No proprietary records, internal figures, or production/deployment claims are shown here.</p>
               </div>
             </div>
             <div class="evidence-callout">
