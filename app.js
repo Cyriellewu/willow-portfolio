@@ -109,3 +109,93 @@ if (claritySlider && palmExhibit && palmCopy) {
     palmStops.forEach((stop, index) => stop.classList.toggle("is-active", index === value));
   });
 }
+
+document.querySelectorAll(".decision-step").forEach((step) => {
+  step.addEventListener("click", () => {
+    document.querySelectorAll(".decision-step").forEach((item) => {
+      const isCurrent = item === step;
+      item.classList.toggle("is-active", isCurrent);
+      item.setAttribute("aria-expanded", String(isCurrent));
+    });
+  });
+});
+
+document.querySelectorAll("[data-rep-stage]").forEach((stage) => {
+  stage.addEventListener("click", () => {
+    document.querySelectorAll("[data-rep-stage]").forEach((item) => {
+      const isCurrent = item === stage;
+      item.classList.toggle("is-active", isCurrent);
+      item.setAttribute("aria-pressed", String(isCurrent));
+    });
+  });
+});
+
+const railLinks = [...document.querySelectorAll(".case-rail a[href^='#']")];
+if (railLinks.length) {
+  const sections = railLinks
+    .map((link) => document.querySelector(link.getAttribute("href")))
+    .filter(Boolean);
+  const linkFor = (section) => railLinks.find((link) => link.getAttribute("href") === `#${section.id}`);
+  const setActive = (section) => {
+    railLinks.forEach((link) => link.classList.toggle("is-active", link === linkFor(section)));
+  };
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((left, right) => right.intersectionRatio - left.intersectionRatio)[0];
+      if (visible) setActive(visible.target);
+    },
+    { rootMargin: "-18% 0px -62% 0px", threshold: [0.05, 0.25, 0.5] },
+  );
+  sections.forEach((section) => observer.observe(section));
+}
+
+const siteHeader = document.querySelector(".site-header");
+const siteNavigation = document.querySelector(".site-nav");
+if (siteHeader && siteNavigation) {
+  siteNavigation.id = siteNavigation.id || "site-navigation";
+  const menuButton = document.createElement("button");
+  menuButton.type = "button";
+  menuButton.className = "menu-toggle";
+  menuButton.setAttribute("aria-controls", siteNavigation.id);
+  menuButton.setAttribute("aria-expanded", "false");
+  menuButton.textContent = "Menu";
+  siteNavigation.before(menuButton);
+
+  if (!siteNavigation.querySelector(".nav-contact")) {
+    const contact = document.createElement("a");
+    contact.className = "nav-contact";
+    contact.href = "mailto:willowwu925@gmail.com";
+    contact.textContent = "Say hello";
+    siteNavigation.append(contact);
+  }
+
+  const closeMenu = () => {
+    siteNavigation.classList.remove("is-open");
+    menuButton.setAttribute("aria-expanded", "false");
+    menuButton.textContent = "Menu";
+    document.body.classList.remove("menu-open");
+  };
+  menuButton.addEventListener("click", () => {
+    const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+    if (isOpen) {
+      closeMenu();
+      return;
+    }
+    siteNavigation.classList.add("is-open");
+    menuButton.setAttribute("aria-expanded", "true");
+    menuButton.textContent = "Close";
+    document.body.classList.add("menu-open");
+    siteNavigation.querySelector("a")?.focus();
+  });
+  siteNavigation.addEventListener("click", (event) => {
+    if (event.target.closest("a")) closeMenu();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && menuButton.getAttribute("aria-expanded") === "true") {
+      closeMenu();
+      menuButton.focus();
+    }
+  });
+}
