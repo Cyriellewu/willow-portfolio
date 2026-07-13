@@ -146,7 +146,7 @@ if (railLinks.length) {
         .sort((left, right) => right.intersectionRatio - left.intersectionRatio)[0];
       if (visible) setActive(visible.target);
     },
-    { rootMargin: "-18% 0px -62% 0px", threshold: [0.05, 0.25, 0.5] },
+    { rootMargin: "-14% 0px -55% 0px", threshold: [0.05, 0.25, 0.5] },
   );
   sections.forEach((section) => observer.observe(section));
 }
@@ -193,6 +193,18 @@ if (siteHeader && siteNavigation) {
     if (event.target.closest("a")) closeMenu();
   });
   document.addEventListener("keydown", (event) => {
+    if (event.key === "Tab" && menuButton.getAttribute("aria-expanded") === "true") {
+      const focusable = [menuButton, ...siteNavigation.querySelectorAll("a")];
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
     if (event.key === "Escape" && menuButton.getAttribute("aria-expanded") === "true") {
       closeMenu();
       menuButton.focus();
@@ -235,13 +247,16 @@ if (zoomButtons.length) {
   });
 
   const closeViewer = () => {
-    viewer.close();
-    viewerImage.removeAttribute("src");
-    returnFocus?.focus();
+    if (viewer.open) viewer.close();
   };
 
   closeButton.addEventListener("click", closeViewer);
   viewer.addEventListener("click", (event) => {
     if (event.target === viewer) closeViewer();
+  });
+  viewer.addEventListener("close", () => {
+    viewerImage.removeAttribute("src");
+    returnFocus?.focus();
+    returnFocus = null;
   });
 }
