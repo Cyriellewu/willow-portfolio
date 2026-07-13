@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 560" role="img" aria-labelledby="title desc">
+  <title id="title">Converting time-sorted chassis fault windows into a weighted relationship graph</title>
+  <desc id="desc">Three synthetic chassis timelines with fault events are transformed into a graph. Green, amber, and blue edges represent temporal, context, and co-occurrence relationships.</desc>
+  <rect width="1120" height="560" fill="#fffefa"/>
+  <style>
+    .ink{stroke:#2b362f;fill:none;stroke-width:2}
+    .soft{stroke:#a3aaa1;fill:none;stroke-width:1.5}
+    .guide{stroke:#d7d8d0;fill:none;stroke-width:1;stroke-dasharray:5 6}
+    .time{stroke:#526c5e;fill:none;stroke-width:4}
+    .context{stroke:#a97835;fill:none;stroke-width:3}
+    .pattern{stroke:#5f7f9d;fill:none;stroke-width:3;stroke-dasharray:7 5}
+    .node{fill:#fffefa;stroke:#2b362f;stroke-width:2}
+    .node-a{fill:#526c5e;stroke:#fffefa;stroke-width:2}
+    .node-b{fill:#a97835;stroke:#fffefa;stroke-width:2}
+    .node-c{fill:#5f7f9d;stroke:#fffefa;stroke-width:2}
+    text{font-family:"Segoe UI",Arial,sans-serif;fill:#2b362f}
+    .mono{font-family:Consolas,"Courier New",monospace;letter-spacing:.08em}
+    .muted{fill:#657168}
+  </style>
+
+  <text x="48" y="54" font-size="18" font-weight="700">01 / Time-sorted fault windows</text>
+  <text x="48" y="83" font-size="14" class="muted">Synthetic illustration — no proprietary fault records shown</text>
+
+  <rect x="42" y="112" width="470" height="330" class="guide"/>
+  <line x1="84" y1="180" x2="458" y2="180" class="soft"/>
+  <line x1="84" y1="275" x2="458" y2="275" class="soft"/>
+  <line x1="84" y1="370" x2="458" y2="370" class="soft"/>
+
+  <text x="62" y="148" font-size="13" class="mono muted">CHASSIS A</text>
+  <text x="62" y="243" font-size="13" class="mono muted">CHASSIS B</text>
+  <text x="62" y="338" font-size="13" class="mono muted">CHASSIS C</text>
+
+  <path d="M84 173 C106 130 126 221 148 174 S190 130 212 174 S254 218 276 174 S318 130 340 174 S382 218 404 174" class="ink"/>
+  <path d="M84 268 C106 225 126 316 148 269 S190 225 212 269 S254 313 276 269 S318 225 340 269 S382 313 404 269" class="ink"/>
+  <path d="M84 363 C106 320 126 411 148 364 S190 320 212 364 S254 408 276 364 S318 320 340 364 S382 408 404 364" class="ink"/>
+
+  <line x1="114" y1="180" x2="114" y2="218" class="soft"/><circle cx="114" cy="222" r="10" class="node-a"/>
+  <line x1="167" y1="180" x2="167" y2="210" class="soft"/><circle cx="167" cy="214" r="10" class="node-c"/>
+  <line x1="221" y1="180" x2="221" y2="226" class="soft"/><circle cx="221" cy="230" r="10" class="node-b"/>
+  <line x1="289" y1="180" x2="289" y2="210" class="soft"/><circle cx="289" cy="214" r="10" class="node-a"/>
+  <circle cx="348" cy="214" r="4" class="node-c"/><circle cx="366" cy="214" r="4" class="node-c"/><circle cx="384" cy="214" r="4" class="node-c"/>
+
+  <line x1="128" y1="275" x2="128" y2="305" class="soft"/><circle cx="128" cy="309" r="10" class="node-b"/>
+  <line x1="185" y1="275" x2="185" y2="320" class="soft"/><circle cx="185" cy="324" r="10" class="node-a"/>
+  <line x1="245" y1="275" x2="245" y2="305" class="soft"/><circle cx="245" cy="309" r="10" class="node-c"/>
+  <line x1="307" y1="275" x2="307" y2="316" class="soft"/><circle cx="307" cy="320" r="10" class="node-b"/>
+  <circle cx="362" cy="309" r="4" class="node-a"/><circle cx="380" cy="309" r="4" class="node-a"/>
+
+  <line x1="104" y1="370" x2="104" y2="405" class="soft"/><circle cx="104" cy="409" r="10" class="node-c"/>
+  <line x1="160" y1="370" x2="160" y2="395" class="soft"/><circle cx="160" cy="399" r="10" class="node-b"/>
+  <line x1="216" y1="370" x2="216" y2="414" class="soft"/><circle cx="216" cy="418" r="10" class="node-a"/>
+  <line x1="276" y1="370" x2="276" y2="395" class="soft"/><circle cx="276" cy="399" r="10" class="node-c"/>
+  <circle cx="337" cy="409" r="4" class="node-b"/><circle cx="355" cy="409" r="4" class="node-b"/><circle cx="373" cy="409" r="4" class="node-b"/>
+
+  <line x1="84" y1="458" x2="458" y2="458" class="ink"/>
+  <path d="M448 450 L460 458 L448 466" class="ink"/>
+  <text x="188" y="491" font-size="14" class="mono muted">EVENT ORDER WITHIN EACH CHASSIS</text>
+
+  <path d="M536 274 H612" class="ink" stroke-width="3"/>
+  <path d="M594 256 L614 274 L594 292" class="ink" stroke-width="3"/>
+  <text x="544" y="240" font-size="13" class="mono muted">RELATIONSHIP</text>
+  <text x="550" y="312" font-size="13" class="mono muted">CONSTRUCTION</text>
+
+  <text x="656" y="54" font-size="18" font-weight="700">02 / Weighted relationship graph</text>
+  <text x="656" y="83" font-size="14" class="muted">Fault events become nodes; relationships become typed edges</text>
+
+  <line x1="695" y1="165" x2="792" y2="126" class="time"/>
+  <line x1="792" y1="126" x2="910" y2="162" class="time"/>
+  <line x1="910" y1="162" x2="970" y2="258" class="time"/>
+  <line x1="970" y1="258" x2="928" y2="375" class="time"/>
+  <line x1="928" y1="375" x2="805" y2="421" class="time"/>
+  <line x1="805" y1="421" x2="690" y2="350" class="time"/>
+  <line x1="690" y1="350" x2="663" y2="250" class="time"/>
+  <line x1="663" y1="250" x2="695" y2="165" class="time"/>
+
+  <line x1="695" y1="165" x2="910" y2="162" class="context"/>
+  <line x1="792" y1="126" x2="970" y2="258" class="context"/>
+  <line x1="663" y1="250" x2="805" y2="421" class="context"/>
+  <line x1="690" y1="350" x2="928" y2="375" class="context"/>
+
+  <line x1="695" y1="165" x2="928" y2="375" class="pattern"/>
+  <line x1="792" y1="126" x2="690" y2="350" class="pattern"/>
+  <line x1="910" y1="162" x2="805" y2="421" class="pattern"/>
+  <line x1="663" y1="250" x2="970" y2="258" class="pattern"/>
+  <line x1="792" y1="126" x2="928" y2="375" class="pattern"/>
+
+  <circle cx="695" cy="165" r="17" class="node-a"/>
+  <circle cx="792" cy="126" r="17" class="node-c"/>
+  <circle cx="910" cy="162" r="17" class="node-b"/>
+  <circle cx="970" cy="258" r="17" class="node-c"/>
+  <circle cx="928" cy="375" r="17" class="node-a"/>
+  <circle cx="805" cy="421" r="17" class="node-b"/>
+  <circle cx="690" cy="350" r="17" class="node-c"/>
+  <circle cx="663" cy="250" r="17" class="node-b"/>
+  <circle cx="816" cy="272" r="20" class="node"/>
+  <text x="793" y="278" font-size="14" class="mono">target</text>
+
+  <g transform="translate(660 474)">
+    <line x1="0" y1="0" x2="46" y2="0" class="time"/><text x="58" y="5" font-size="13">temporal proximity</text>
+    <line x1="225" y1="0" x2="271" y2="0" class="context"/><text x="283" y="5" font-size="13">shared context</text>
+    <line x1="0" y1="38" x2="46" y2="38" class="pattern"/><text x="58" y="43" font-size="13">recurring co-occurrence</text>
+  </g>
+</svg>
