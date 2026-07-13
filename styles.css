@@ -91,7 +91,8 @@ img { max-width: 100%; }
   display: grid; grid-template-columns: 1fr auto 1fr; min-height: 64px; align-items: center; gap: 28px;
 }
 .site-name { display: inline-flex; width: fit-content; align-items: center; gap: 10px; font-family: var(--font-display); font-size: 1.02rem; font-style: italic; font-weight: 400; letter-spacing: .005em; }
-.site-name img { display: block; flex: 0 0 auto; }
+.site-name img { display: block; width: 38px; height: 29px; flex: 0 0 auto; }
+.site-name span { transform: translateY(-1px); }
 .site-nav { display: flex; gap: 24px; color: var(--cp-text-muted); font-size: .82rem; font-weight: 700; }
 .site-nav a, .utility-link, .text-link, .contact-links a { text-underline-offset: 5px; }
 .site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--cp-text); text-decoration: underline; text-decoration-color: var(--cp-accent); text-decoration-thickness: 2px; }
@@ -151,14 +152,14 @@ h1, h2, h3 {
 figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; line-height: 1.45; }
 .citation-card { align-self: stretch; display: flex; flex-direction: column; justify-content: space-between; padding: 27px 0 0; border-top: 2px solid var(--cp-text); }
 .citation-card p { margin-bottom: 52px; }
-.citation-card strong { display: block; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.4rem, 2.1vw, 2rem); font-weight: 500; line-height: 1.12; }
+.citation-card strong { display: block; font-family: var(--font-display); font-size: clamp(1.4rem, 2.1vw, 2rem); font-weight: 500; line-height: 1.12; }
 .citation-card span { display: block; margin-top: 27px; color: var(--cp-text-soft); font-size: .78rem; }
 .approach { padding-bottom: clamp(94px, 13vw, 176px); }
 .approach-grid { display: grid; max-width: 840px; margin-left: auto; }
 .approach-grid article { display: grid; grid-template-columns: 88px 1fr; gap: 28px; padding: 24px 0; border-top: 1px solid var(--cp-border); }
 .approach-grid article:last-child { border-bottom: 1px solid var(--cp-border); }
-.approach-grid span { color: var(--cp-accent); font-family: Consolas, "Courier New", Courier, monospace; font-size: .74rem; font-weight: 700; }
-.approach-grid h3 { font-family: "Segoe UI", Aptos, Calibri, sans-serif; font-size: 1.2rem; font-weight: 750; letter-spacing: -.025em; line-height: 1.2; }
+.approach-grid span { color: var(--cp-accent); font-family: var(--font-mono); font-size: .74rem; font-weight: 700; }
+.approach-grid h3 { font-family: var(--font-ui); font-size: 1.2rem; font-weight: 750; letter-spacing: -.025em; line-height: 1.2; }
 .approach-grid p { grid-column: 2; max-width: 570px; margin-top: -16px; color: var(--cp-text-muted); font-size: .92rem; }
 .contact-section {
   display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, .38fr); gap: 50px;
@@ -174,7 +175,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 .case-hero h1 { max-width: 1040px; margin-top: 18px; font-size: clamp(3.6rem, 6.2vw, 6.5rem); }
 .case-summary { max-width: 700px; margin-top: 27px; color: var(--cp-text-muted); font-size: 1.12rem; }
 .case-meta-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; margin-top: 50px; padding-top: 19px; border-top: 2px solid var(--cp-text); }
-.case-meta-grid dt { color: var(--cp-text-soft); font-family: Consolas, "Courier New", Courier, monospace; font-size: .68rem; letter-spacing: .055em; text-transform: uppercase; }
+.case-meta-grid dt { color: var(--cp-text-soft); font-family: var(--font-mono); font-size: .68rem; letter-spacing: .055em; text-transform: uppercase; }
 .case-meta-grid dd { margin-top: 8px; font-size: .87rem; font-weight: 700; line-height: 1.38; }
 .case-content { display: grid; grid-template-columns: minmax(150px, .2fr) minmax(0, .72fr); gap: clamp(40px, 9vw, 130px); padding: 56px 0 clamp(100px, 14vw, 184px); border-top: 1px solid var(--cp-border); }
 .case-rail { position: sticky; top: 100px; align-self: start; display: grid; gap: 9px; }
@@ -203,7 +204,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 .about-page > p { max-width: 680px; margin-top: 28px; color: var(--cp-text-muted); font-size: 1.08rem; }
 .about-notes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px; margin-top: 78px; }
 .about-notes article { padding-top: 18px; border-top: 2px solid var(--cp-text); }
-.about-notes h2 { font-family: "Segoe UI", Aptos, Calibri, sans-serif; font-size: 1.1rem; font-weight: 750; letter-spacing: -.02em; }
+.about-notes h2 { font-family: var(--font-ui); font-size: 1.1rem; font-weight: 750; letter-spacing: -.02em; }
 .about-notes p { margin-top: 12px; color: var(--cp-text-muted); font-size: .9rem; }
 
 @media (max-width: 860px) {
@@ -278,7 +279,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 
 .field-note-label {
   color: var(--cp-text-soft);
-  font-family: Consolas, "Courier New", Courier, monospace;
+  font-family: var(--font-mono);
   font-size: .72rem;
   font-weight: 700;
   letter-spacing: .075em;
@@ -357,7 +358,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
   gap: 26px;
   align-items: center;
   color: var(--cp-text-muted);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
   font-size: 1.08rem;
   font-style: italic;
   white-space: nowrap;
@@ -365,7 +366,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 }
 
 .marquee-track:hover { animation-play-state: paused; }
-.marquee-track i { color: var(--cp-accent); font-family: "Segoe UI", Aptos, Calibri, sans-serif; font-size: .76rem; font-style: normal; }
+.marquee-track i { color: var(--cp-accent); font-family: var(--font-ui); font-size: .76rem; font-style: normal; }
 
 @keyframes notebook-marquee {
   to { transform: translateX(-33.333%); }
@@ -384,7 +385,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
   padding-left: 18px;
   border-left: 2px solid var(--cp-accent);
   color: var(--cp-text) !important;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
   font-size: 1.04rem !important;
   font-style: italic;
   line-height: 1.45;
@@ -402,7 +403,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 
 .micro-label {
   color: var(--cp-accent);
-  font-family: Consolas, "Courier New", Courier, monospace;
+  font-family: var(--font-mono);
   font-size: .72rem;
   font-weight: 700;
   letter-spacing: .06em;
@@ -457,7 +458,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 .palm-exhibit label {
   display: block;
   color: var(--cp-accent);
-  font-family: Consolas, "Courier New", Courier, monospace;
+  font-family: var(--font-mono);
   font-size: .72rem;
   font-weight: 700;
   letter-spacing: .06em;
@@ -518,13 +519,13 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 
 .path-timeline li > span {
   color: var(--cp-accent);
-  font-family: Consolas, "Courier New", Courier, monospace;
+  font-family: var(--font-mono);
   font-size: .72rem;
   font-weight: 700;
 }
 
 .path-timeline h3 {
-  font-family: "Segoe UI", Aptos, Calibri, sans-serif;
+  font-family: var(--font-ui);
   font-size: 1.18rem;
   font-weight: 750;
   letter-spacing: -.02em;
@@ -554,7 +555,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 
 .field-notes-grid span {
   color: var(--cp-accent);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
   font-size: 1.5rem;
   font-style: italic;
 }
@@ -593,7 +594,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
   display: block;
   margin-top: 18px;
   color: var(--cp-text-soft);
-  font-family: Consolas, "Courier New", Courier, monospace;
+  font-family: var(--font-mono);
   font-size: .72rem;
 }
 
@@ -716,7 +717,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 
 .toy-graph text {
   fill: var(--cp-text-soft);
-  font-family: Consolas, "Courier New", Courier, monospace;
+  font-family: var(--font-mono);
   font-size: 10px;
 }
 
@@ -803,7 +804,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 
 .week-recap strong {
   color: var(--cp-accent);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
   font-size: 2.2rem;
   font-weight: 500;
   line-height: 1;
@@ -824,7 +825,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
   place-items: center;
   border: 1px solid var(--cp-bg);
   color: var(--cp-bg);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
   font-size: 3rem;
   line-height: 1;
 }
@@ -835,7 +836,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
   justify-content: space-between;
   margin-top: 8px;
   color: var(--cp-text-soft);
-  font-family: Consolas, "Courier New", Courier, monospace;
+  font-family: var(--font-mono);
   font-size: .65rem;
 }
 
@@ -851,7 +852,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
   gap: 9px;
   margin-top: 20px;
   color: var(--cp-text-soft);
-  font-family: Consolas, "Courier New", Courier, monospace;
+  font-family: var(--font-mono);
   font-size: .72rem;
 }
 
@@ -937,7 +938,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 
 .notebook-index-grid span {
   color: var(--cp-accent);
-  font-family: Consolas, "Courier New", Courier, monospace;
+  font-family: var(--font-mono);
   font-size: .68rem;
   font-weight: 700;
   letter-spacing: .06em;
@@ -1019,6 +1020,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 .flagship-graph-mark {
   display: block;
   width: 100%;
+  height: auto;
   margin-top: 26px;
   border: 1px solid rgba(246, 245, 240, .24);
   background: var(--cp-surface);
@@ -1032,7 +1034,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
   gap: 8px;
   margin-top: 8px;
   color: var(--cp-text-soft);
-  font-family: Consolas, "Courier New", Courier, monospace;
+  font-family: var(--font-mono);
   font-size: .72rem;
 }
 
@@ -1123,7 +1125,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 
 .data-misalignment-figure text {
   fill: var(--cp-text);
-  font-family: Consolas, "Courier New", Courier, monospace;
+  font-family: var(--font-mono);
   font-size: 13px;
 }
 
@@ -1181,7 +1183,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 .decision-step span,
 .evidence-tier span {
   color: var(--cp-accent);
-  font-family: Consolas, "Courier New", Courier, monospace;
+  font-family: var(--font-mono);
   font-size: .66rem;
   font-weight: 700;
   letter-spacing: .05em;
@@ -1191,7 +1193,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 .decision-step strong {
   display: block;
   margin-top: 20px;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
   font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.1;
@@ -1247,14 +1249,14 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 .rep-stage-number {
   padding-left: 16px;
   color: var(--cp-accent);
-  font-family: Consolas, "Courier New", Courier, monospace;
+  font-family: var(--font-mono);
   font-size: .72rem;
   font-weight: 700;
 }
 
 .rep-stage strong {
   display: block;
-  font-family: "Segoe UI", Aptos, Calibri, sans-serif;
+  font-family: var(--font-ui);
   font-size: .96rem;
   letter-spacing: -.015em;
 }
@@ -1263,7 +1265,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
   display: block;
   margin-top: 3px;
   color: var(--cp-text-soft);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
   font-size: .8rem;
 }
 
@@ -1281,7 +1283,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
   padding: 15px 17px;
   background: var(--cp-text);
   color: var(--cp-bg) !important;
-  font-family: Consolas, "Courier New", Courier, monospace;
+  font-family: var(--font-mono);
   font-size: .9rem;
 }
 
@@ -1300,7 +1302,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 
 .result-plate span {
   color: var(--cp-text-soft);
-  font-family: Consolas, "Courier New", Courier, monospace;
+  font-family: var(--font-mono);
   font-size: .7rem;
   font-weight: 700;
   letter-spacing: .05em;
@@ -1309,7 +1311,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 
 .result-plate strong {
   color: var(--cp-accent);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
   font-size: clamp(3rem, 7vw, 5.6rem);
   font-weight: 500;
   letter-spacing: -.06em;
@@ -1366,7 +1368,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 .product-tradeoff span,
 .evaluation-split span {
   color: var(--cp-warning);
-  font-family: Consolas, "Courier New", Courier, monospace;
+  font-family: var(--font-mono);
   font-size: .66rem;
   font-weight: 700;
   letter-spacing: .05em;
@@ -1393,7 +1395,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
   border-top: 1px solid var(--cp-border);
   border-bottom: 1px solid var(--cp-border);
   color: var(--cp-text-soft);
-  font-family: Consolas, "Courier New", Courier, monospace;
+  font-family: var(--font-mono);
   font-size: .72rem;
 }
 
@@ -1429,7 +1431,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
   display: block;
   margin-top: 20px;
   color: var(--cp-accent);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
   font-size: 1.65rem;
   font-weight: 500;
   line-height: 1.1;
@@ -1462,7 +1464,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 
 .project-nav span {
   color: var(--cp-accent);
-  font-family: Consolas, "Courier New", Courier, monospace;
+  font-family: var(--font-mono);
   font-size: .68rem;
   font-weight: 700;
   letter-spacing: .06em;
@@ -1472,7 +1474,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 .project-nav strong {
   display: block;
   margin-top: 12px;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
   font-size: clamp(1.8rem, 3vw, 2.7rem);
   font-weight: 500;
   line-height: 1.05;
@@ -1521,7 +1523,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
     background: transparent;
     color: var(--cp-text);
     cursor: pointer;
-    font-family: "Segoe UI", Aptos, Calibri, sans-serif;
+    font-family: var(--font-ui);
     font-size: .84rem;
     font-weight: 750;
     text-decoration: underline;
@@ -1555,7 +1557,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
   .site-nav a {
     min-height: 44px;
     color: var(--cp-text);
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: var(--font-display);
     font-size: clamp(1.55rem, 7vw, 2.25rem);
     font-weight: 500;
     line-height: 1.15;
@@ -1565,7 +1567,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
     display: block;
     margin-top: 12px;
     color: var(--cp-accent);
-    font-family: "Segoe UI", Aptos, Calibri, sans-serif;
+    font-family: var(--font-ui);
     font-size: .88rem;
     font-weight: 750;
   }
@@ -1641,13 +1643,13 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 
 .proof-rail .site-frame {
   display: flex;
-  min-height: 36px;
+  min-height: 42px;
   flex-wrap: wrap;
   align-items: center;
   gap: 6px 22px;
   color: var(--cp-text-muted);
   font-family: var(--font-mono);
-  font-size: .66rem;
+  font-size: .72rem;
   letter-spacing: .035em;
   text-transform: uppercase;
 }
@@ -1659,8 +1661,8 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 }
 
 .proof-rail span::before {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: var(--cp-accent);
   content: "";
@@ -1783,11 +1785,54 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
   font-family: var(--font-mono);
   font-size: .64rem;
   letter-spacing: .16em;
-  content: "●  ●  ●";
 }
 
 .case-eol .case-image::before {
   color: var(--cp-warning);
+  content: "●  ●  ●     EVIDENCE OF LIFE / PUBLIC DEMO";
+}
+
+.case-oracle .case-image::before {
+  content: "●  ●  ●     ORACLE OS / LOCAL MOCK";
+}
+
+.product-window {
+  position: relative;
+  padding-top: 34px;
+}
+
+.product-window::before {
+  position: absolute;
+  top: 9px;
+  left: 12px;
+  color: var(--cp-text-soft);
+  font-family: var(--font-mono);
+  font-size: .6rem;
+  letter-spacing: .16em;
+  content: "●  ●  ●";
+}
+
+.eol-window::before {
+  color: var(--cp-warning);
+}
+
+.figure-annotation {
+  position: absolute;
+  right: 14px;
+  bottom: 48px;
+  max-width: 240px;
+  padding: 7px 9px;
+  border-left: 2px solid var(--cp-warning);
+  background: rgba(253, 252, 248, .94);
+  color: var(--cp-text);
+  font-family: var(--font-ui);
+  font-size: .72rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.case-image .figure-annotation {
+  bottom: 54px;
 }
 
 .button,
@@ -1825,7 +1870,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 
   .proof-rail span {
     min-height: 28px;
-    font-size: .58rem;
+    font-size: .64rem;
   }
 
   .notebook-hero::before {
@@ -1844,14 +1889,225 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
   }
 
   .site-name img {
-    width: 28px;
-    height: 21px;
+    width: 32px;
+    height: 24px;
+  }
+
+  .figure-annotation {
+    position: static;
+    display: block;
+    max-width: none;
+    margin-top: 9px;
+    padding: 7px 9px;
   }
 }
 
 @media (max-width: 420px) {
   .notebook-hero::before {
     display: none;
+  }
+}
+
+/* ===================== Recruiter scan refinements ===================== */
+
+.field-note {
+  padding: 18px 0 0;
+  border: 0;
+  border-top: 2px solid var(--cp-text);
+  background: transparent;
+}
+
+.field-note h2 {
+  max-width: 14ch;
+  margin-top: 24px;
+  font-size: clamp(1.55rem, 2.2vw, 1.9rem);
+}
+
+.field-note > p:not(.field-note-label) {
+  max-width: 320px;
+}
+
+.project-question {
+  margin-top: 11px !important;
+  color: var(--cp-text) !important;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2vw, 1.65rem) !important;
+  font-style: italic;
+  line-height: 1.18;
+}
+
+.compact-room .work-body > p:not(.project-question) {
+  margin-top: 14px;
+}
+
+.figure-zoom {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: zoom-in;
+  text-align: inherit;
+}
+
+.figure-zoom img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.compact-room .product-window .figure-zoom {
+  aspect-ratio: 4 / 3;
+}
+
+.compact-room .product-window .figure-zoom img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.eol-window .figure-zoom img {
+  object-position: center top;
+}
+
+.oracle-window .figure-zoom img {
+  object-position: center center;
+}
+
+.experience-section {
+  padding: clamp(72px, 9vw, 126px) 0;
+  border-top: 2px solid var(--cp-text);
+}
+
+.experience-section .section-intro {
+  margin-bottom: 36px;
+}
+
+.experience-rows {
+  border-top: 1px solid var(--cp-border);
+}
+
+.experience-rows article {
+  display: grid;
+  grid-template-columns: minmax(150px, .28fr) 42px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--cp-border);
+}
+
+.experience-rows article > span {
+  color: var(--cp-accent);
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  font-weight: 500;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.experience-rows h3 {
+  font-family: var(--font-ui);
+  font-size: 1.12rem;
+  font-weight: 650;
+  letter-spacing: -.015em;
+}
+
+.experience-rows p {
+  max-width: 620px;
+  margin-top: 6px;
+  color: var(--cp-text-muted);
+  font-size: .88rem;
+}
+
+.org-logo {
+  display: block;
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.org-logo-crown {
+  padding: 3px;
+}
+
+.path-timeline li.has-logo {
+  grid-template-columns: 150px 42px minmax(0, 1fr);
+  gap: 20px;
+}
+
+.image-viewer {
+  width: min(1180px, calc(100% - 48px));
+  max-width: none;
+  max-height: calc(100vh - 48px);
+  margin: auto;
+  padding: 52px 18px 18px;
+  overflow: auto;
+  border: 1px solid var(--cp-border-strong);
+  background: var(--cp-bg);
+  color: var(--cp-text);
+}
+
+.image-viewer::backdrop {
+  background: rgba(34, 46, 38, .72);
+  backdrop-filter: blur(4px);
+}
+
+.image-viewer img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--cp-surface);
+}
+
+.image-viewer p {
+  margin-top: 12px;
+  color: var(--cp-text-muted);
+  font-size: .82rem;
+}
+
+.viewer-close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  min-height: 36px;
+  padding: 6px 10px;
+  border: 1px solid var(--cp-border-strong);
+  background: var(--cp-surface);
+  color: var(--cp-text);
+  cursor: pointer;
+  font-family: var(--font-ui);
+  font-weight: 650;
+}
+
+@media (max-width: 640px) {
+  .experience-rows article {
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .experience-rows article > span {
+    grid-column: 1 / -1;
+  }
+
+  .path-timeline li.has-logo {
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .path-timeline li.has-logo > span {
+    grid-column: 1 / -1;
+  }
+
+  .image-viewer {
+    width: calc(100% - 20px);
+    max-height: calc(100vh - 20px);
+    padding: 50px 10px 10px;
+  }
+
+  .viewer-close {
+    min-height: 44px;
   }
 }
 
@@ -1951,7 +2207,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 }
 
 .page-date {
-  font-family: Consolas, "Courier New", Courier, monospace;
+  font-family: var(--font-mono);
   font-size: .82rem;
   color: var(--cp-text-soft);
 }
@@ -1983,7 +2239,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
   padding: 3px 9px;
   border: 1px solid var(--cp-border-strong);
   color: var(--cp-accent);
-  font-family: Consolas, "Courier New", Courier, monospace;
+  font-family: var(--font-mono);
   font-size: .68rem;
   font-weight: 700;
   letter-spacing: .04em;
@@ -2040,7 +2296,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 }
 
 .now-item h2 {
-  font-family: "Segoe UI", Aptos, Calibri, sans-serif;
+  font-family: var(--font-ui);
   font-size: 1.2rem;
   font-weight: 750;
   letter-spacing: -.02em;
@@ -2068,7 +2324,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 }
 
 .colophon-body h2 {
-  font-family: "Segoe UI", Aptos, Calibri, sans-serif;
+  font-family: var(--font-ui);
   font-size: 1.15rem;
   font-weight: 750;
   letter-spacing: -.02em;
@@ -2104,7 +2360,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 }
 
 .colophon-body code {
-  font-family: Consolas, "Courier New", Courier, monospace;
+  font-family: var(--font-mono);
   font-size: .86em;
   color: var(--cp-text);
 }
@@ -2127,7 +2383,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 }
 
 .about-side-quests h2 {
-  font-family: "Segoe UI", Aptos, Calibri, sans-serif;
+  font-family: var(--font-ui);
   font-size: 1.1rem;
   font-weight: 750;
   letter-spacing: -.02em;
@@ -2147,7 +2403,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 }
 
 .about-elsewhere h2 {
-  font-family: "Segoe UI", Aptos, Calibri, sans-serif;
+  font-family: var(--font-ui);
   font-size: 1.1rem;
   font-weight: 750;
   letter-spacing: -.02em;
