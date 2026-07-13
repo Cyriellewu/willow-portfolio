@@ -199,3 +199,49 @@ if (siteHeader && siteNavigation) {
     }
   });
 }
+
+const zoomButtons = [...document.querySelectorAll(".figure-zoom")];
+if (zoomButtons.length) {
+  let viewer = document.querySelector("#image-viewer");
+  if (!viewer) {
+    viewer = document.createElement("dialog");
+    viewer.className = "image-viewer";
+    viewer.id = "image-viewer";
+    viewer.setAttribute("aria-labelledby", "viewer-caption");
+    viewer.innerHTML = `
+      <button type="button" class="viewer-close" aria-label="Close image viewer">Close</button>
+      <img id="viewer-image" alt="" />
+      <p id="viewer-caption"></p>
+    `;
+    document.body.append(viewer);
+  }
+
+  const viewerImage = viewer.querySelector("#viewer-image");
+  const viewerCaption = viewer.querySelector("#viewer-caption");
+  const closeButton = viewer.querySelector(".viewer-close");
+  let returnFocus = null;
+
+  zoomButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const source = button.querySelector("img");
+      if (!source) return;
+      returnFocus = button;
+      viewerImage.src = source.currentSrc || source.src;
+      viewerImage.alt = source.alt;
+      viewerCaption.textContent = button.dataset.caption || source.alt;
+      viewer.showModal();
+      closeButton.focus();
+    });
+  });
+
+  const closeViewer = () => {
+    viewer.close();
+    viewerImage.removeAttribute("src");
+    returnFocus?.focus();
+  };
+
+  closeButton.addEventListener("click", closeViewer);
+  viewer.addEventListener("click", (event) => {
+    if (event.target === viewer) closeViewer();
+  });
+}
