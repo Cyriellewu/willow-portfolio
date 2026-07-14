@@ -22,6 +22,7 @@
     </script>
     <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
     <link rel="preload" href="../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../assets/fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body class="case-page case-eol">
@@ -70,7 +71,10 @@
             </p>
             <div class="case-image eol-hero-figure">
               <button type="button" class="figure-zoom" aria-label="Open full Evidence of Life interface" data-caption="Evidence of Life public demo rendered with sample data.">
-                <img src="../assets/projects/evidence-of-life-demo.png" width="1440" height="900" loading="lazy" decoding="async" alt="Evidence of Life public demo with sample calendar, notes, and focus data" />
+                <picture>
+                  <source type="image/webp" srcset="../assets/projects/evidence-of-life-demo-640.webp 640w, ../assets/projects/evidence-of-life-demo-1200.webp 1200w" sizes="(max-width: 860px) calc(100vw - 48px), 900px" />
+                  <img src="../assets/projects/evidence-of-life-demo.png" width="1440" height="900" loading="lazy" decoding="async" alt="Evidence of Life public demo with sample calendar, notes, and focus data" />
+                </picture>
               </button>
               <span class="figure-annotation">Sample week · private integrations disabled</span>
               <p class="case-caption">Public demo rendered with repository sample data. Nothing in this image belongs to a real account.</p>
@@ -107,7 +111,7 @@
                 <div class="week-calendar"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
                 <div class="week-recap"><strong>3</strong><span>small moments worth keeping</span></div>
               </div>
-              <p id="week-copy">Mon: a late walk, a finished query, and a call home. The day is more than its tasks.</p>
+              <p id="week-copy" aria-live="polite">Mon: a late walk, a finished query, and a call home. The day is more than its tasks.</p>
             </div>
           </section>
           <section id="evidence">

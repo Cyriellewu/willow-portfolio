@@ -34,9 +34,15 @@ const weekViews = {
 };
 
 document.querySelectorAll("[data-week-view]").forEach((button) => {
+  button.tabIndex = button.getAttribute("aria-selected") === "true" ? 0 : -1;
+
   button.addEventListener("click", () => {
-    document.querySelectorAll("[data-week-view]").forEach((item) => item.setAttribute("aria-selected", "false"));
+    document.querySelectorAll("[data-week-view]").forEach((item) => {
+      item.setAttribute("aria-selected", "false");
+      item.tabIndex = -1;
+    });
     button.setAttribute("aria-selected", "true");
+    button.tabIndex = 0;
     if (weekCopy) weekCopy.textContent = weekViews[button.dataset.weekView];
     if (weekPanel) {
       weekPanel.dataset.view = button.dataset.weekView;
@@ -261,31 +267,6 @@ if (zoomButtons.length) {
   });
 }
 
-/* Scroll-reveal entrance animations (progressive enhancement, motion-safe) */
-(function () {
-  const prefersReduced =
-    window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (!("IntersectionObserver" in window) || prefersReduced) return;
-  const targets = document.querySelectorAll(
-    ".work-item, .experience-rows article, .skills-grid div, .about-notes article, .about-side-quests, .about-elsewhere, .path-timeline li, .note-entry, .contact-section > div",
-  );
-  if (!targets.length) return;
-  document.documentElement.classList.add("reveal-ready");
-  targets.forEach((el) => el.classList.add("reveal"));
-  const revealObserver = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          obs.unobserve(entry.target);
-        }
-      });
-    },
-    { rootMargin: "0px 0px -8% 0px", threshold: 0.08 },
-  );
-  targets.forEach((el) => revealObserver.observe(el));
-})();
-
 /* Homepage active-section nav highlight */
 (function () {
   const navLinks = [...document.querySelectorAll('.site-nav a[href^="#"]')];
@@ -302,7 +283,7 @@ if (zoomButtons.length) {
         if (!entry.isIntersecting) return;
         navLinks.forEach((link) => link.removeAttribute("aria-current"));
         const active = pairs.get(entry.target);
-        if (active) active.setAttribute("aria-current", "page");
+        if (active) active.setAttribute("aria-current", "location");
       });
     },
     { rootMargin: "-45% 0px -50% 0px" },

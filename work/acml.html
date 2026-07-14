@@ -22,6 +22,7 @@
     </script>
     <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
     <link rel="preload" href="../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../assets/fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body class="case-page case-acml">
@@ -170,7 +171,7 @@
             <p class="edge-formula-note">Illustrative composition; see PMLR 304 for the published edge-weighting method.</p>
             <div class="case-micro-exhibit graph-case-exhibit">
               <p class="micro-label">Toy representation explorer</p>
-              <p id="graph-copy">Time links faults that recur near each other. The graph remembers sequence, not just frequency.</p>
+              <p id="graph-copy" aria-live="polite">Time links faults that recur near each other. The graph remembers sequence, not just frequency.</p>
               <svg class="toy-graph" id="toy-graph" data-graph-state="time" viewBox="0 0 280 120" aria-hidden="true">
                 <line class="toy-edge toy-edge-time" x1="42" y1="62" x2="140" y2="30" />
                 <line class="toy-edge toy-edge-place" x1="42" y1="62" x2="210" y2="76" />

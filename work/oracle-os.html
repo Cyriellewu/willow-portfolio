@@ -22,6 +22,7 @@
     </script>
     <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
     <link rel="preload" href="../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../assets/fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body class="case-page case-oracle">
@@ -71,7 +72,10 @@
             </p>
             <div class="case-image oracle-hero-figure">
               <button type="button" class="figure-zoom" aria-label="Open full Oracle OS interface" data-caption="Oracle OS local mock with a fictional profile.">
-                <img src="../assets/projects/oracle-os-demo.png" width="1280" height="800" loading="lazy" decoding="async" alt="Oracle OS demo showing code-generated I Ching, BaZi, and Astrology lenses" />
+                <picture>
+                  <source type="image/webp" srcset="../assets/projects/oracle-os-demo-640.webp 640w, ../assets/projects/oracle-os-demo-1200.webp 1200w" sizes="(max-width: 860px) calc(100vw - 48px), 900px" />
+                  <img src="../assets/projects/oracle-os-demo.png" width="1280" height="580" loading="lazy" decoding="async" alt="Oracle OS demo showing code-generated I Ching, BaZi, and Astrology lenses" />
+                </picture>
               </button>
               <span class="figure-annotation">Code-selected symbols · fictional local profile</span>
               <p class="case-caption">Local mock profile. The I Ching, BaZi, and Astrology lenses are generated through application logic.</p>
