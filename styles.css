@@ -2521,3 +2521,33 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 @media (max-width: 640px) {
   .skills-grid { grid-template-columns: 1fr; gap: 0; }
 }
+
+/* Scroll-reveal entrance (only active when JS runs and motion is allowed) */
+.reveal-ready .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+.reveal-ready .reveal.is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal-ready .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* Micro-interactions */
+.site-nav a, .utility-link, .text-link, .artifact-link, .contact-links a, .button {
+  transition: color .2s ease, background-color .2s ease, border-color .2s ease, text-decoration-color .2s ease, transform .2s ease;
+}
+.button:hover { transform: translateY(-1px); }
+.button:active { transform: translateY(0); }
+.figure-zoom { overflow: hidden; }
+.project-figure img, .figure-zoom img { transition: transform .5s ease; }
+.figure-zoom:hover img, .figure-zoom:focus-visible img { transform: scale(1.03); }
+
+/* Readable measure on text-first pages */
+.about-page > p, .page-lede { max-inline-size: 68ch; }
+
+/* Print stylesheet — clean PDF/paper output */
+@media print {
+  .site-header, .menu-toggle, .proof-rail, .notebook-marquee, .hero-actions,
+  .image-viewer, .project-nav, .figure-annotation, .skip-link { display: none !important; }
+  body { background: #fff; color: #000; }
+  .site-frame { width: 100%; }
+  main a[href^="http"]::after { content: " (" attr(href) ")"; font-size: .85em; color: #333; word-break: break-all; }
+  * { box-shadow: none !important; }
+}
