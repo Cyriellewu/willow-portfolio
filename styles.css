@@ -40,7 +40,7 @@
   --cp-border-strong: #a3aaa1;
   --cp-text: #222e26;
   --cp-text-muted: #5b6d62;
-  --cp-text-soft: #627468;
+  --cp-text-soft: #566860;
   --cp-accent: #4e6858;
   --cp-accent-hover: #3b5244;
   --cp-accent-soft: rgba(78, 104, 88, 0.09);
@@ -1979,6 +1979,8 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 }
 
 .oracle-window .figure-zoom img {
+  width: 100%;
+  object-fit: cover;
   object-position: center center;
 }
 
@@ -2463,10 +2465,6 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
     white-space: normal;
   }
 
-  .proof-rail span:nth-child(3) {
-    display: none;
-  }
-
   .marquee-track {
     width: calc(100% - 40px);
     grid-template-columns: 1fr;
@@ -2478,4 +2476,48 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
     border-top: 1px solid var(--cp-border);
     border-left: 0;
   }
+}
+
+.hero-subhead {
+  margin: 0 0 16px;
+  font-size: 1.06rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--cp-text);
+}
+
+.skills-section {
+  padding: clamp(56px, 7vw, 96px) 0;
+  border-top: 2px solid var(--cp-text);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 40px;
+  margin: 28px 0 0;
+}
+
+.skills-grid div {
+  padding-top: 14px;
+  border-top: 1px solid var(--cp-border);
+}
+
+.skills-grid dt {
+  margin-bottom: 8px;
+  color: var(--cp-text-soft);
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  letter-spacing: .055em;
+  text-transform: uppercase;
+}
+
+.skills-grid dd {
+  margin: 0;
+  font-size: .92rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .skills-grid { grid-template-columns: 1fr; gap: 0; }
 }

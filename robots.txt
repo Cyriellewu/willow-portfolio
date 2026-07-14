@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cyriellewu.github.io/willow-portfolio/sitemap.xml
