@@ -18,8 +18,9 @@ The site has no build step. Upload the contents of this folder to a static host 
 
 ## Content sources
 
-All factual claims are derived from `../09_Master_Resume/main.tex` and the verified
-project cards in `../00_Project_Cards/`.
+All factual claims are derived from `../09_Master_Resume/main.tex`, the role-specific
+variants in `../09_Master_Resume/variants/`, and the verified project cards in
+`../00_Project_Cards/`.
 
 `assets/projects/` contains only approved conservative-public artifacts:
 
@@ -27,5 +28,6 @@ project cards in `../00_Project_Cards/`.
 - Evidence of Life local public demo screenshot with repository sample data.
 - Palm Vein aggregate SSIM chart without biometric imagery.
 
-The public site intentionally does not include a downloadable resume until a new
-sanitized general-purpose version is regenerated from the verified source material.
+The public site now exposes curated, role-specific one-page resume PDFs under
+`assets/resumes/`, each derived from the same verified source material and sanitized
+for public sharing.
