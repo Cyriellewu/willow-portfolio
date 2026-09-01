@@ -122,6 +122,16 @@ h1, h2, h3 {
 .button-primary:hover { background: var(--cp-accent); border-color: var(--cp-accent); }
 .button-secondary { border-color: var(--cp-border-strong); background: transparent; }
 .button-secondary:hover { border-color: var(--cp-accent); color: var(--cp-accent); }
+.button-quiet {
+  min-height: 46px;
+  padding-inline: 6px;
+  border-color: transparent;
+  color: var(--cp-text-muted);
+  text-decoration: underline;
+  text-decoration-color: var(--cp-border-strong);
+  text-underline-offset: 5px;
+}
+.button-quiet:hover { color: var(--cp-accent); text-decoration-color: var(--cp-accent); }
 .hero-note { align-self: end; padding-top: 16px; border-top: 2px solid var(--cp-text); }
 .hero-note > p:not(.eyebrow) { margin-top: 5px; font-size: .88rem; font-weight: 700; line-height: 1.4; }
 .hero-note .note-small { margin-top: 18px; color: var(--cp-text-soft); font-size: .76rem; font-weight: 500; }
@@ -2485,11 +2495,121 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 }
 
 .hero-subhead {
-  margin: 0 0 16px;
-  font-size: 1.06rem;
+  max-width: 690px;
+  margin: 22px 0 0;
+  font-size: clamp(1.15rem, 1.8vw, 1.4rem);
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 1.4;
   color: var(--cp-text);
+}
+
+.hero-main .hero-copy {
+  max-width: 720px;
+  margin-top: 18px;
+}
+
+.hero-status-card {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 4px;
+}
+
+.hero-system-path {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 9px 10px;
+  margin-top: 28px;
+  padding-top: 16px;
+  border-top: 1px solid var(--cp-border);
+  color: var(--cp-text-soft);
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.hero-system-path i {
+  color: var(--cp-warning);
+  font-style: normal;
+}
+
+.quick-proof {
+  display: grid;
+  grid-template-columns: minmax(180px, .32fr) minmax(0, 1fr);
+  gap: clamp(32px, 6vw, 76px);
+  padding: clamp(42px, 5vw, 68px) 0;
+  border-top: 2px solid var(--cp-text);
+}
+
+.quick-proof-heading h2 {
+  max-width: 8ch;
+  margin-top: 12px;
+  font-size: clamp(2rem, 3.4vw, 3.4rem);
+}
+
+.quick-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--cp-border);
+}
+
+.quick-proof-grid article {
+  min-width: 0;
+  padding: 19px 22px 22px 0;
+  border-bottom: 1px solid var(--cp-border);
+}
+
+.quick-proof-grid article:nth-child(2n) {
+  padding-left: 22px;
+  border-left: 1px solid var(--cp-border);
+}
+
+.quick-proof-grid span,
+.project-scan dt {
+  color: var(--cp-accent);
+  font-family: var(--font-mono);
+  font-size: .66rem;
+  font-weight: 700;
+  letter-spacing: .055em;
+  text-transform: uppercase;
+}
+
+.quick-proof-grid strong {
+  display: block;
+  margin-top: 13px;
+  font-size: 1.04rem;
+}
+
+.quick-proof-grid p {
+  max-width: 34ch;
+  margin-top: 7px;
+  color: var(--cp-text-muted);
+  font-size: .86rem;
+  line-height: 1.48;
+}
+
+.project-scan {
+  display: grid;
+  gap: 0;
+  max-width: 610px;
+  margin-top: 24px;
+  border-top: 1px solid var(--cp-border);
+}
+
+.project-scan div {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 15px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--cp-border);
+}
+
+.project-scan dd {
+  color: var(--cp-text-muted);
+  font-size: .9rem;
+  line-height: 1.48;
 }
 
 .skills-section {
@@ -2634,6 +2754,8 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 }
 
 @media (max-width: 860px) {
+  .quick-proof { grid-template-columns: 1fr; }
+  .quick-proof-heading h2 { max-width: none; }
   .resume-feature,
   .resume-grid {
     grid-template-columns: 1fr;
@@ -2642,6 +2764,12 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 
 @media (max-width: 640px) {
   .skills-grid { grid-template-columns: 1fr; gap: 0; }
+  .quick-proof-grid { grid-template-columns: 1fr; }
+  .quick-proof-grid article:nth-child(2n) {
+    padding-left: 0;
+    border-left: 0;
+  }
+  .project-scan div { grid-template-columns: 1fr; gap: 5px; }
 }
 
 /* Micro-interactions */
