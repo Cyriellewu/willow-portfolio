@@ -1,6 +1,6 @@
-# Willow Wu — Personal Website
+# Willow Wu: Personal Website
 
-Static, project-led personal portfolio with four evidence-backed case studies.
+Static, project-led personal portfolio with three primary case studies and one supporting evaluation story.
 
 ## Preview locally
 
@@ -18,9 +18,9 @@ The site has no build step. Upload the contents of this folder to a static host 
 
 ## Content sources
 
-All factual claims are derived from `../09_Master_Resume/main.tex`, the role-specific
-variants in `../09_Master_Resume/variants/`, and the verified project cards in
-`../00_Project_Cards/`.
+All factual claims are derived from normalized, verified project cards under
+`../career_system/project_cards/`. Employer and in-progress research work stay at a
+role-level public summary.
 
 `assets/projects/` contains only approved conservative-public artifacts:
 
@@ -28,6 +28,5 @@ variants in `../09_Master_Resume/variants/`, and the verified project cards in
 - Evidence of Life local public demo screenshot with repository sample data.
 - Palm Vein aggregate SSIM chart without biometric imagery.
 
-The public site now exposes curated, role-specific one-page resume PDFs under
-`assets/resumes/`, each derived from the same verified source material and sanitized
-for public sharing.
+Public resume PDFs are temporarily withheld while one canonical Software Engineering
+and AI Systems resume is rebuilt from verified source material.

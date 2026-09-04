@@ -4,27 +4,6 @@ if (currentYear) {
   currentYear.textContent = String(new Date().getFullYear());
 }
 
-const graphCopy = document.querySelector("#graph-copy");
-const graphDisplay = document.querySelector("#toy-graph");
-const graphFacts = {
-  time: "Time links faults that recur near each other. The graph remembers sequence, not just frequency.",
-  place: "Place links faults that happen in the same subsystem context. The graph remembers where a signal belongs.",
-  pattern: "Pattern links faults that co-occur more often than chance. The graph remembers a recurring relationship.",
-};
-
-document.querySelectorAll("[data-graph]").forEach((button) => {
-  button.addEventListener("click", () => {
-    document.querySelectorAll("[data-graph]").forEach((item) => {
-      item.classList.remove("is-active");
-      item.setAttribute("aria-pressed", "false");
-    });
-    button.classList.add("is-active");
-    button.setAttribute("aria-pressed", "true");
-    if (graphCopy) graphCopy.textContent = graphFacts[button.dataset.graph];
-    if (graphDisplay) graphDisplay.dataset.graphState = button.dataset.graph;
-  });
-});
-
 const weekCopy = document.querySelector("#week-copy");
 const weekPanel = document.querySelector("#week-panel");
 const weekViews = {
@@ -99,38 +78,6 @@ if (claritySlider && palmExhibit && palmCopy) {
   });
 }
 
-document.querySelectorAll(".decision-step").forEach((step) => {
-  const selectStep = () => {
-    document.querySelectorAll(".decision-step").forEach((item) => {
-      const isCurrent = item === step;
-      item.classList.toggle("is-active", isCurrent);
-      item.setAttribute("aria-checked", String(isCurrent));
-      item.tabIndex = isCurrent ? 0 : -1;
-    });
-  };
-
-  step.addEventListener("click", selectStep);
-  step.addEventListener("keydown", (event) => {
-    if (!["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"].includes(event.key)) return;
-    event.preventDefault();
-    const steps = [...document.querySelectorAll(".decision-step")];
-    const offset = ["ArrowRight", "ArrowDown"].includes(event.key) ? 1 : -1;
-    const next = steps[(steps.indexOf(step) + offset + steps.length) % steps.length];
-    next.focus();
-    next.click();
-  });
-});
-
-document.querySelectorAll("[data-rep-stage]").forEach((stage) => {
-  stage.addEventListener("click", () => {
-    document.querySelectorAll("[data-rep-stage]").forEach((item) => {
-      const isCurrent = item === stage;
-      item.classList.toggle("is-active", isCurrent);
-      item.setAttribute("aria-pressed", String(isCurrent));
-    });
-  });
-});
-
 const railLinks = [...document.querySelectorAll(".case-rail a[href^='#']")];
 if (railLinks.length) {
   const sections = railLinks
@@ -169,7 +116,7 @@ if (siteHeader && siteNavigation) {
   if (!siteNavigation.querySelector(".nav-contact")) {
     const contact = document.createElement("a");
     contact.className = "nav-contact";
-    contact.href = "mailto:willowwu925@gmail.com";
+    contact.href = "mailto:yw4643@columbia.edu";
     contact.textContent = "Say hello";
     siteNavigation.append(contact);
   }

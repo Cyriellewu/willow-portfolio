@@ -47,7 +47,7 @@
   --cp-accent-fg: #ffffff;
   --cp-success: #526c5e;
   --cp-danger: #b44f45;
-  --cp-warning: #c76852;
+  --cp-warning: #8f3f32;
   --cp-link: #3f5749;
   --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.12);
   --cp-overlay: rgba(246, 245, 240, 0.94);
@@ -108,10 +108,10 @@ h1, h2, h3 {
   font-optical-sizing: auto;
 }
 .hero {
-  display: grid; grid-template-columns: minmax(0, 1fr) minmax(230px, .34fr); gap: clamp(36px, 6vw, 80px);
-  align-items: end; padding: clamp(20px, 1.6vw, 24px) 0 clamp(40px, 4vw, 56px);
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(230px, .32fr); gap: clamp(36px, 6vw, 80px);
+  align-items: end; padding: clamp(44px, 6vw, 84px) 0 clamp(40px, 5vw, 68px);
 }
-.hero h1 { max-width: 17ch; margin-top: 16px; font-size: clamp(3.2rem, 5vw, 5rem); }
+.hero h1 { max-width: 19ch; margin-top: 16px; font-size: clamp(3rem, 4.8vw, 4.8rem); }
 .hero-copy { max-width: 650px; margin-top: 28px; color: var(--cp-text-muted); font-size: 1.08rem; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
 .button {
@@ -186,6 +186,26 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 .contact-links a:hover { color: var(--cp-accent); text-decoration-color: var(--cp-accent); }
 .site-footer { display: flex; justify-content: space-between; gap: 24px; padding: 26px 0 36px; color: var(--cp-text-soft); font-size: .76rem; }
 
+.supporting-work {
+  display: grid;
+  grid-template-columns: minmax(150px, .24fr) minmax(0, .56fr) minmax(180px, .3fr);
+  gap: 24px 36px;
+  align-items: start;
+  padding: 34px 0;
+  border-bottom: 1px solid var(--cp-border);
+}
+.supporting-work h3 {
+  font-family: var(--font-ui);
+  font-size: clamp(1.35rem, 2.2vw, 2rem);
+  line-height: 1.1;
+  letter-spacing: -.022em;
+}
+.supporting-work > p:not(.work-meta) {
+  color: var(--cp-text-muted);
+  font-size: .9rem;
+}
+.supporting-work .text-link { margin-top: 0; }
+
 .case-hero { max-width: 1020px; padding: clamp(86px, 11vw, 148px) 0 72px; }
 .case-hero h1 { max-width: 15ch; margin-top: 18px; font-size: clamp(3.6rem, 6.2vw, 6.5rem); }
 .case-summary { max-width: 700px; margin-top: 27px; color: var(--cp-text-muted); font-size: 1.12rem; }
@@ -242,6 +262,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
   .case-image { width: 100%; margin-left: 0; }
   .about-notes { grid-template-columns: 1fr; gap: 30px; }
   .about-notes article { max-width: 580px; }
+  .supporting-work { grid-template-columns: 1fr; gap: 12px; }
 }
 @media (max-width: 560px) {
   body { font-size: 17px; }
@@ -249,7 +270,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
   .header-content { min-height: 58px; }
   .site-nav { gap: 15px; font-size: .76rem; }
   .utility-link { font-size: .76rem; }
-  .hero { gap: 44px; padding-top: 66px; padding-bottom: 84px; }
+  .hero { gap: 32px; padding-top: 40px; padding-bottom: 44px; }
   .hero h1, .about-page h1 { font-size: clamp(2.8rem, 12.4vw, 3.55rem); line-height: 1.01; }
   .hero-copy, .about-page > p { font-size: 1rem; }
   .section { padding-top: 96px; }
@@ -1512,6 +1533,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 
   .site-header {
     position: sticky;
+    backdrop-filter: none;
   }
 
   .header-content {
@@ -1546,7 +1568,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
     top: 0;
     right: 0;
     bottom: 0;
-    left: 12%;
+    left: 0;
     z-index: 30;
     display: none;
     flex-direction: column;
@@ -1554,7 +1576,6 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
     justify-content: center;
     gap: 24px;
     padding: 88px 40px 40px;
-    border-left: 1px solid var(--cp-border-strong);
     background: var(--cp-surface);
     box-shadow: var(--cp-shadow);
     overflow-y: auto;
@@ -1656,6 +1677,7 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
   min-height: 42px;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: space-between;
   gap: 6px 22px;
   color: var(--cp-text-muted);
   font-family: var(--font-mono);
@@ -1878,9 +1900,8 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 
 @media (max-width: 640px) {
   .proof-rail .site-frame {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0;
+    display: flex;
+    gap: 4px 18px;
     padding-top: 6px;
     padding-bottom: 6px;
   }
@@ -2177,15 +2198,11 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
 }
 
 @media (max-width: 560px) {
-  .hero {
-    gap: 32px;
-    padding-top: 44px;
-    padding-bottom: 56px;
-  }
-
-  .hero h1 {
-    font-size: clamp(2.4rem, 10vw, 3.1rem);
-  }
+  .hero h1 { font-size: clamp(2.25rem, 9.4vw, 2.85rem); }
+  .hero-subhead { font-size: 1.05rem; }
+  .hero-main .hero-actions { gap: 8px; margin-top: 24px; }
+  .hero-main .button-quiet { min-height: 44px; padding-inline: 3px; }
+  .hero-status-card h2 { max-width: 24ch; margin-top: 14px; font-size: 1.25rem; }
 
   .section {
     padding-top: 64px;
@@ -2470,15 +2487,14 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
   .path-page-timeline li { grid-template-columns: 1fr; gap: 9px; }
 
   .proof-rail .site-frame {
-    grid-template-columns: 1fr;
-    gap: 2px;
+    gap: 2px 14px;
     padding-top: 8px;
     padding-bottom: 8px;
   }
 
   .proof-rail span {
     min-height: 22px;
-    white-space: normal;
+    white-space: nowrap;
   }
 
   .marquee-track {
@@ -2514,25 +2530,6 @@ figcaption { padding: 12px 0 0; color: var(--cp-text-soft); font-size: .76rem; l
   flex-direction: column;
   justify-content: flex-end;
   padding-bottom: 4px;
-}
-
-.hero-system-path {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 9px 10px;
-  margin-top: 28px;
-  padding-top: 16px;
-  border-top: 1px solid var(--cp-border);
-  color: var(--cp-text-soft);
-  font-family: var(--font-mono);
-  font-size: .68rem;
-  line-height: 1.35;
-  text-transform: uppercase;
-}
-
-.hero-system-path i {
-  color: var(--cp-warning);
-  font-style: normal;
 }
 
 .quick-proof {
