@@ -22,7 +22,7 @@
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="wrap">
-        <a class="site-name" href="index.html"><img src="assets/identity/ruled-w.svg" width="34" height="26" alt="" />Willow Wu</a>
+        <a class="site-name" href="index.html">Willow Wu</a>
         <nav class="site-nav" aria-label="Primary">
           <a href="index.html#work">Work</a>
           <a href="path.html">Experience</a>
@@ -35,20 +35,20 @@
     <main id="main" class="wrap page">
       <h1>About</h1>
       <div class="prose">
-        <p class="lede">I am a software engineer who ended up doing a lot of machine learning, and I like the part where the two meet: deciding what a system should predict, building the pipeline that feeds it, and proving that the number it reports is real.</p>
-        <p>I am finishing an MS in Computer Science at Columbia on the machine learning track, graduating in December 2026. Before that I studied Data Science at Hong Kong Baptist University, where my final-year project on predictive maintenance for vehicle chassis systems became a first-author paper at ACML 2025.</p>
-        <p>In summer 2026 I was a Software Engineer Intern at Microsoft on the OfficePLUS AI Assistant, working on a React/TypeScript streaming chat engine and on telemetry forensics across Azure data stores. Since June 2026 I have also been a Data Analyst at Columbia Business School, building entity-resolution pipelines in Python and DuckDB on the university's HPC grid.</p>
+        <p class="lede">I'm a software engineer who ended up doing a lot of machine learning. The part I like is where the two meet: deciding what a system should predict, building the pipeline that feeds it, and checking that the number it reports is real.</p>
+        <p>I studied data science at Hong Kong Baptist University. My final-year project there, with a vehicle manufacturer, became a first-author paper at ACML 2025. Now I'm at Columbia finishing a master's in computer science on the machine learning track. I graduate in December 2026.</p>
+        <p>In summer 2026 I was a software engineering intern at Microsoft, on the OfficePLUS AI assistant. I worked on the React and TypeScript engine that streams model output into the chat, and spent a few weeks in Azure telemetry working out why users were hitting failures. Since June I've also been a data analyst at Columbia Business School, building entity-resolution pipelines in Python and DuckDB on the university's HPC cluster.</p>
 
-        <h2>What I care about</h2>
-        <p>Problem formulation before model choice. In the ACML work the first real contribution was turning "predict failure" into three targets the maintenance records could actually support.</p>
-        <p>Evaluation that survives leakage. Vehicle-wise chronological validation, entity-disjoint splits, and fold-safe feature engineering are not glamorous, but they are the difference between a result and a number.</p>
-        <p>Explicit boundaries between what code guarantees and what a model suggests. Oracle OS puts every symbol in code and lets the model only explain; the OfficePLUS work was partly about proving which fallback branches were load-bearing before touching them.</p>
+        <h2>Things I keep coming back to</h2>
+        <p>Define the target before picking the model. In the ACML work, the first real contribution was turning "predict failure" into three questions the maintenance records could actually answer.</p>
+        <p>Evaluate in a way that can't cheat. Vehicle-wise chronological splits, entity-disjoint folds, fold-safe feature engineering. Boring, and the only reason I trust the results.</p>
+        <p>Keep a clear line between what code guarantees and what a model suggests. Oracle OS puts every symbol in code and lets the model only explain. At Microsoft, part of the refactor was proving which fallback branches were load-bearing before touching them.</p>
 
         <h2>Elsewhere</h2>
         <ul>
           <li><a href="https://github.com/Cyriellewu" target="_blank" rel="noreferrer">GitHub</a></li>
           <li><a href="https://www.linkedin.com/in/yw4643" target="_blank" rel="noreferrer">LinkedIn</a></li>
-          <li><a href="mailto:yw4643@columbia.edu">yw4643@columbia.edu</a></li>
+          <li><button type="button" class="copy-email" data-email="yw4643@columbia.edu">yw4643@columbia.edu</button></li>
           <li><a href="colophon.html">How this site is built</a></li>
         </ul>
       </div>

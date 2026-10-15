@@ -40,7 +40,7 @@
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="wrap">
-        <a class="site-name" href="index.html"><img src="assets/identity/ruled-w.svg" width="34" height="26" alt="" />Willow Wu</a>
+        <a class="site-name" href="index.html">Willow Wu</a>
         <nav class="site-nav" aria-label="Primary">
           <a href="#work">Work</a>
           <a href="path.html">Experience</a>
@@ -52,12 +52,12 @@
 
     <main id="main">
       <section class="wrap hero">
-        <h1>Software engineer with applied-ML depth.</h1>
-        <p class="hero-lede">I am Willow Wu. I build and test the systems around models: the data pipelines, the evaluation, and the product on top.</p>
-        <p class="hero-facts">MS in Computer Science at Columbia, machine learning track, graduating December 2026. Software Engineer Intern at Microsoft in summer 2026. First author of a paper at ACML 2025. Looking for full-time software engineering and machine learning roles.</p>
+        <h1>Hi, I'm Willow.</h1>
+        <p class="hero-lede">I'm finishing a master's in computer science at Columbia, done December 2026. Last summer I was a software engineering intern at Microsoft on the OfficePLUS AI assistant. Before that I wrote a paper on predicting vehicle chassis failures with graph neural networks.</p>
+        <p class="hero-facts">I'm looking for a full-time software engineering or machine learning job starting in 2027. The things I'm good at: turning a vague ask into something you can measure, and building the pipeline and the product around a model.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="resumes.html">Resume</a>
-          <a class="link" href="mailto:yw4643@columbia.edu">yw4643@columbia.edu</a>
+          <button type="button" class="link copy-email" data-email="yw4643@columbia.edu">yw4643@columbia.edu</button>
           <a class="link" href="https://github.com/Cyriellewu" target="_blank" rel="noreferrer">GitHub</a>
           <a class="link" href="https://www.linkedin.com/in/yw4643" target="_blank" rel="noreferrer">LinkedIn</a>
         </div>
@@ -65,13 +65,14 @@
 
       <section id="work" class="section">
         <div class="wrap section-grid">
-          <h2 class="section-label">Selected work<span>Four things I built, with the numbers that were measured.</span></h2>
+          <h2 class="section-label">Work</h2>
           <div class="project-list">
 
             <article class="project no-figure">
               <div>
-                <h3>Streaming chat engine and telemetry forensics for OfficePLUS AI Assistant</h3>
-                <p class="meta">Microsoft, Software Engineer Intern, summer 2026. React, TypeScript, KQL, T-SQL, Azure.</p>
+                <h3>OfficePLUS AI Assistant, at Microsoft</h3>
+                <p class="meta">Software engineering intern, summer 2026. React, TypeScript, KQL, T-SQL, Azure.</p>
+                <p class="summary">I worked on the engine that streams model output into the chat, and on finding out from telemetry why users were actually hitting failures.</p>
                 <ul>
                   <li>Contributed to a React/TypeScript refactor of the assistant's LLM streaming engine, implementing a two-table, session-keyed model with bounded cleanup that cannot evict an active run.</li>
                   <li>Traced backend rate-limit failures across three Azure telemetry stores with KQL and T-SQL. 97.6% were quota exhaustion rather than provider throttling (11,958 vs 295 blocks), which corrected the team's leading hypothesis.</li>
@@ -83,8 +84,9 @@
 
             <article class="project">
               <div>
-                <h3>Explainable graph neural networks for predictive maintenance</h3>
-                <p class="meta">First author, ACML 2025, Proceedings of Machine Learning Research volume 304. Python, PyTorch Geometric, scikit-learn.</p>
+                <h3>Predicting vehicle chassis failures with graph neural networks</h3>
+                <p class="meta">ACML 2025, first author. Python, PyTorch Geometric, scikit-learn.</p>
+                <p class="summary">My final-year project with a vehicle manufacturer, which turned into a paper. Most of the work was figuring out what "failure" should even mean in the data.</p>
                 <ul>
                   <li>Reframed a vague "predict failure" request into three supervised tasks linked to maintenance records: emergency-fee existence, cost tier, and subsystem category.</li>
                   <li>Built weighted fault graphs from temporal, spatial, and co-occurrence evidence, with a GCN encoder and Random Forest head, on about 9 million vehicle records.</li>
@@ -105,8 +107,9 @@
 
             <article class="project">
               <div>
-                <h3>Evidence of Life, a planning and memory app for people with ADHD</h3>
-                <p class="meta">Columbia AI Startup Studio, 2026. React 18, TypeScript, Supabase (Postgres, Auth, Edge Functions), Vercel.</p>
+                <h3>Evidence of Life</h3>
+                <p class="meta">Columbia AI Startup Studio, 2026. React, TypeScript, Supabase, Vercel.</p>
+                <p class="summary">A planning app for people with ADHD. There is one text box; the app works out whether you typed a plan, a deadline, a habit, or a memory, and files it.</p>
                 <ul>
                   <li>One low-friction input for plans, dues, habits, and remembered moments, with AI-assisted classification that routes free text into typed records.</li>
                   <li>30 to 40 early users over about two months. 15 tables with row-level security, 8 Deno edge functions, Vitest and Playwright suites in CI.</li>
@@ -130,8 +133,9 @@
 
             <article class="project">
               <div>
-                <h3>Oracle OS, symbolic reflection where code draws the symbols and the model only explains them</h3>
-                <p class="meta">Microsoft Global Intern Hackathon 2026, team of three. I built the engines, the app, and the journal loop. TypeScript, Supabase, Vercel.</p>
+                <h3>Oracle OS</h3>
+                <p class="meta">Microsoft intern hackathon, 2026. Team of three; I built the engines, the app, and the journal loop. TypeScript, Supabase, Vercel.</p>
+                <p class="summary">Tarot, I Ching, BaZi, and astrology, with one rule: code picks the symbols, the model is only allowed to talk about them.</p>
                 <ul>
                   <li>Four rule-based engines (Tarot, I Ching, BaZi, Astrology) generate every symbol in code. LLM calls are isolated to reflection endpoints and never choose the symbols.</li>
                   <li>Medical, legal, and financial prompts are redirected. Prompts are externalized and API inputs validated, so the boundary between code and model is inspectable.</li>
@@ -159,7 +163,7 @@
 
       <section class="section">
         <div class="wrap section-grid">
-          <h2 class="section-label">Also<span>Smaller projects, open source, and awards.</span></h2>
+          <h2 class="section-label">Smaller things</h2>
           <div class="more-work">
             <div>
               <h4>Open source<span>PyTorch Geometric, DuckDB, 2026</span></h4>
@@ -187,7 +191,7 @@
 
       <section class="section">
         <div class="wrap section-grid">
-          <h2 class="section-label">Experience<span>Recent roles. The <a href="path.html">full timeline</a> has the earlier internships and education.</span></h2>
+          <h2 class="section-label">Experience<span>The <a href="path.html">full list</a> has the earlier internships and school.</span></h2>
           <div>
             <div class="rows">
               <article class="row">
@@ -216,13 +220,27 @@
         </div>
       </section>
 
+      <section class="section">
+        <div class="wrap section-grid">
+          <h2 class="section-label">Now</h2>
+          <div class="prose">
+            <ul>
+              <li>Last semester at Columbia. Graduating in December.</li>
+              <li>Building entity-resolution pipelines at Columbia Business School, matching SEC filings to a few hundred million workforce records in DuckDB.</li>
+              <li>Trying to get a <a href="https://github.com/pyg-team/pytorch_geometric/pull/10754" target="_blank" rel="noreferrer">PyTorch Geometric PR</a> over the line.</li>
+              <li>Applying for software engineering and ML jobs that start in 2027.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <section class="section contact">
         <div class="wrap section-grid">
           <h2 class="section-label">Contact</h2>
           <div>
-            <p>I am looking for full-time software engineering and machine learning roles starting after December 2026, in places where the system around the model matters as much as the model.</p>
+            <p>If you're hiring for 2027, email me. I read everything and reply to most of it.</p>
             <ul class="contact-list">
-              <li><a href="mailto:yw4643@columbia.edu">yw4643@columbia.edu</a></li>
+              <li><button type="button" class="copy-email" data-email="yw4643@columbia.edu">yw4643@columbia.edu</button></li>
               <li><a href="https://github.com/Cyriellewu" target="_blank" rel="noreferrer">github.com/Cyriellewu</a></li>
               <li><a href="https://www.linkedin.com/in/yw4643" target="_blank" rel="noreferrer">linkedin.com/in/yw4643</a></li>
             </ul>
