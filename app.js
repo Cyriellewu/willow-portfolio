@@ -1,239 +1,35 @@
-const currentYear = document.querySelector("#current-year");
+const year = document.querySelector("#year");
+if (year) year.textContent = String(new Date().getFullYear());
 
-if (currentYear) {
-  currentYear.textContent = String(new Date().getFullYear());
-}
+const frames = [...document.querySelectorAll("button.frame")];
+const viewer = document.querySelector("#viewer");
+if (frames.length && viewer && typeof viewer.showModal === "function") {
+  const image = viewer.querySelector("img");
+  const caption = viewer.querySelector("p");
+  const close = viewer.querySelector(".viewer-close");
+  let returnTo = null;
 
-const weekCopy = document.querySelector("#week-copy");
-const weekPanel = document.querySelector("#week-panel");
-const weekViews = {
-  timeline: "Mon: a late walk, a finished query, and a call home. The day is more than its tasks.",
-  calendar: "One fictional week: work, movement, conversation, and rest share the same calendar without competing for a streak.",
-  recap: "The recap is not a productivity score. It is a small record of where attention went.",
-};
-
-document.querySelectorAll("[data-week-view]").forEach((button) => {
-  button.tabIndex = button.getAttribute("aria-selected") === "true" ? 0 : -1;
-
-  button.addEventListener("click", () => {
-    document.querySelectorAll("[data-week-view]").forEach((item) => {
-      item.setAttribute("aria-selected", "false");
-      item.tabIndex = -1;
-    });
-    button.setAttribute("aria-selected", "true");
-    button.tabIndex = 0;
-    if (weekCopy) weekCopy.textContent = weekViews[button.dataset.weekView];
-    if (weekPanel) {
-      weekPanel.dataset.view = button.dataset.weekView;
-      weekPanel.setAttribute("aria-labelledby", button.id);
-    }
-  });
-
-  button.addEventListener("keydown", (event) => {
-    if (!["ArrowLeft", "ArrowRight"].includes(event.key)) return;
-    event.preventDefault();
-    const tabs = [...document.querySelectorAll("[data-week-view]")];
-    const index = tabs.indexOf(button);
-    const next = event.key === "ArrowRight"
-      ? tabs[(index + 1) % tabs.length]
-      : tabs[(index - 1 + tabs.length) % tabs.length];
-    next.focus();
-    next.click();
-  });
-});
-
-const casts = [
-  { symbol: "☷", text: "Code chooses: a fixed local hexagram. AI may: explain its traditional themes. AI may not: predict an outcome." },
-  { symbol: "☉", text: "Code chooses: a local Tarot card from a fixed deck. AI may: offer a reflection prompt. AI may not: claim the draw is fate." },
-  { symbol: "☯", text: "Code chooses: a rule-based BaZi state. AI may: summarize the supplied structure. AI may not: invent missing personal facts." },
-];
-let castIndex = 0;
-const oracleCast = document.querySelector("#oracle-cast");
-const oracleResult = document.querySelector("#oracle-result");
-const oracleSymbol = document.querySelector("#oracle-symbol");
-if (oracleCast && oracleResult && oracleSymbol) {
-  oracleCast.addEventListener("click", () => {
-    oracleResult.textContent = casts[castIndex].text;
-    oracleSymbol.textContent = casts[castIndex].symbol;
-    castIndex = (castIndex + 1) % casts.length;
-  });
-}
-
-const claritySlider = document.querySelector("#clarity-slider");
-const palmExhibit = document.querySelector(".palm-exhibit");
-const palmCopy = document.querySelector("#palm-copy");
-const palmStops = [...document.querySelectorAll(".slider-stops span")];
-const palmNotes = [
-  "Low smoothing keeps a toy branching pattern intact. This is a synthetic illustration, not biometric data.",
-  "Moderate smoothing can reduce visible noise while starting to soften the original structure.",
-  "Heavy smoothing looks cleaner, but the synthetic branches are less distinguishable. Visual polish is not enough.",
-];
-
-if (claritySlider && palmExhibit && palmCopy) {
-  claritySlider.addEventListener("input", () => {
-    const value = Number(claritySlider.value);
-    palmExhibit.dataset.smoothing = String(value);
-    palmCopy.textContent = palmNotes[value];
-    palmStops.forEach((stop, index) => stop.classList.toggle("is-active", index === value));
-  });
-}
-
-const railLinks = [...document.querySelectorAll(".case-rail a[href^='#']")];
-if (railLinks.length) {
-  const sections = railLinks
-    .map((link) => document.querySelector(link.getAttribute("href")))
-    .filter(Boolean);
-  const linkFor = (section) => railLinks.find((link) => link.getAttribute("href") === `#${section.id}`);
-  const setActive = (section) => {
-    railLinks.forEach((link) => link.classList.toggle("is-active", link === linkFor(section)));
-  };
-  if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((left, right) => right.intersectionRatio - left.intersectionRatio)[0];
-        if (visible) setActive(visible.target);
-      },
-      { rootMargin: "-14% 0px -55% 0px", threshold: [0.05, 0.25, 0.5] },
-    );
-    sections.forEach((section) => observer.observe(section));
-  }
-}
-
-const siteHeader = document.querySelector(".site-header");
-const siteNavigation = document.querySelector(".site-nav");
-if (siteHeader && siteNavigation) {
-  siteNavigation.id = siteNavigation.id || "site-navigation";
-  const menuButton = document.createElement("button");
-  menuButton.type = "button";
-  menuButton.className = "menu-toggle";
-  menuButton.setAttribute("aria-controls", siteNavigation.id);
-  menuButton.setAttribute("aria-expanded", "false");
-  menuButton.textContent = "Menu";
-  siteNavigation.before(menuButton);
-
-  if (!siteNavigation.querySelector(".nav-contact")) {
-    const contact = document.createElement("a");
-    contact.className = "nav-contact";
-    contact.href = "mailto:yw4643@columbia.edu";
-    contact.textContent = "Say hello";
-    siteNavigation.append(contact);
-  }
-
-  const closeMenu = () => {
-    siteNavigation.classList.remove("is-open");
-    menuButton.setAttribute("aria-expanded", "false");
-    menuButton.textContent = "Menu";
-    document.body.classList.remove("menu-open");
-  };
-  menuButton.addEventListener("click", () => {
-    const isOpen = menuButton.getAttribute("aria-expanded") === "true";
-    if (isOpen) {
-      closeMenu();
-      return;
-    }
-    siteNavigation.classList.add("is-open");
-    menuButton.setAttribute("aria-expanded", "true");
-    menuButton.textContent = "Close";
-    document.body.classList.add("menu-open");
-    siteNavigation.querySelector("a")?.focus();
-  });
-  siteNavigation.addEventListener("click", (event) => {
-    if (event.target.closest("a")) closeMenu();
-  });
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Tab" && menuButton.getAttribute("aria-expanded") === "true") {
-      const focusable = [menuButton, ...siteNavigation.querySelectorAll("a")];
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
-      if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault();
-        last.focus();
-      } else if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault();
-        first.focus();
-      }
-    }
-    if (event.key === "Escape" && menuButton.getAttribute("aria-expanded") === "true") {
-      closeMenu();
-      menuButton.focus();
-    }
-  });
-}
-
-const zoomButtons = [...document.querySelectorAll(".figure-zoom")];
-if (zoomButtons.length) {
-  let viewer = document.querySelector("#image-viewer");
-  if (!viewer) {
-    viewer = document.createElement("dialog");
-    viewer.className = "image-viewer";
-    viewer.id = "image-viewer";
-    viewer.setAttribute("aria-labelledby", "viewer-caption");
-    viewer.innerHTML = `
-      <button type="button" class="viewer-close" aria-label="Close image viewer">Close</button>
-      <img id="viewer-image" alt="" />
-      <p id="viewer-caption"></p>
-    `;
-    document.body.append(viewer);
-  }
-
-  const viewerImage = viewer.querySelector("#viewer-image");
-  const viewerCaption = viewer.querySelector("#viewer-caption");
-  const closeButton = viewer.querySelector(".viewer-close");
-  let returnFocus = null;
-
-  zoomButtons.forEach((button) => {
+  frames.forEach((button) => {
     button.addEventListener("click", () => {
       const source = button.querySelector("img");
       if (!source) return;
-      returnFocus = button;
-      viewerImage.src = source.currentSrc || source.src;
-      viewerImage.alt = source.alt;
-      viewerCaption.textContent = button.dataset.caption || source.alt;
-      if (typeof viewer.showModal === "function") {
-        viewer.showModal();
-        closeButton.focus();
-      }
+      returnTo = button;
+      image.src = source.currentSrc || source.src;
+      image.alt = source.alt;
+      caption.textContent = button.dataset.caption || source.alt;
+      viewer.showModal();
+      close.focus();
     });
   });
 
-  const closeViewer = () => {
-    if (viewer.open) viewer.close();
-  };
-
-  closeButton.addEventListener("click", closeViewer);
+  close.addEventListener("click", () => viewer.close());
   viewer.addEventListener("click", (event) => {
-    if (event.target === viewer) closeViewer();
+    if (event.target === viewer) viewer.close();
   });
   viewer.addEventListener("close", () => {
-    viewerImage.removeAttribute("src");
-    viewerCaption.textContent = "";
-    returnFocus?.focus();
-    returnFocus = null;
+    image.removeAttribute("src");
+    caption.textContent = "";
+    if (returnTo) returnTo.focus();
+    returnTo = null;
   });
 }
-
-/* Homepage active-section nav highlight */
-(function () {
-  const navLinks = [...document.querySelectorAll('.site-nav a[href^="#"]')];
-  if (!navLinks.length || !("IntersectionObserver" in window)) return;
-  const pairs = new Map();
-  navLinks.forEach((link) => {
-    const section = document.querySelector(link.getAttribute("href"));
-    if (section) pairs.set(section, link);
-  });
-  if (!pairs.size) return;
-  const navObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        navLinks.forEach((link) => link.removeAttribute("aria-current"));
-        const active = pairs.get(entry.target);
-        if (active) active.setAttribute("aria-current", "location");
-      });
-    },
-    { rootMargin: "-45% 0px -50% 0px" },
-  );
-  pairs.forEach((link, section) => navObserver.observe(section));
-})();

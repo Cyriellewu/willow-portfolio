@@ -1,12 +1,13 @@
 # Willow Wu: Personal Website
 
-Static, project-led personal portfolio with three primary case studies and one supporting evaluation story.
+Static personal site: home, experience, resume, about, colophon, and four case studies.
+No framework and no build step.
 
 ## Preview locally
 
-From this folder, run:
+From this folder:
 
-```powershell
+```sh
 python -m http.server 4173
 ```
 
@@ -14,19 +15,19 @@ Then open `http://localhost:4173`.
 
 ## Publish
 
-The site has no build step. Upload the contents of this folder to a static host such as GitHub Pages, Vercel, Netlify, or Cloudflare Pages.
+Upload the contents of this folder to any static host (GitHub Pages, Vercel, Netlify, Cloudflare Pages).
+
+## Structure
+
+- `index.html`, `path.html`, `resumes.html`, `about.html`, `colophon.html`
+- `work/` case studies
+- `styles.css` the only stylesheet; `app.js` image viewer and footer year
+- `assets/fonts/` self-hosted Latin subsets of Bricolage Grotesque and Source Serif 4
+- `assets/projects/` approved public screenshots and illustrations only
+- `assets/social/` Open Graph images
 
 ## Content sources
 
-All factual claims are derived from normalized, verified project cards under
-`../career_system/project_cards/`. Employer and in-progress research work stay at a
-role-level public summary.
-
-`assets/projects/` contains only approved conservative-public artifacts:
-
-- Oracle OS local mock UI screenshot with a fictional profile.
-- Evidence of Life local public demo screenshot with repository sample data.
-- Palm Vein aggregate SSIM chart without biometric imagery.
-
-Public resume PDFs are temporarily withheld while one canonical Software Engineering
-and AI Systems resume is rebuilt from verified source material.
+Facts on the site match the current resume in the private career repository
+(`career_system/resume/variants/flagship_swe_ai.tex` and the project cards).
+Employer work is described at the level of detail already on the resume.

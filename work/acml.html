@@ -2,163 +2,125 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Case study of Willow Wu's first-author ACML 2025 research on reframing predictive maintenance into cost-aware graph learning with leakage-aware evaluation." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="Case study: Willow Wu's first-author ACML 2025 paper on explainable graph neural networks for predictive maintenance in vehicle chassis systems." />
     <link rel="canonical" href="https://cyriellewu.github.io/willow-portfolio/work/acml.html" />
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="Willow Wu" />
-    <meta property="og:title" content="ACML 2025 Predictive Maintenance Research | Willow Wu" />
-    <meta property="og:description" content="From an ambiguous industrial prediction request to cost-aware graph learning and leakage-aware evaluation." />
+    <meta property="og:title" content="Predictive maintenance as graph learning, ACML 2025" />
+    <meta property="og:description" content="From a vague prediction request to cost-aware tasks, weighted fault graphs, and leakage-aware evaluation." />
     <meta property="og:url" content="https://cyriellewu.github.io/willow-portfolio/work/acml.html" />
     <meta property="og:image" content="https://cyriellewu.github.io/willow-portfolio/assets/social/acml-og-1200x630.png" />
-    <meta property="og:image:alt" content="Cost-aware graph learning, ACML 2025 research by Willow Wu" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="ACML 2025 Predictive Maintenance Research | Willow Wu" />
-    <meta name="twitter:description" content="From an ambiguous industrial prediction request to cost-aware graph learning and leakage-aware evaluation." />
-    <meta name="twitter:image" content="https://cyriellewu.github.io/willow-portfolio/assets/social/acml-og-1200x630.png" />
-    <title>ACML 2025 Predictive Maintenance Research | Willow Wu</title>
+    <title>Predictive maintenance as graph learning</title>
     <script type="application/ld+json">
-      {"@context":"https://schema.org","@type":"CreativeWork","name":"ACML 2025 Predictive Maintenance Research","url":"https://cyriellewu.github.io/willow-portfolio/work/acml.html","description":"First-author research on reframing predictive maintenance into cost-aware graph learning with leakage-aware evaluation.","author":{"@type":"Person","name":"Willow Wu","url":"https://cyriellewu.github.io/willow-portfolio/"},"image":"https://cyriellewu.github.io/willow-portfolio/assets/social/acml-og-1200x630.png"}
+      {"@context":"https://schema.org","@type":"CreativeWork","name":"Predictive maintenance as graph learning, ACML 2025","url":"https://cyriellewu.github.io/willow-portfolio/work/acml.html","author":{"@type":"Person","name":"Willow Wu","url":"https://cyriellewu.github.io/willow-portfolio/"}}
     </script>
     <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
-    <link rel="preload" href="../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="../assets/fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../assets/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="../styles.css" />
   </head>
-  <body class="case-page case-acml">
-    <a class="skip-link" href="#main-content">Skip to content</a>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
-      <div class="site-frame header-content">
-        <a class="site-name" href="../index.html"><img src="../assets/identity/ruled-w.svg" width="32" height="24" alt="" /><span>Willow Wu</span></a>
-        <nav class="site-nav" aria-label="Primary navigation">
-          <a href="../index.html#work">Work</a>
+      <div class="wrap">
+        <a class="site-name" href="../index.html">Willow Wu</a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="../index.html#work" aria-current="page">Work</a>
           <a href="../path.html">Experience</a>
           <a href="../resumes.html">Resume</a>
           <a href="../about.html">About</a>
         </nav>
-        <a class="utility-link" href="mailto:yw4643@columbia.edu">Say hello</a>
       </div>
     </header>
-    <main id="main-content" class="site-frame">
+
+    <main id="main" class="wrap">
       <header class="case-hero">
-        <p class="eyebrow">ACML 2025 / PMLR 304 / First author</p>
-        <h1>The model was not the first problem.</h1>
-        <p class="case-summary">
-          First-author research in a four-author collaboration. The work began with an
-          industrial prediction request, then became a story about problem definition,
-          usable labels, representation design, and evaluation that could survive
-          leakage.
-        </p>
-        <dl class="case-meta-grid">
+        <p class="kicker">ACML 2025, Proceedings of Machine Learning Research volume 304. First author in a four-author collaboration.</p>
+        <h1>Predictive maintenance as cost-aware graph learning</h1>
+        <p class="lede">An industrial partner asked for a model that predicts vehicle failures. The work that mattered came before the model: defining targets the maintenance records could support, representing fault relationships as a graph, and evaluating in a way that could not leak across vehicles or time.</p>
+        <dl class="case-meta">
           <div><dt>Role</dt><dd>First author and lead researcher</dd></div>
-          <div><dt>Context</dt><dd>Published ACML research</dd></div>
-          <div><dt>Data</dt><dd>Industrial maintenance data</dd></div>
-          <div><dt>Focus</dt><dd>Graph learning and evaluation</dd></div>
+          <div><dt>Data</dt><dd>About 9M proprietary vehicle maintenance records</dd></div>
+          <div><dt>Method</dt><dd>Weighted fault graphs, GCN encoder, Random Forest head</dd></div>
+          <div><dt>Stack</dt><dd>Python, PyTorch Geometric, scikit-learn</dd></div>
         </dl>
       </header>
-      <div class="case-content">
-        <aside class="case-rail" aria-label="Case study sections">
-          <a href="#contribution">Contribution</a>
-          <a href="#artifact">Artifact</a>
-          <a href="#result">Result</a>
-          <a href="#constraint">Constraint</a>
-        </aside>
-        <article class="case-story">
-          <section id="contribution">
-            <p class="case-label">Contribution</p>
-            <h2>I reframed an ambiguous prediction request into three testable maintenance decisions.</h2>
-            <p>
-              The initial fault and operational data did not line up with a usable outcome.
-              After stakeholder clarification, I linked fault histories to maintenance
-              records and defined three supervised tasks: emergency-fee existence,
-              cost tier, and subsystem category.
-            </p>
-            <figure class="data-misalignment-figure">
-              <svg viewBox="0 0 720 240" role="img" aria-label="A conceptual diagram showing misaligned fault logs and operational readings unable to produce a clear outcome variable.">
-                <rect x="28" y="30" width="220" height="76" rx="0" />
-                <text x="52" y="66">Fault logs</text>
-                <text x="52" y="88">events over time</text>
-                <rect x="472" y="30" width="220" height="76" rx="0" />
-                <text x="495" y="66">Operational readings</text>
-                <text x="495" y="88">incomplete context</text>
-                <path d="M248 68 H430" />
-                <text x="328" y="54">?</text>
-                <rect class="data-question" x="154" y="150" width="412" height="62" rx="0" />
-                <text x="182" y="186">What outcome can this system honestly predict?</text>
-              </svg>
-              <figcaption>Conceptual reconstruction: source alignment and outcome definition had to be solved before modeling.</figcaption>
-            </figure>
-          </section>
-          <section id="artifact">
-            <p class="case-label">Artifact</p>
-            <h2>A weighted fault graph made relationships first-class.</h2>
-            <p>
-              I moved from sparse one-hot codes to contextual features and then to weighted
-              graphs combining temporal, spatial, and repeated co-occurrence evidence. A
-              GCN learned relational representations, and a Random Forest produced the
-              task-level predictions.
-            </p>
-            <figure class="acml-conversion-figure">
-              <button type="button" class="figure-zoom" aria-label="Open full ACML graph-conversion illustration" data-caption="Synthetic three-stage ACML research journey: messy evidence, aligned windows, and weighted graph.">
-                <img src="../assets/projects/acml-graph-conversion.svg" width="1320" height="470" decoding="async" alt="Messy industrial evidence reframed into aligned maintenance windows and a weighted fault relationship graph with temporal, context, and co-occurrence edges" />
+
+      <div class="case-body">
+        <section>
+          <h2>Problem</h2>
+          <div class="text">
+            <p>The raw fault logs and operational readings did not line up with any usable outcome. "Predict failure" had no definition that the data could be scored against.</p>
+            <p>After clarifying with the stakeholders, I linked fault histories to maintenance records and defined three supervised tasks: whether an emergency fee occurred, which cost tier it fell in, and which subsystem was involved. Each one is a decision a maintenance planner actually makes.</p>
+          </div>
+        </section>
+
+        <section>
+          <h2>Representation</h2>
+          <div class="text">
+            <p>Sparse one-hot fault codes carried almost no structure. I moved to contextual features, then to weighted graphs that combine three kinds of evidence between faults: temporal proximity, spatial proximity within the chassis, and repeated co-occurrence. A graph convolutional network learns relational representations over that graph, and a Random Forest produces the task-level predictions.</p>
+            <figure class="shot">
+              <button type="button" class="frame" data-caption="From raw fault logs to maintenance-linked windows to a weighted relationship graph. All labels and events are synthetic.">
+                <img src="../assets/projects/acml-graph-conversion.svg" width="1320" height="470" decoding="async" alt="Three stages: messy fault evidence, maintenance-linked windows, and a weighted relationship graph with temporal, context and co-occurrence edges" />
               </button>
-              <figcaption>Original website illustration based on the research journey and published graph-conversion concept. All labels and events are synthetic.</figcaption>
+              <figcaption>The conversion in three stages. Labels and events are synthetic; the published paper describes the real construction.</figcaption>
             </figure>
-            <div class="system-diagram" aria-label="Research flow">
+            <div class="flow" aria-label="Research flow">
               <div><strong>Fault signals</strong><span>Temporal, spatial, and co-occurrence evidence</span></div>
               <div><strong>Weighted graph</strong><span>GCN representation learning over relationships</span></div>
               <div><strong>Maintenance decision</strong><span>Cost-aware tasks with interpretable patterns</span></div>
             </div>
-            <p class="edge-formula">w<sub>ij</sub> = α · sim<sub>temporal</sub> + β · sim<sub>spatial</sub> + γ · assoc<sub>apriori</sub></p>
-            <p class="edge-formula-note">Illustrative composition; see PMLR 304 for the published edge-weighting method.</p>
-            <a class="text-link" href="https://proceedings.mlr.press/v304/you26a.html" target="_blank" rel="noreferrer">Read the publication in PMLR <span aria-hidden="true">↗</span></a>
-          </section>
-          <section id="result">
-            <p class="case-label">Result</p>
-            <h2>High-cost failure precision improved from about 60% to 95%.</h2>
-            <p>
-              The published evaluation uses vehicle-wise chronological cross-validation
-              to reduce temporal and inter-vehicle leakage. The point was not just a
-              strong score, but avoiding one that looked strong because future records
-              or the same vehicles had leaked across the split.
-            </p>
-            <div class="result-plate" aria-label="Published high-cost precision result">
-              <span>Published high-cost precision</span>
-              <strong>60% <i aria-hidden="true">→</i> 95%</strong>
-              <p>High-cost class in the emergency-fee range task. Reported in PMLR 304.</p>
+            <p class="formula">w<sub>ij</sub> = α · sim<sub>temporal</sub> + β · sim<sub>spatial</sub> + γ · assoc<sub>apriori</sub></p>
+            <p>Illustrative composition. See the paper for the published edge-weighting method.</p>
+          </div>
+        </section>
+
+        <section>
+          <h2>Result</h2>
+          <div class="text">
+            <p>The published evaluation uses vehicle-wise chronological cross-validation, so no vehicle and no future record appears on both sides of a split. The point was not only a strong score but a score that could not have come from leakage.</p>
+            <div class="result">
+              <strong>60% to 95%</strong>
+              <p>Precision on the high-cost class in the emergency-fee range task, as reported in PMLR 304.</p>
             </div>
-            <div class="evidence-hierarchy">
-              <div class="evidence-tier tier-published">
-                <span>Published in PMLR 304</span>
-                <p>98.9% fault-category accuracy · high-cost precision 60% → 95% · recall +25%.</p>
-              </div>
-              <div class="evidence-tier tier-method">
-                <span>Method verified in the paper</span>
-                <p>NRP-GCN-RF, triple-edge graph construction, and vehicle-wise chronological cross-validation.</p>
-              </div>
-            </div>
-          </section>
-          <section id="constraint">
-            <p class="case-label">Constraint</p>
-            <h2>A usable target and leakage-resistant evaluation matter before model novelty.</h2>
-            <p>
-              More records are not automatically more evidence. The research used
-              proprietary manufacturer datasets, so this case study keeps the published
-              result and method while omitting dataset examples, internal figures, and
-              unpublished implementation details.
-            </p>
-          </section>
-        </article>
+            <ul>
+              <li>98.9% fault-category accuracy.</li>
+              <li>High-cost failure precision from 60% to 95%, recall up 25 points.</li>
+              <li>Method: NRP-GCN-RF with triple-edge graph construction and vehicle-wise chronological cross-validation.</li>
+            </ul>
+            <ul class="link-list links">
+              <li><a class="link" href="https://proceedings.mlr.press/v304/you26a.html" target="_blank" rel="noreferrer">Read the paper in PMLR</a></li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2>Limits</h2>
+          <div class="text">
+            <p>The datasets are proprietary to the manufacturer. This page keeps the published results and method and omits dataset examples, internal figures, and unpublished implementation details.</p>
+          </div>
+        </section>
       </div>
+
+      <nav class="case-next" aria-label="Next case study">
+        <a href="evidence-of-life.html"><span>Next</span><strong>Evidence of Life</strong></a>
+      </nav>
     </main>
-    <nav class="site-frame project-nav" aria-label="Next project">
-      <a href="evidence-of-life.html">
-        <span>Next project</span>
-        <strong>Evidence of Life</strong>
-        <p>What if a calendar remembered what the day felt like?</p>
-      </a>
-    </nav>
-    <footer class="site-frame site-footer"><p>© <span id="current-year"></span> Willow Wu</p><p><a href="../index.html#work">All selected work</a></p></footer>
+
+    <dialog class="viewer" id="viewer" aria-label="Image viewer">
+      <button type="button" class="viewer-close">Close</button>
+      <img alt="" />
+      <p></p>
+    </dialog>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>© <span id="year">2026</span> Willow Wu</p>
+        <p><a href="../index.html#work">All work</a></p>
+      </div>
+    </footer>
     <script src="../app.js"></script>
   </body>
 </html>

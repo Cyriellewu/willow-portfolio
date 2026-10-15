@@ -2,144 +2,98 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Case study of controllable NIR palm-image augmentation evaluated with similarity metrics rather than recognition claims." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="Case study: controllable near-infrared palm-image enhancement evaluated with similarity metrics rather than recognition claims, by Willow Wu." />
     <link rel="canonical" href="https://cyriellewu.github.io/willow-portfolio/work/palm-vein.html" />
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="Willow Wu" />
-    <meta property="og:title" content="Palm Vein Enhancement Evaluation | Willow Wu" />
-    <meta property="og:description" content="Controlled NIR augmentation evaluated with similarity metrics rather than biometric recognition claims." />
+    <meta property="og:title" content="Palm-vein image enhancement" />
+    <meta property="og:description" content="Enhancement must preserve the structure a biometric depends on, not only look cleaner." />
     <meta property="og:url" content="https://cyriellewu.github.io/willow-portfolio/work/palm-vein.html" />
     <meta property="og:image" content="https://cyriellewu.github.io/willow-portfolio/assets/social/palm-vein-og-1200x630.png" />
-    <meta property="og:image:alt" content="Palm Vein Enhancement evaluation case study" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Palm Vein Enhancement Evaluation | Willow Wu" />
-    <meta name="twitter:description" content="Controlled NIR augmentation evaluated with similarity metrics rather than biometric recognition claims." />
-    <meta name="twitter:image" content="https://cyriellewu.github.io/willow-portfolio/assets/social/palm-vein-og-1200x630.png" />
-    <title>Palm Vein Enhancement Evaluation | Willow Wu</title>
-    <script type="application/ld+json">
-      {"@context":"https://schema.org","@type":"CreativeWork","name":"Palm Vein Enhancement Evaluation","url":"https://cyriellewu.github.io/willow-portfolio/work/palm-vein.html","description":"Controllable NIR palm-image augmentation evaluated with similarity metrics rather than recognition claims.","author":{"@type":"Person","name":"Willow Wu","url":"https://cyriellewu.github.io/willow-portfolio/"},"image":"https://cyriellewu.github.io/willow-portfolio/assets/social/palm-vein-og-1200x630.png"}
-    </script>
+    <title>Palm-vein image enhancement</title>
     <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
-    <link rel="preload" href="../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="../assets/fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../assets/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="../styles.css" />
   </head>
-  <body class="case-page case-palm">
-    <a class="skip-link" href="#main-content">Skip to content</a>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
-      <div class="site-frame header-content">
-        <a class="site-name" href="../index.html"><img src="../assets/identity/ruled-w.svg" width="32" height="24" alt="" /><span>Willow Wu</span></a>
-        <nav class="site-nav" aria-label="Primary navigation">
-          <a href="../index.html#work">Work</a>
+      <div class="wrap">
+        <a class="site-name" href="../index.html">Willow Wu</a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="../index.html#work" aria-current="page">Work</a>
           <a href="../path.html">Experience</a>
           <a href="../resumes.html">Resume</a>
           <a href="../about.html">About</a>
         </nav>
-        <a class="utility-link" href="mailto:yw4643@columbia.edu">Say hello</a>
       </div>
     </header>
-    <main id="main-content" class="site-frame">
+
+    <main id="main" class="wrap">
       <header class="case-hero">
-        <p class="eyebrow">Applied ML / Columbia COMS 6998 project</p>
-        <h1>A prettier biometric image can be a worse biometric.</h1>
-        <p class="case-summary">
-          A COMS 6998 exploration of controllable NIR palm-image augmentation under
-          simulated Dirty, Warm, and Wet surface conditions. Evaluation measures image
-          similarity, not identity or recognition accuracy.
-        </p>
-        <dl class="case-meta-grid">
+        <p class="kicker">Columbia COMS 6998, Mobile Computing. Course project with a professor's research group.</p>
+        <h1>Palm-vein image enhancement</h1>
+        <p class="lede">Dirt, warmth, and moisture degrade near-infrared palm-vein images. For a biometric, a smoother image is not automatically a better one: the enhancement has to preserve the structure a matcher depends on. This project measures that, and only that.</p>
+        <dl class="case-meta">
           <div><dt>Role</dt><dd>Lead implementation and evaluation</dd></div>
-          <div><dt>Method</dt><dd>InstructPix2Pix and FFT preservation</dd></div>
-          <div><dt>Evaluation</dt><dd>SSIM, PSNR, LPIPS</dd></div>
-          <div><dt>Batch check</dt><dd>1,526 archived rows</dd></div>
+          <div><dt>Method</dt><dd>InstructPix2Pix with FFT low-frequency preservation and reference blending</dd></div>
+          <div><dt>Metrics</dt><dd>SSIM, PSNR, LPIPS against clean references</dd></div>
+          <div><dt>Conditions</dt><dd>Dirty, Warm, Wet</dd></div>
         </dl>
       </header>
-      <div class="case-content">
-        <aside class="case-rail" aria-label="Case study sections">
-          <a href="#contribution">Contribution</a>
-          <a href="#artifact">Artifact</a>
-          <a href="#result">Result</a>
-          <a href="#constraint">Constraint</a>
-        </aside>
-        <article class="case-story">
-          <section id="contribution">
-            <p class="case-label">Contribution</p>
-            <h2>Image enhancement must preserve reference structure, not only visual quality.</h2>
-            <p>
-              Dirt, warmth, and moisture degrade NIR palm-vein imagery. For a biometric
-              use case, the goal cannot simply be a visually smoother image: the
-              enhancement must preserve structure relative to the clean reference.
-            </p>
-          </section>
-          <section id="artifact">
-            <p class="case-label">Artifact</p>
-            <h2>Constrain a generative edit with low-frequency preservation.</h2>
-            <p>
-              I built a condition-specific InstructPix2Pix pipeline with FFT
-              low-frequency preservation and reference blending. The work evaluates
-              Dirty, Warm, and Wet conditions rather than treating all degradation as
-              interchangeable noise.
-            </p>
-            <div class="system-diagram" aria-label="Palm Vein evaluation flow">
-              <div><strong>Degraded NIR input</strong><span>Dirty, Warm, or Wet condition</span></div>
+
+      <div class="case-body">
+        <section>
+          <h2>Method</h2>
+          <div class="text">
+            <p>A condition-specific InstructPix2Pix pipeline edits the degraded image, an FFT step preserves the low-frequency content of the reference, and the result is blended back toward the reference. The three degradation conditions are evaluated separately instead of being treated as interchangeable noise.</p>
+            <div class="flow" aria-label="Evaluation flow">
+              <div><strong>Degraded input</strong><span>Dirty, Warm, or Wet condition</span></div>
               <div><strong>Guided enhancement</strong><span>InstructPix2Pix with FFT preservation and blending</span></div>
-              <div><strong>Similarity evaluation</strong><span>SSIM, PSNR, LPIPS against clean reference</span></div>
+              <div><strong>Similarity evaluation</strong><span>SSIM, PSNR, LPIPS against the clean reference</span></div>
             </div>
-            <div class="case-micro-exhibit palm-exhibit">
-              <label for="clarity-slider">Synthetic clarity / fidelity tradeoff</label>
-              <input id="clarity-slider" type="range" min="0" max="2" value="0" />
-              <div class="slider-stops" aria-hidden="true"><span class="is-active">Preserve</span><span>Balance</span><span>Smooth</span></div>
-              <div class="synthetic-vein" aria-hidden="true"><span></span><span></span><span></span></div>
-              <p id="palm-copy" aria-live="polite">Low smoothing keeps a toy branching pattern intact. This is a synthetic illustration, not biometric data.</p>
+          </div>
+        </section>
+
+        <section>
+          <h2>Results</h2>
+          <div class="text">
+            <p>Two separate readouts that are deliberately not merged, because they used different comparator setups.</p>
+            <div class="flow two" aria-label="Two evaluation readouts">
+              <div><strong>Controlled 50-pair experiment</strong><span>Mean SSIM by condition: Dirty 0.460, Warm 0.438, Wet 0.455. PSNR 21.68, 20.90, 19.80. LPIPS 0.517, 0.497, 0.505. A directional readout at n=50.</span></div>
+              <div><strong>Archived 1,526-row QA check</strong><span>Mean before-and-after SSIM 0.939 across 1,526 comparison rows. Condition membership was not retained, so it stays separate from the controlled experiment.</span></div>
             </div>
-          </section>
-          <section id="result">
-            <p class="case-label">Result</p>
-            <h2>Controlled experiment and archived QA stay separate.</h2>
-            <div class="evaluation-split">
-              <div>
-                <span>Controlled 50-pair experiment</span>
-                <strong>Dirty: 0.460 SSIM</strong>
-                <p>Condition means: Dirty 0.460, Warm 0.438, Wet 0.455 SSIM; PSNR 21.68, 20.90, 19.80; LPIPS 0.517, 0.497, 0.505. n=50 total, treated as a directional readout.</p>
+            <figure class="shot">
+              <div class="frame static">
+                <img src="../assets/projects/palm-vein-ssim.svg" width="1200" height="700" loading="lazy" decoding="async" alt="Histogram of 1,526 aggregate SSIM before-and-after values with a mean of 0.939" />
               </div>
-              <div>
-                <span>Archived 1,526-row QA check</span>
-                <strong>Mean: 0.939 SSIM</strong>
-                <p>A separate before/after SSIM distribution using a different comparator setup. Exact condition membership is not retained, so it is not merged with the controlled experiment.</p>
-              </div>
-            </div>
-            <p>
-              The chart below is intentionally limited to aggregate similarity values.
-              It is a QA diagnostic, not a claim about biometric recognition accuracy
-              or physical-capture realism.
-            </p>
-            <div class="case-image palm-evidence-figure">
-              <img src="../assets/projects/palm-vein-ssim.svg" width="1200" height="700" loading="lazy" decoding="async" alt="Histogram of 1,526 aggregate SSIM before-after values with a mean of 0.9392" />
-              <p class="case-caption">1,526 aggregate comparison rows. No palm-vein image, crop, identifier, or dataset example is shown.</p>
-            </div>
-          </section>
-          <section id="constraint">
-            <p class="case-label">Constraint</p>
-            <h2>Visual outputs are not public evidence by default.</h2>
-            <p class="palm-privacy-boundary">
-              The project produced comparison triplets, heatmaps, and histograms, but
-              this public case study excludes biometric-derived imagery pending separate
-              data-license and consent review. The public artifact is the aggregate
-              evaluation record and the method description only.
-            </p>
-          </section>
-        </article>
+              <figcaption>SSIM distribution over the 1,526 archived rows. A QA diagnostic, not a recognition-accuracy claim.</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section>
+          <h2>Limits</h2>
+          <div class="text">
+            <p>The project produced comparison triplets, heatmaps, and histograms, but no biometric-derived imagery is published here pending data-license and consent review. The public record is the aggregate evaluation and the method description.</p>
+          </div>
+        </section>
       </div>
+
+      <nav class="case-next" aria-label="Next case study">
+        <a href="acml.html"><span>Next</span><strong>Predictive maintenance as graph learning</strong></a>
+      </nav>
     </main>
-    <nav class="site-frame project-nav" aria-label="Next project">
-      <a href="acml.html">
-        <span>Return to flagship</span>
-        <strong>ACML research</strong>
-        <p>The model was not the first problem.</p>
-      </a>
-    </nav>
-    <footer class="site-frame site-footer"><p>© <span id="current-year"></span> Willow Wu</p><p><a href="../index.html#work">All selected work</a></p></footer>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>© <span id="year">2026</span> Willow Wu</p>
+        <p><a href="../index.html#work">All work</a></p>
+      </div>
+    </footer>
     <script src="../app.js"></script>
   </body>
 </html>

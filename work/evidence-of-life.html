@@ -2,159 +2,122 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Case study of a private memory and daily-planning product built with React, TypeScript, Supabase, and AI-assisted routing." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="Case study: Evidence of Life, a planning and memory app for people with ADHD built by Willow Wu on React, TypeScript and Supabase." />
     <link rel="canonical" href="https://cyriellewu.github.io/willow-portfolio/work/evidence-of-life.html" />
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="Willow Wu" />
-    <meta property="og:title" content="Evidence of Life | Full-Stack Memory App Case Study" />
-    <meta property="og:description" content="A private full-stack memory system for the context between tasks." />
+    <meta property="og:title" content="Evidence of Life" />
+    <meta property="og:description" content="A planning and memory app for people with ADHD. React, TypeScript, Supabase. 30 to 40 early users." />
     <meta property="og:url" content="https://cyriellewu.github.io/willow-portfolio/work/evidence-of-life.html" />
     <meta property="og:image" content="https://cyriellewu.github.io/willow-portfolio/assets/social/evidence-of-life-og-1200x630.png" />
-    <meta property="og:image:alt" content="Evidence of Life full-stack memory system" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Evidence of Life | Full-Stack Memory App Case Study" />
-    <meta name="twitter:description" content="A private full-stack memory system for the context between tasks." />
-    <meta name="twitter:image" content="https://cyriellewu.github.io/willow-portfolio/assets/social/evidence-of-life-og-1200x630.png" />
-    <title>Evidence of Life | Full-Stack Memory App Case Study | Willow Wu</title>
+    <title>Evidence of Life</title>
     <script type="application/ld+json">
-      {"@context":"https://schema.org","@type":"CreativeWork","name":"Evidence of Life","url":"https://cyriellewu.github.io/willow-portfolio/work/evidence-of-life.html","description":"A private full-stack memory and daily-planning product built with React, TypeScript, Supabase, and AI-assisted routing.","author":{"@type":"Person","name":"Willow Wu","url":"https://cyriellewu.github.io/willow-portfolio/"},"image":"https://cyriellewu.github.io/willow-portfolio/assets/social/evidence-of-life-og-1200x630.png"}
+      {"@context":"https://schema.org","@type":"CreativeWork","name":"Evidence of Life","url":"https://cyriellewu.github.io/willow-portfolio/work/evidence-of-life.html","author":{"@type":"Person","name":"Willow Wu","url":"https://cyriellewu.github.io/willow-portfolio/"}}
     </script>
     <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
-    <link rel="preload" href="../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="../assets/fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../assets/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="../styles.css" />
   </head>
-  <body class="case-page case-eol">
-    <a class="skip-link" href="#main-content">Skip to content</a>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
-      <div class="site-frame header-content">
-        <a class="site-name" href="../index.html"><img src="../assets/identity/ruled-w.svg" width="32" height="24" alt="" /><span>Willow Wu</span></a>
-        <nav class="site-nav" aria-label="Primary navigation">
-          <a href="../index.html#work">Work</a>
+      <div class="wrap">
+        <a class="site-name" href="../index.html">Willow Wu</a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="../index.html#work" aria-current="page">Work</a>
           <a href="../path.html">Experience</a>
           <a href="../resumes.html">Resume</a>
           <a href="../about.html">About</a>
         </nav>
-        <a class="utility-link" href="mailto:yw4643@columbia.edu">Say hello</a>
       </div>
     </header>
-    <main id="main-content" class="site-frame">
+
+    <main id="main" class="wrap">
       <header class="case-hero">
-        <p class="eyebrow">Solo product / Full-stack / 2026</p>
-        <h1>Evidence of Life.</h1>
-        <p class="case-summary">
-          A low-friction planning and memory product for users with ADHD, combining
-          authenticated capture, AI-assisted routing, calendar, and place context.
-        </p>
-        <dl class="case-meta-grid">
+        <p class="kicker">Columbia AI Startup Studio, 2026. Sole maintainer, built with AI coding tools.</p>
+        <h1>Evidence of Life</h1>
+        <p class="lede">A planning and memory app for people with ADHD. One low-friction input takes plans, dues, habits, and remembered moments, and AI-assisted classification routes each one into a typed record with calendar and place context.</p>
+        <dl class="case-meta">
           <div><dt>Role</dt><dd>End-to-end product owner</dd></div>
-          <div><dt>Stack</dt><dd>React, TypeScript, Supabase</dd></div>
-          <div><dt>Backend</dt><dd>Postgres and Edge Functions</dd></div>
-          <div><dt>Result</dt><dd>About 50 users and 51 passing tests</dd></div>
+          <div><dt>Stack</dt><dd>React 18, TypeScript, Vite, Tailwind, TanStack Query</dd></div>
+          <div><dt>Backend</dt><dd>Supabase: Postgres, Auth, Storage, 8 Deno edge functions</dd></div>
+          <div><dt>Adoption</dt><dd>30 to 40 early users over about two months</dd></div>
         </dl>
       </header>
-      <div class="case-content">
-        <aside class="case-rail" aria-label="Case study sections">
-          <a href="#contribution">Contribution</a>
-          <a href="#artifact">Artifact</a>
-          <a href="#result">Result</a>
-          <a href="#constraint">Constraint</a>
-        </aside>
-        <article class="case-story">
-          <section id="contribution">
-            <p class="case-label">Contribution</p>
-            <h2>Reduce the friction between noticing something and keeping it.</h2>
-            <p>
-              For users with ADHD, capturing a plan or memory can become another task.
-              I built one low-friction input that routes moments, plans, and dues into
-              useful views without making a clinical-treatment claim.
-            </p>
-            <div class="case-image eol-hero-figure">
-              <button type="button" class="figure-zoom" aria-label="Open full Evidence of Life interface" data-caption="Evidence of Life public demo rendered with sample data.">
+
+      <div class="case-body">
+        <section>
+          <h2>Problem</h2>
+          <div class="text">
+            <p>For someone with ADHD, writing a plan down can itself become the task that gets dropped. The product's bet is that capture has to be nearly free: one box, free text or voice, and the app decides where it goes.</p>
+            <figure class="shot">
+              <button type="button" class="frame" data-caption="Evidence of Life public demo rendered from sample data. No real account is shown.">
                 <picture>
-                  <source type="image/webp" srcset="../assets/projects/evidence-of-life-demo-640.webp 640w, ../assets/projects/evidence-of-life-demo-1200.webp 1200w" sizes="(max-width: 860px) calc(100vw - 48px), 900px" />
-                  <img src="../assets/projects/evidence-of-life-demo.png" width="1440" height="900" loading="lazy" decoding="async" alt="Evidence of Life public demo with sample calendar, notes, and focus data" />
+                  <source type="image/webp" srcset="../assets/projects/evidence-of-life-demo-640.webp 640w, ../assets/projects/evidence-of-life-demo-1200.webp 1200w" sizes="(max-width: 860px) calc(100vw - 40px), 760px" />
+                  <img src="../assets/projects/evidence-of-life-demo.png" width="1440" height="900" loading="lazy" decoding="async" alt="Evidence of Life public demo showing a sample week with tasks, a focus timer and a day timeline" />
                 </picture>
               </button>
-              <span class="figure-annotation">Sample week · private integrations disabled</span>
-              <p class="case-caption">Public demo rendered with repository sample data. Nothing in this image belongs to a real account.</p>
-            </div>
-          </section>
-          <section id="artifact">
-            <p class="case-label">Artifact</p>
-            <h2>One input, several useful forms of context.</h2>
-            <p>
-              I built the application as a React and TypeScript SPA with Supabase Auth,
-              Postgres, and Edge Functions. Smart input classifies a fragment of daily
-              life, while calendar and map views make it possible to revisit when and
-              where a moment happened.
-            </p>
-            <div class="system-diagram" aria-label="Evidence of Life product flow">
-              <div><strong>Capture</strong><span>Plan, note, focus session, or remembered moment</span></div>
-              <div><strong>Classify</strong><span>Smart-input Edge Function routes free-form input to a typed record</span></div>
+              <figcaption>Public demo with sample data. Private integrations are disabled.</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section>
+          <h2>What I built</h2>
+          <div class="text">
+            <p>A React and TypeScript single-page app on Supabase, deployed on Vercel. The data model has 15 tables with row-level security on every one, 63 owner policies, and a private storage bucket for photos served through one-hour signed URLs.</p>
+            <ul>
+              <li>Smart input: an edge function sends the text to a model with three tools, classify, query, and modify, keeps six turns of history, maps rate-limit and quota errors to user-facing messages, and falls back to plain text.</li>
+              <li>Calendar sync and map memory, so a moment can be revisited by when and where it happened.</li>
+              <li>Security: JWT checks in every edge function, HMAC-signed OAuth state with expiry and nonce, a redirect-origin allowlist, an SSRF guard on link previews, and only the publishable key in the browser.</li>
+              <li>Tests: Vitest suites, Playwright smoke tests, and Deno auth tests that run in CI.</li>
+            </ul>
+            <div class="flow" aria-label="Product flow">
+              <div><strong>Capture</strong><span>Plan, due, habit, focus session, or moment</span></div>
+              <div><strong>Classify</strong><span>Edge function routes free text to a typed record</span></div>
               <div><strong>Revisit</strong><span>Calendar and place context, not a productivity score</span></div>
             </div>
-            <div class="system-diagram engineering-diagram" aria-label="Evidence of Life engineering flow">
-              <div><strong>React + TypeScript SPA</strong><span>Authenticated capture, calendar, map, and recap views</span></div>
-              <div><strong>Supabase</strong><span>Auth and Postgres persistence for user records</span></div>
-              <div><strong>Edge Functions</strong><span>Server-side smart-input and integration workflows</span></div>
-            </div>
-            <div class="case-micro-exhibit week-exhibit" aria-label="One fictional week in three views">
-              <p class="micro-label">One fictional week, three views</p>
-              <div class="view-tabs" role="tablist" aria-label="Evidence of Life views">
-                <button type="button" id="week-tab-timeline" role="tab" aria-controls="week-panel" aria-selected="true" data-week-view="timeline">Timeline</button>
-                <button type="button" id="week-tab-calendar" role="tab" aria-controls="week-panel" aria-selected="false" data-week-view="calendar">Calendar</button>
-                <button type="button" id="week-tab-recap" role="tab" aria-controls="week-panel" aria-selected="false" data-week-view="recap">Recap</button>
-              </div>
-              <div id="week-panel" class="week-visual" role="tabpanel" aria-labelledby="week-tab-timeline" data-view="timeline">
-                <div class="week-timeline"><span>Walk</span><span>Query</span><span>Call</span></div>
-                <div class="week-calendar"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
-                <div class="week-recap"><strong>3</strong><span>small moments worth keeping</span></div>
-              </div>
-              <p id="week-copy" aria-live="polite">Mon: a late walk, a finished query, and a call home. The day is more than its tasks.</p>
-            </div>
-          </section>
-          <section id="result">
-            <p class="case-label">Result</p>
-            <h2>Early adoption is backed by a unit-tested implementation.</h2>
-            <p>
-              The interface sits on a full-stack implementation rather than a static
-              concept: authentication, database records, serverless workflows, and
-              centralized design tokens. About 50 users adopted the product over two
-              months, and the project records 51 passing Vitest tests across parsing,
-              classification, time, and timer utilities.
-            </p>
-            <aside class="product-tradeoff">
-              <span>Unresolved product question</span>
-              <h3>How do you show continuity without turning it into pressure?</h3>
-              <p>
-                The product research pushes against guilt-driven streak mechanics, while
-                the current implementation still records habit streaks. The next product
-                question is how to preserve completion history without making it the
-                source of motivation.
-              </p>
-            </aside>
-          </section>
-          <section id="constraint">
-            <p class="case-label">Constraint</p>
-            <h2>The public view is deliberately fictional.</h2>
-            <p>
-              This site shows only a local public demo using sample data. No map view,
-              real account, private journal, or connected calendar is exposed here.
-            </p>
-          </section>
-        </article>
+          </div>
+        </section>
+
+        <section>
+          <h2>A bug worth describing</h2>
+          <div class="text">
+            <p>The Supabase free plan ran out of egress and the app started returning 402 errors. The cause was one wildcard select that pulled about 17 MB of inline photos on every refresh. I listed the columns explicitly, moved photos to signed URLs with an in-memory cache and in-flight dedupe, and added an ESLint rule that blocks wildcard selects in CI so it cannot come back.</p>
+            <ul class="link-list links">
+              <li><a class="link" href="https://github.com/Cyriellewu/evidenceoflife-v2" target="_blank" rel="noreferrer">Source on GitHub</a></li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2>Limits</h2>
+          <div class="text">
+            <p>The app makes no clinical claim. The screenshot here is the public demo with sample data; no real account, journal, map, or connected calendar is shown. Account deletion and a live RLS audit are still on the roadmap.</p>
+          </div>
+        </section>
       </div>
+
+      <nav class="case-next" aria-label="Next case study">
+        <a href="oracle-os.html"><span>Next</span><strong>Oracle OS</strong></a>
+      </nav>
     </main>
-    <nav class="site-frame project-nav" aria-label="Next project">
-      <a href="oracle-os.html">
-        <span>Next project</span>
-        <strong>Oracle OS</strong>
-        <p>What if code draws the symbols and AI only explains them?</p>
-      </a>
-    </nav>
-    <footer class="site-frame site-footer"><p>© <span id="current-year"></span> Willow Wu</p><p><a href="../index.html#work">All selected work</a></p></footer>
+
+    <dialog class="viewer" id="viewer" aria-label="Image viewer">
+      <button type="button" class="viewer-close">Close</button>
+      <img alt="" />
+      <p></p>
+    </dialog>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>© <span id="year">2026</span> Willow Wu</p>
+        <p><a href="../index.html#work">All work</a></p>
+      </div>
+    </footer>
     <script src="../app.js"></script>
   </body>
 </html>

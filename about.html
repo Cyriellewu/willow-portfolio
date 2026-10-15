@@ -2,89 +2,63 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="About Willow Wu, a software engineer with applied-ML depth who builds inspectable, tested systems." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="About Willow Wu, a software engineer with applied-ML depth finishing an MS in Computer Science at Columbia." />
     <link rel="canonical" href="https://cyriellewu.github.io/willow-portfolio/about.html" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Willow Wu" />
-    <meta property="og:title" content="About Willow Wu | Software Engineering and Applied ML" />
-    <meta property="og:description" content="A Columbia MSCS candidate building inspectable, tested software and applied-ML systems." />
+    <meta property="og:title" content="About Willow Wu" />
+    <meta property="og:description" content="Software engineer with applied-ML depth, Columbia MSCS, graduating December 2026." />
     <meta property="og:url" content="https://cyriellewu.github.io/willow-portfolio/about.html" />
     <meta property="og:image" content="https://cyriellewu.github.io/willow-portfolio/assets/social/home-og-1200x630.png" />
-    <meta property="og:image:alt" content="Willow Wu, software engineer with applied-ML depth" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="About Willow Wu | Software Engineering and Applied ML" />
-    <meta name="twitter:description" content="A Columbia MSCS candidate building inspectable, tested software and applied-ML systems." />
-    <meta name="twitter:image" content="https://cyriellewu.github.io/willow-portfolio/assets/social/home-og-1200x630.png" />
-    <title>About Willow Wu | Software Engineering and Applied ML</title>
+    <title>About Willow Wu</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="preload" href="assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="assets/fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <a class="skip-link" href="#main-content">Skip to content</a>
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
-      <div class="site-frame header-content">
-        <a class="site-name" href="index.html"><img src="assets/identity/ruled-w.svg" width="32" height="24" alt="" /><span>Willow Wu</span></a>
-        <nav class="site-nav" aria-label="Primary navigation">
+      <div class="wrap">
+        <a class="site-name" href="index.html">Willow Wu</a>
+        <nav class="site-nav" aria-label="Primary">
           <a href="index.html#work">Work</a>
           <a href="path.html">Experience</a>
           <a href="resumes.html">Resume</a>
           <a href="about.html" aria-current="page">About</a>
         </nav>
-        <a class="utility-link" href="mailto:yw4643@columbia.edu">Say hello</a>
       </div>
     </header>
-    <main id="main-content" class="site-frame about-page">
-      <p class="eyebrow">About</p>
-      <h1>I build software for problems that are hard to define, not only hard to code.</h1>
-      <p>
-        My work moves between software engineering, applied ML, and product. I care about
-        defining the right target, making behavior testable, and showing where a system's
-        guarantees end.
-      </p>
-      <p>
-        I am completing an MS in Computer Science at Columbia University on the
-        Machine Learning track. Before that, I studied Data Science at Hong Kong
-        Baptist University. My strongest work combines engineering discipline with
-        careful evaluation and problem formulation.
-      </p>
-      <p>
-        I am graduating in December 2026 and looking for full-time software engineering
-        and machine learning roles where product systems, data, and model behavior meet.
-      </p>
-      <div class="about-notes">
-        <article>
-          <h2>Research</h2>
-          <p>I care about problem formulation, interpretable evaluation, and the difference between a strong metric and a useful result.</p>
-        </article>
-        <article>
-          <h2>Engineering</h2>
-          <p>I like explicit boundaries: what code guarantees, what models suggest, and how a system fails when the answer is uncertain.</p>
-        </article>
-        <article>
-          <h2>Products</h2>
-          <p>I build products around context, ambiguity, and the information that conventional workflows often discard.</p>
-        </article>
-      </div>
 
-      <div class="about-elsewhere">
+    <main id="main" class="wrap page">
+      <h1>About</h1>
+      <div class="prose">
+        <p class="lede">I am a software engineer who ended up doing a lot of machine learning, and I like the part where the two meet: deciding what a system should predict, building the pipeline that feeds it, and proving that the number it reports is real.</p>
+        <p>I am finishing an MS in Computer Science at Columbia on the machine learning track, graduating in December 2026. Before that I studied Data Science at Hong Kong Baptist University, where my final-year project on predictive maintenance for vehicle chassis systems became a first-author paper at ACML 2025.</p>
+        <p>In summer 2026 I was a Software Engineer Intern at Microsoft on the OfficePLUS AI Assistant, working on a React/TypeScript streaming chat engine and on telemetry forensics across Azure data stores. Since June 2026 I have also been a Data Analyst at Columbia Business School, building entity-resolution pipelines in Python and DuckDB on the university's HPC grid.</p>
+
+        <h2>What I care about</h2>
+        <p>Problem formulation before model choice. In the ACML work the first real contribution was turning "predict failure" into three targets the maintenance records could actually support.</p>
+        <p>Evaluation that survives leakage. Vehicle-wise chronological validation, entity-disjoint splits, and fold-safe feature engineering are not glamorous, but they are the difference between a result and a number.</p>
+        <p>Explicit boundaries between what code guarantees and what a model suggests. Oracle OS puts every symbol in code and lets the model only explain; the OfficePLUS work was partly about proving which fallback branches were load-bearing before touching them.</p>
+
         <h2>Elsewhere</h2>
         <ul>
-          <li><a href="https://www.linkedin.com/in/yw4643" target="_blank" rel="noreferrer">LinkedIn</a></li>
           <li><a href="https://github.com/Cyriellewu" target="_blank" rel="noreferrer">GitHub</a></li>
-          <li><a href="colophon.html">Colophon: how this site works</a></li>
+          <li><a href="https://www.linkedin.com/in/yw4643" target="_blank" rel="noreferrer">LinkedIn</a></li>
+          <li><a href="mailto:yw4643@columbia.edu">yw4643@columbia.edu</a></li>
+          <li><a href="colophon.html">How this site is built</a></li>
         </ul>
       </div>
-
-      <div class="hero-actions">
-        <a class="button button-primary" href="mailto:yw4643@columbia.edu">Email me <span aria-hidden="true">↗</span></a>
-      </div>
     </main>
-    <footer class="site-frame site-footer">
-      <p>© <span id="current-year"></span> Willow Wu</p>
-      <p><a href="index.html">Back to selected work</a></p>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>© <span id="year">2026</span> Willow Wu</p>
+        <p><a href="index.html">Back to work</a></p>
+      </div>
     </footer>
     <script src="app.js"></script>
   </body>

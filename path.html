@@ -2,122 +2,138 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Experience timeline for Willow Wu, from HKBU Data Science to Columbia MSCS, research collaboration, and software engineering work." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="Experience and education timeline for Willow Wu: Microsoft, Columbia Business School, Columbia University, HKBU, and earlier software and data internships." />
     <link rel="canonical" href="https://cyriellewu.github.io/willow-portfolio/path.html" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Willow Wu" />
-    <meta property="og:title" content="Experience | Willow Wu" />
-    <meta property="og:description" content="Experience timeline spanning software engineering, ML research, teaching, and data systems." />
+    <meta property="og:title" content="Experience, Willow Wu" />
+    <meta property="og:description" content="Roles, research, teaching, and education from 2021 to 2026." />
     <meta property="og:url" content="https://cyriellewu.github.io/willow-portfolio/path.html" />
     <meta property="og:image" content="https://cyriellewu.github.io/willow-portfolio/assets/social/home-og-1200x630.png" />
-    <meta property="og:image:alt" content="Willow Wu, software engineer with applied-ML depth" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Experience | Willow Wu" />
-    <meta name="twitter:description" content="Experience timeline spanning software engineering, ML research, teaching, and data systems." />
-    <meta name="twitter:image" content="https://cyriellewu.github.io/willow-portfolio/assets/social/home-og-1200x630.png" />
-    <title>Experience | Willow Wu</title>
+    <title>Experience, Willow Wu</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="preload" href="assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="assets/fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <a class="skip-link" href="#main-content">Skip to content</a>
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
-      <div class="site-frame header-content">
-        <a class="site-name" href="index.html"><img src="assets/identity/ruled-w.svg" width="32" height="24" alt="" /><span>Willow Wu</span></a>
-        <nav class="site-nav" aria-label="Primary navigation">
+      <div class="wrap">
+        <a class="site-name" href="index.html">Willow Wu</a>
+        <nav class="site-nav" aria-label="Primary">
           <a href="index.html#work">Work</a>
           <a href="path.html" aria-current="page">Experience</a>
           <a href="resumes.html">Resume</a>
           <a href="about.html">About</a>
         </nav>
-        <a class="utility-link" href="mailto:yw4643@columbia.edu">Say hello</a>
       </div>
     </header>
 
-    <main id="main-content" class="site-frame notebook-page">
-      <p class="eyebrow">The path so far</p>
-      <h1>Different rooms, same instinct.</h1>
-      <p class="page-lede">
-        I keep ending up in places where the hard part isn't the model or the code:
-        it's deciding what question to ask, and for whom.
-      </p>
+    <main id="main" class="wrap page">
+      <h1>Experience</h1>
+      <p class="lede">Roles, research, teaching, and education, newest first. The <a href="resumes.html">resume</a> has the same record in one page.</p>
 
-      <ol class="path-timeline path-page-timeline">
-        <li class="has-logo">
-          <span>Summer 2026</span>
-          <img class="org-logo org-logo-microsoft" src="assets/institutions/microsoft-icon.svg" width="36" height="36" alt="" />
-          <div>
-            <h3>Microsoft: Software Engineer Intern</h3>
-            <p>
-              Software Engineer Intern. Public details are intentionally limited to a
-              role-level summary.
-            </p>
+      <div class="stack">
+        <div class="section-grid">
+          <h2 class="section-label">Roles</h2>
+          <div class="rows">
+            <article class="row">
+              <p class="when">Summer 2026</p>
+              <div>
+                <h3>Microsoft <span>Software Engineer Intern, OfficePLUS AI Assistant</span></h3>
+                <ul>
+                  <li>Contributed to a React/TypeScript refactor of the LLM streaming engine: a two-table, session-keyed model with bounded cleanup that preserves active runs.</li>
+                  <li>Traced rate-limit failures across three Azure telemetry stores with KQL and T-SQL; 97.6% were quota exhaustion rather than provider throttling.</li>
+                  <li>Helped raise the assistant's UI success rate from about 70% to 98% by fixing double-submit and stall bugs found through telemetry.</li>
+                  <li>Ran an end-to-end release through Azure DevOps pipelines with signed artifacts.</li>
+                </ul>
+              </div>
+            </article>
+            <article class="row">
+              <p class="when">Jun 2026 to now</p>
+              <div>
+                <h3>Columbia Business School <span>Data Analyst, with Prof. Emmanuel Yimfor</span></h3>
+                <ul>
+                  <li>Python and DuckDB entity-resolution pipelines on Columbia's Linux HPC grid, linking SEC Form D and ADV filings to workforce data covering 606M+ profiles, 1.78B positions, and 32M+ companies.</li>
+                  <li>Built 141,661 high-confidence entity pairs and entity-disjoint splits to test LLM-assisted resolution against an 87,579-pair rule baseline.</li>
+                  <li>Replaced token-expanded joins with normalized hash joins and constrained blocking, which stopped memory blowups while keeping all 63 reference relationships and adding 8 fund-level matches.</li>
+                </ul>
+              </div>
+            </article>
+            <article class="row">
+              <p class="when">Sep to Dec 2025</p>
+              <div>
+                <h3>Columbia University <span>Teaching Assistant, Introduction to Databases, with Prof. Kenneth Ross</span></h3>
+                <ul>
+                  <li>Advised six project teams, about 40 students, on schema design, SQL, and query plans in a 300-student course.</li>
+                  <li>Graded exams and assignments; helped students debug queries, execution plans, and indexing.</li>
+                </ul>
+              </div>
+            </article>
+            <article class="row">
+              <p class="when">Nov 2023 to Mar 2024</p>
+              <div>
+                <h3>Shenzhen Haohai Zhiyuan <span>Software Engineer Intern, IoT smart-hardware startup</span></h3>
+                <ul>
+                  <li>Built AWS-backed REST services and React Native and Flutter interfaces for a hardware product, localized in more than ten languages.</li>
+                </ul>
+              </div>
+            </article>
+            <article class="row">
+              <p class="when">Summer 2023</p>
+              <div>
+                <h3>China Academy of Railway Sciences <span>Data Engineering Intern, Institute of Electronic Computing Technology</span></h3>
+                <ul>
+                  <li>Built ETL pipelines to clean, migrate, and validate millions of freight records on a DCFS, Elasticsearch/ELK, and PCF Spring Cloud platform.</li>
+                </ul>
+              </div>
+            </article>
           </div>
-        </li>
-        <li class="has-logo">
-          <span>2026 - now</span>
-          <img class="org-logo org-logo-crown" src="assets/institutions/columbia-crown.svg" width="36" height="36" alt="" />
-          <div>
-            <h3>Columbia Business School: Research Assistant</h3>
-            <p>
-              Research collaboration applying machine learning to a social-science
-              question, with sensitive research details kept out of this public notebook.
-            </p>
+        </div>
+
+        <div class="section-grid">
+          <h2 class="section-label">Research</h2>
+          <div class="rows">
+            <article class="row">
+              <p class="when">2025</p>
+              <div>
+                <h3>Explainable Dynamic Graph Neural Networks for Predictive Maintenance in Vehicle Chassis Systems <span>first author</span></h3>
+                <p>You Wu et al. Proceedings of Machine Learning Research, ACML 2025. GCN encoder and Random Forest on about 9M vehicle records: 98.9% fault-category accuracy, high-cost failure precision from 60% to 95% under leakage-aware cross-validation. <a href="work/acml.html">Case study</a>, <a href="https://proceedings.mlr.press/v304/you26a.html" target="_blank" rel="noreferrer">paper</a>.</p>
+              </div>
+            </article>
           </div>
-        </li>
-        <li class="has-logo">
-          <span>2025 - 2026</span>
-          <img class="org-logo org-logo-crown" src="assets/institutions/columbia-crown.svg" width="36" height="36" alt="" />
-          <div>
-            <h3>Columbia University: MSCS (ML Track)</h3>
-            <p>
-              Machine Learning track. Previously served as a Teaching Assistant for
-              Introduction to Databases, advising project teams on schema design, SQL,
-              and query-plan analysis.
-            </p>
+        </div>
+
+        <div class="section-grid">
+          <h2 class="section-label">Education</h2>
+          <div class="rows">
+            <article class="row">
+              <p class="when">Sep 2025 to Dec 2026</p>
+              <div>
+                <h3>Columbia University <span>MS in Computer Science, machine learning track</span></h3>
+                <p>New York. GPA 3.96 / 4.0.</p>
+              </div>
+            </article>
+            <article class="row">
+              <p class="when">Sep 2021 to Jun 2025</p>
+              <div>
+                <h3>Hong Kong Baptist University <span>BSc in Data Science</span></h3>
+                <p>Hong Kong. Final-year project with an industry partner became the ACML paper.</p>
+              </div>
+            </article>
           </div>
-        </li>
-        <li>
-          <span>2025</span>
-          <div>
-            <h3>ACML / PMLR: First-Author Publication</h3>
-            <p>
-              Explainable graph neural networks for predictive maintenance. Reframed an ambiguous
-              industrial problem into cost-aware prediction tasks with vehicle-wise chronological evaluation.
-            </p>
-          </div>
-        </li>
-        <li>
-          <span>2023 - 2024</span>
-          <div>
-            <h3>Software &amp; data internships</h3>
-            <p>
-              AWS-backed services and cross-platform interfaces at a Shenzhen hardware startup.
-              Railway logistics data engineering at the China Academy of Railway Sciences,
-              migrating and validating millions of freight records on an Elasticsearch/ELK platform.
-            </p>
-          </div>
-        </li>
-        <li class="has-logo">
-          <span>2021 - 2025</span>
-          <img class="org-logo org-logo-hkbu" src="assets/institutions/hkbu.png" width="36" height="36" alt="" />
-          <div>
-            <h3>Hong Kong Baptist University (HKBU): B.Sc. Data Science</h3>
-            <p>
-              Where the ACML research began and where I first encountered industrial
-              data problems and ML research methodology.
-            </p>
-          </div>
-        </li>
-      </ol>
+        </div>
+      </div>
     </main>
 
-    <footer class="site-frame site-footer">
-      <p>© <span id="current-year"></span> Willow Wu</p>
-      <p><a href="index.html">Back to selected work</a></p>
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>© <span id="year">2026</span> Willow Wu</p>
+        <p><a href="index.html">Back to work</a></p>
+      </div>
     </footer>
     <script src="app.js"></script>
   </body>

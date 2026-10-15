@@ -2,111 +2,74 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Colophon: how this site is built, what is published, and what is intentionally omitted." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="How this site is built and what is published on it." />
     <link rel="canonical" href="https://cyriellewu.github.io/willow-portfolio/colophon.html" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Willow Wu" />
-    <meta property="og:title" content="Colophon | Willow Wu" />
-    <meta property="og:description" content="How Willow Wu's field-notebook portfolio is built and how its public evidence is scoped." />
+    <meta property="og:title" content="Colophon, Willow Wu" />
     <meta property="og:url" content="https://cyriellewu.github.io/willow-portfolio/colophon.html" />
     <meta property="og:image" content="https://cyriellewu.github.io/willow-portfolio/assets/social/home-og-1200x630.png" />
-    <meta property="og:image:alt" content="Willow Wu, software engineer with applied-ML depth" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Colophon | Willow Wu" />
-    <meta name="twitter:description" content="How Willow Wu's field-notebook portfolio is built and how its public evidence is scoped." />
-    <meta name="twitter:image" content="https://cyriellewu.github.io/willow-portfolio/assets/social/home-og-1200x630.png" />
-    <title>Colophon | Willow Wu</title>
+    <title>Colophon, Willow Wu</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="preload" href="assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="assets/fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <a class="skip-link" href="#main-content">Skip to content</a>
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
-      <div class="site-frame header-content">
-        <a class="site-name" href="index.html"><img src="assets/identity/ruled-w.svg" width="32" height="24" alt="" /><span>Willow Wu</span></a>
-        <nav class="site-nav" aria-label="Primary navigation">
+      <div class="wrap">
+        <a class="site-name" href="index.html">Willow Wu</a>
+        <nav class="site-nav" aria-label="Primary">
           <a href="index.html#work">Work</a>
           <a href="path.html">Experience</a>
           <a href="resumes.html">Resume</a>
           <a href="about.html">About</a>
         </nav>
-        <a class="utility-link" href="mailto:yw4643@columbia.edu">Say hello</a>
       </div>
     </header>
 
-    <main id="main-content" class="site-frame notebook-page">
-      <p class="eyebrow">Colophon</p>
-      <h1>How this site works.</h1>
+    <main id="main" class="wrap page">
+      <h1>Colophon</h1>
+      <div class="prose">
+        <p class="lede">How this site is built, what it publishes, and what it leaves out.</p>
 
-      <div class="colophon-body">
-        <section>
-          <h2>A living field notebook</h2>
-          <p>
-            This site is a working document, not a finished portfolio. It changes as projects
-            develop, thinking sharpens, and new work becomes ready to share. Some pages are
-            polished; others are honest first drafts.
-          </p>
-        </section>
+        <h2>Stack</h2>
+        <p>Static HTML, one CSS file, and a few lines of JavaScript for the image viewer. No framework, no build step, no analytics, no cookies. Hosted on GitHub Pages.</p>
 
-        <section>
-          <h2>What is published</h2>
-          <ul>
-            <li>Project case studies drawn from published papers, public repositories, and course work</li>
-            <li>Sample data and synthetic illustrations only, with no real user data</li>
-            <li>Aggregate statistics (e.g. SSIM histograms) without source imagery</li>
-            <li>Public-safe career and project facts selected for this site</li>
-          </ul>
-        </section>
+        <h2>Type</h2>
+        <p>Headings and interface text are set in Bricolage Grotesque. Running text is Source Serif 4. Both are open-source families from Google Fonts, served from this site rather than a third-party host.</p>
 
-        <section>
-          <h2>What is intentionally omitted</h2>
-          <ul>
-            <li>Biometric images or identifiers (palm-vein project uses synthetic illustrations)</li>
-            <li>Proprietary datasets, NDA-covered details, or private account data</li>
-            <li>Internal details of employer work beyond high-level public role descriptions</li>
-            <li>Personal lifestyle, hobbies, or media consumption not relevant to work</li>
-          </ul>
-        </section>
+        <h2>What is published</h2>
+        <ul>
+          <li>Work from published papers, public repositories, course projects, and internship work at the level of detail that already appears on my resume.</li>
+          <li>Screenshots from public demos with sample data only.</li>
+          <li>Aggregate statistics without source imagery for the palm-vein project.</li>
+        </ul>
 
-        <section>
-          <h2>Technical stack</h2>
-          <p>
-            Static HTML, CSS, and vanilla JavaScript. No frameworks, no build step, no external
-            scripts, no analytics, no cookies. Hosted on GitHub Pages.
-          </p>
-        </section>
+        <h2>What is left out</h2>
+        <ul>
+          <li>Biometric images or identifiers.</li>
+          <li>Proprietary datasets, internal identifiers, and anything covered by an NDA.</li>
+          <li>Private account data.</li>
+        </ul>
 
-        <section>
-          <h2>Accessibility</h2>
-          <ul>
-            <li>Semantic HTML with landmark regions and ARIA labels where needed</li>
-            <li>Skip-to-content link on every page</li>
-            <li>Keyboard-navigable interactive elements</li>
-            <li>Respects <code>prefers-reduced-motion</code></li>
-            <li>Color contrast targets WCAG AA against the sage/cream palette</li>
-          </ul>
-          <p>
-            If something isn't working well with your setup, I'd like to know:
-            <a href="mailto:yw4643@columbia.edu">email me</a>.
-          </p>
-        </section>
-
-        <section>
-          <h2>Update policy</h2>
-          <p>
-            I update this site when there is something worth saying, not on a schedule.
-            Major project additions or corrections get a commit; small copy edits accumulate.
-          </p>
-        </section>
+        <h2>Accessibility</h2>
+        <ul>
+          <li>Semantic landmarks, a skip link on every page, and keyboard-operable controls with visible focus.</li>
+          <li>Light and dark themes follow the system setting.</li>
+          <li>Reduced-motion preferences are respected.</li>
+        </ul>
+        <p>If something does not work with your setup, <a href="mailto:yw4643@columbia.edu">email me</a>.</p>
       </div>
     </main>
 
-    <footer class="site-frame site-footer">
-      <p>© <span id="current-year"></span> Willow Wu</p>
-      <p><a href="index.html">Back to selected work</a></p>
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>© <span id="year">2026</span> Willow Wu</p>
+        <p><a href="index.html">Back to work</a></p>
+      </div>
     </footer>
     <script src="app.js"></script>
   </body>
