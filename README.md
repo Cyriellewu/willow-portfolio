@@ -22,7 +22,7 @@ Upload the contents of this folder to any static host (GitHub Pages, Vercel, Net
 - `index.html`, `path.html`, `resumes.html`, `about.html`, `colophon.html`
 - `work/` case studies
 - `styles.css` the only stylesheet; `app.js` image viewer and footer year
-- `assets/fonts/` self-hosted Latin subsets of Bricolage Grotesque and Source Serif 4
+- `assets/fonts/` self-hosted Latin subsets of Fraunces and IBM Plex Sans
 - `assets/projects/` approved public screenshots and illustrations only
 - `assets/social/` Open Graph images
 

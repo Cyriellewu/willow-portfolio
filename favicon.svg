@@ -1,4 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Willow Wu">
-  <rect width="64" height="64" rx="10" fill="#1f3fd0"/>
-  <path d="M11 17 21 48 32 25 43 48 53 17" fill="none" stroke="#ffffff" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+  <rect width="64" height="64" fill="#f6f5f0"/>
+  <line x1="7" y1="15" x2="57" y2="15" stroke="#4e6858" stroke-width="1" opacity=".45"/>
+  <line x1="7" y1="32" x2="57" y2="32" stroke="#4e6858" stroke-width="1" opacity=".45"/>
+  <line x1="7" y1="49" x2="57" y2="49" stroke="#4e6858" stroke-width="1" opacity=".45"/>
+  <path d="M12 14 22 50 32 24 42 50 52 14" fill="none" stroke="#4e6858" stroke-linecap="square" stroke-linejoin="miter" stroke-width="5"/>
+  <circle cx="32" cy="24" r="3.5" fill="#c76852"/>
 </svg>

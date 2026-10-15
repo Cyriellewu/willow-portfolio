@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 48" role="img" aria-label="Willow Wu">
+  <line x1="5" y1="9" x2="59" y2="9" stroke="#4e6858" stroke-width="1" opacity=".45"/>
+  <line x1="5" y1="24" x2="59" y2="24" stroke="#4e6858" stroke-width="1" opacity=".45"/>
+  <line x1="5" y1="39" x2="59" y2="39" stroke="#4e6858" stroke-width="1" opacity=".45"/>
+  <path d="M11 8 22 40 32 18 42 40 53 8" fill="none" stroke="#4e6858" stroke-linecap="square" stroke-linejoin="miter" stroke-width="4"/>
+  <circle cx="32" cy="18" r="3" fill="#c76852"/>
+</svg>
