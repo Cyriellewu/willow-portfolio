@@ -1,20 +1,13 @@
 /* Willow Wu: personal site
    Layout: one left-aligned column, 1120px max, large section headings, project rows with big figures.
-   Type: Fraunces for headings, IBM Plex Sans for running text and interface.
+   Type: Newsreader for headings, IBM Plex Sans for running text and interface.
    Color: warm paper, dark green ink, sage accent. Light and dark themes. */
 
 @font-face {
-  font-family: "Fraunces";
-  src: url("assets/fonts/fraunces-latin.woff2") format("woff2");
+  font-family: "Newsreader";
+  src: url("assets/fonts/newsreader-latin.woff2") format("woff2");
   font-style: normal;
-  font-weight: 400 600;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Fraunces";
-  src: url("assets/fonts/fraunces-italic-latin.woff2") format("woff2");
-  font-style: italic;
-  font-weight: 400 600;
+  font-weight: 400 500;
   font-display: swap;
 }
 @font-face {
@@ -39,7 +32,7 @@
   --accent-soft: rgba(78, 104, 88, 0.1);
   --accent-ink: #ffffff;
   --shadow: 0 12px 32px rgba(34, 46, 38, 0.1);
-  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-display: "Newsreader", Georgia, "Times New Roman", serif;
   --font-text: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
   --gutter-left: max(20px, env(safe-area-inset-left, 0px));
   --gutter-right: max(20px, env(safe-area-inset-right, 0px));
